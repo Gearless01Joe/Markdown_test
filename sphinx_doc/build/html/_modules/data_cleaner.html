@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+
+<html lang="zh-CN" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>data_cleaner &#8212; Markdown  文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css?v=5283bb3d" />
+    
+    <script src="../_static/documentation_options.js?v=7d86a446"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总索引"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python 模块索引"
+             >模块</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Markdown  文档</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">模块代码</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">data_cleaner</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>data_cleaner 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"># @Time    : 2025/11/10 13:41</span>
+<span class="sd"># @User  : 刘子都</span>
+<span class="sd"># @Descriotion  : 国自然科学基金项目推荐数据清洗模块</span>
+<span class="sd">                  实现breadth_search和cited_articles字段的数据清洗和标准化处理</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">sqlalchemy</span><span class="w"> </span><span class="kn">import</span> <span class="n">or_</span><span class="p">,</span> <span class="n">func</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">base_mysql</span><span class="w"> </span><span class="kn">import</span> <span class="n">session_dict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">application.NsfcTopicRcmdModels</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">NsfcTopicRcmdTaskListModel</span><span class="p">,</span>
+    <span class="n">NsfcTopicRcmdTaskTopicListModel</span><span class="p">,</span>
+    <span class="n">NsfcTopicRcmdTaskAppInfoModel</span>
+<span class="p">)</span>
+
+
+<span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">DEFAULT_DB_KEY</span> <span class="o">=</span> <span class="s1">&#39;medicine&#39;</span>
+
+
+<div class="viewcode-block" id="DataCleaner">
+<a class="viewcode-back" href="../data_cleaner.html#data_cleaner.DataCleaner">[文档]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DataCleaner</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;数据清洗类，负责数据库操作和数据清洗流程&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;初始化数据清洗器。</span>
+
+<span class="sd">        :author: LZD</span>
+<span class="sd">        :date: 2025/11/10</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db_key</span> <span class="o">=</span> <span class="n">DEFAULT_DB_KEY</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">BATCH_SIZE</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_task_list_model</span> <span class="o">=</span> <span class="n">NsfcTopicRcmdTaskListModel</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_topic_list_model</span> <span class="o">=</span> <span class="n">NsfcTopicRcmdTaskTopicListModel</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_app_info_model</span> <span class="o">=</span> <span class="n">NsfcTopicRcmdTaskAppInfoModel</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;初始化数据模型失败: </span><span class="si">{</span><span class="n">exc</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">exc</span>
+
+<div class="viewcode-block" id="DataCleaner.run">
+<a class="viewcode-back" href="../data_cleaner.html#data_cleaner.DataCleaner.run">[文档]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;执行所有清洗任务。</span>
+
+<span class="sd">        :author: LZD</span>
+<span class="sd">        :date: 2025/11/10</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">session</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open_session</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;开始执行数据清洗任务&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;数据库: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">db_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">()</span>
+
+            <span class="n">cleaning_plan</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s1">&#39;model_class&#39;</span><span class="p">:</span> <span class="n">NsfcTopicRcmdTaskListModel</span><span class="p">,</span>
+                    <span class="s1">&#39;field_name&#39;</span><span class="p">:</span> <span class="s1">&#39;breadth_search&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;extra_filters&#39;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="n">or_</span><span class="p">(</span>
+                            <span class="n">func</span><span class="o">.</span><span class="n">json_contains_path</span><span class="p">(</span>
+                                <span class="n">NsfcTopicRcmdTaskListModel</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">breadth_search</span><span class="p">,</span>
+                                <span class="s1">&#39;one&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;$.article_addition&#39;</span>
+                            <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>
+                            <span class="n">func</span><span class="o">.</span><span class="n">json_contains_path</span><span class="p">(</span>
+                                <span class="n">NsfcTopicRcmdTaskListModel</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">breadth_search</span><span class="p">,</span>
+                                <span class="s1">&#39;one&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;$.project_addition&#39;</span>
+                            <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+                        <span class="p">)</span>
+                    <span class="p">],</span>
+                    <span class="s1">&#39;processor&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_breadth_search</span><span class="p">,</span>
+                    <span class="s1">&#39;display_name&#39;</span><span class="p">:</span> <span class="s1">&#39;breadth_search 字段&#39;</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s1">&#39;model_class&#39;</span><span class="p">:</span> <span class="n">NsfcTopicRcmdTaskTopicListModel</span><span class="p">,</span>
+                    <span class="s1">&#39;field_name&#39;</span><span class="p">:</span> <span class="s1">&#39;cited_articles&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;extra_filters&#39;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="n">func</span><span class="o">.</span><span class="n">json_type</span><span class="p">(</span>
+                            <span class="n">NsfcTopicRcmdTaskTopicListModel</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">cited_articles</span>
+                        <span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;ARRAY&#39;</span>
+                    <span class="p">],</span>
+                    <span class="s1">&#39;processor&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_cited_articles</span><span class="p">,</span>
+                    <span class="s1">&#39;display_name&#39;</span><span class="p">:</span> <span class="s1">&#39;主题列表表的 cited_articles 字段&#39;</span><span class="p">,</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s1">&#39;model_class&#39;</span><span class="p">:</span> <span class="n">NsfcTopicRcmdTaskAppInfoModel</span><span class="p">,</span>
+                    <span class="s1">&#39;field_name&#39;</span><span class="p">:</span> <span class="s1">&#39;cited_articles&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;extra_filters&#39;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="n">func</span><span class="o">.</span><span class="n">json_type</span><span class="p">(</span>
+                            <span class="n">NsfcTopicRcmdTaskAppInfoModel</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">cited_articles</span>
+                        <span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;ARRAY&#39;</span>
+                    <span class="p">],</span>
+                    <span class="s1">&#39;processor&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_cited_articles</span><span class="p">,</span>
+                    <span class="s1">&#39;display_name&#39;</span><span class="p">:</span> <span class="s1">&#39;应用信息表的 cited_articles 字段&#39;</span><span class="p">,</span>
+                <span class="p">},</span>
+            <span class="p">]</span>
+
+            <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">cleaning_plan</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_clean_dataset</span><span class="p">(</span>
+                    <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+                    <span class="n">model_class</span><span class="o">=</span><span class="n">task</span><span class="p">[</span><span class="s1">&#39;model_class&#39;</span><span class="p">],</span>
+                    <span class="n">field_name</span><span class="o">=</span><span class="n">task</span><span class="p">[</span><span class="s1">&#39;field_name&#39;</span><span class="p">],</span>
+                    <span class="n">extra_filters</span><span class="o">=</span><span class="n">task</span><span class="p">[</span><span class="s1">&#39;extra_filters&#39;</span><span class="p">],</span>
+                    <span class="n">processor</span><span class="o">=</span><span class="n">task</span><span class="p">[</span><span class="s1">&#39;processor&#39;</span><span class="p">],</span>
+                    <span class="n">display_name</span><span class="o">=</span><span class="n">task</span><span class="p">[</span><span class="s1">&#39;display_name&#39;</span><span class="p">],</span>
+                <span class="p">)</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;所有数据清洗任务完成！&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_process_records</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">records</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">processor_func</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;对查询结果进行处理并生成更新内容。</span>
+
+<span class="sd">        :param records: 原始记录列表</span>
+<span class="sd">        :param field_name: 需要处理的字段名</span>
+<span class="sd">        :param processor_func: 数据处理函数</span>
+<span class="sd">        :return: (updates, processed_count, skipped_count)</span>
+<span class="sd">        :author: LZD</span>
+<span class="sd">        :date: 2025/11/10</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">updates</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">processed</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">skipped</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">records</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">updates</span><span class="p">,</span> <span class="n">processed</span><span class="p">,</span> <span class="n">skipped</span>
+
+        <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">records</span><span class="p">:</span>
+            <span class="n">record_id</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+            <span class="n">raw_payload</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">field_name</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">record_id</span> <span class="ow">or</span> <span class="n">raw_payload</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">skipped</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">continue</span>
+
+            <span class="c1"># ORM 会自动将 JSON 字段反序列化为 Python 对象（dict/list）</span>
+            <span class="c1"># 如果已经是 dict 或 list，直接使用；如果是字符串，则解析 JSON</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">raw_payload</span><span class="p">,</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+                <span class="n">parsed_payload</span> <span class="o">=</span> <span class="n">raw_payload</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">raw_payload</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">parsed_payload</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">raw_payload</span><span class="p">)</span>
+                <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">:</span>
+                    <span class="n">skipped</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="k">continue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">skipped</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">continue</span>
+
+            <span class="n">processed_payload</span> <span class="o">=</span> <span class="n">processor_func</span><span class="p">(</span><span class="n">parsed_payload</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">processed_payload</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">skipped</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">continue</span>
+
+            <span class="n">updates</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">record_id</span><span class="p">,</span> <span class="n">processed_payload</span><span class="p">))</span>
+            <span class="n">processed</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">updates</span><span class="p">,</span> <span class="n">processed</span><span class="p">,</span> <span class="n">skipped</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_model_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_class</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;获取已初始化的模型实例。</span>
+
+<span class="sd">        :param model_class: 模型类</span>
+<span class="sd">        :return: 模型实例</span>
+<span class="sd">        :author: LZD</span>
+<span class="sd">        :date: 2025/11/10</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">model_class</span> <span class="o">==</span> <span class="n">NsfcTopicRcmdTaskListModel</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_task_list_model</span>
+        <span class="k">elif</span> <span class="n">model_class</span> <span class="o">==</span> <span class="n">NsfcTopicRcmdTaskTopicListModel</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_topic_list_model</span>
+        <span class="k">elif</span> <span class="n">model_class</span> <span class="o">==</span> <span class="n">NsfcTopicRcmdTaskAppInfoModel</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_app_info_model</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;未注册的模型类: </span><span class="si">{</span><span class="n">model_class</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch_records_with_condition</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">model_class</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">extra_filters</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;使用模型类查询满足条件的记录。</span>
+
+<span class="sd">        :param session: 数据库会话</span>
+<span class="sd">        :param model_class: CRUD模型类</span>
+<span class="sd">        :param field_name: 目标字段名</span>
+<span class="sd">        :param extra_filters: 额外的过滤条件列表</span>
+<span class="sd">        :param offset: 起始偏移量</span>
+<span class="sd">        :param limit: 分页大小</span>
+<span class="sd">        :return: 查询结果列表，格式为 [{&#39;id&#39;: record_id, field_name: field_value}, ...]</span>
+<span class="sd">        :author: LZD</span>
+<span class="sd">        :date: 2025/11/10</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_model_instance</span><span class="p">(</span><span class="n">model_class</span><span class="p">)</span>
+        <span class="n">records</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fetch_records_for_cleaning</span><span class="p">(</span>
+            <span class="n">session</span><span class="p">,</span>
+            <span class="n">field_name</span><span class="p">,</span>
+            <span class="n">extra_filters</span> <span class="ow">or</span> <span class="p">[],</span>
+            <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span>
+            <span class="n">limit</span><span class="o">=</span><span class="n">limit</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">records</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_write_updates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">model_class</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">updates</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;使用模型类将处理结果写回数据库。</span>
+
+<span class="sd">        :param session: 数据库会话</span>
+<span class="sd">        :param model_class: CRUD模型类</span>
+<span class="sd">        :param field_name: 更新字段名</span>
+<span class="sd">        :param updates: 待写入的 (id, processed_data) 列表</span>
+<span class="sd">        :return: 受影响的行数</span>
+<span class="sd">        :author: LZD</span>
+<span class="sd">        :date: 2025/11/10</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">updates</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_model_instance</span><span class="p">(</span><span class="n">model_class</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">total_rows</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">batch_update_field</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">updates</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">)</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">total_rows</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+            <span class="k">raise</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_clean_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">model_class</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">extra_filters</span><span class="p">,</span> <span class="n">processor</span><span class="p">,</span> <span class="n">display_name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;通用清洗流程封装。</span>
+
+<span class="sd">        :param session: 数据库会话</span>
+<span class="sd">        :param model_class: CRUD模型类</span>
+<span class="sd">        :param field_name: 字段名称</span>
+<span class="sd">        :param extra_filters: 额外过滤条件列表</span>
+<span class="sd">        :param processor: 数据处理回调函数</span>
+<span class="sd">        :param display_name: 用于输出的展示名称</span>
+<span class="sd">        :author: LZD</span>
+<span class="sd">        :date: 2025/11/10</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;开始清洗</span><span class="si">{</span><span class="n">display_name</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+        <span class="n">total_found</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">total_processed</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">total_skipped</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">total_updated</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">records</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fetch_records_with_condition</span><span class="p">(</span>
+                <span class="n">session</span><span class="p">,</span> <span class="n">model_class</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">extra_filters</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">records</span><span class="p">:</span>
+                <span class="k">break</span>
+
+            <span class="n">total_found</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">)</span>
+            <span class="n">updates</span><span class="p">,</span> <span class="n">processed</span><span class="p">,</span> <span class="n">skipped</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_records</span><span class="p">(</span>
+                <span class="n">records</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">processor</span>
+            <span class="p">)</span>
+            <span class="n">total_processed</span> <span class="o">+=</span> <span class="n">processed</span>
+            <span class="n">total_skipped</span> <span class="o">+=</span> <span class="n">skipped</span>
+            <span class="n">updated_rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_write_updates</span><span class="p">(</span>
+                <span class="n">session</span><span class="p">,</span> <span class="n">model_class</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">updates</span>
+            <span class="p">)</span>
+            <span class="n">total_updated</span> <span class="o">+=</span> <span class="n">updated_rows</span>
+            <span class="n">offset</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  查询到 </span><span class="si">{</span><span class="n">total_found</span><span class="si">}</span><span class="s2"> 条记录&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  处理成功: </span><span class="si">{</span><span class="n">total_processed</span><span class="si">}</span><span class="s2"> 条，跳过: </span><span class="si">{</span><span class="n">total_skipped</span><span class="si">}</span><span class="s2"> 条&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  更新成功: </span><span class="si">{</span><span class="n">total_updated</span><span class="si">}</span><span class="s2"> 条记录&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">display_name</span><span class="si">}</span><span class="s2"> 清洗完成</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_open_session</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;打开数据库会话。</span>
+
+<span class="sd">        :return: SQLAlchemy Session 实例</span>
+<span class="sd">        :author: LZD</span>
+<span class="sd">        :date: 2025/11/10</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">session_dict</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s2">&quot;base_mysql.session_dict 未找到&quot;</span><span class="p">)</span>
+
+        <span class="n">session_factory</span> <span class="o">=</span> <span class="n">session_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db_key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">session_factory</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown database alias: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">db_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">session</span> <span class="o">=</span> <span class="n">session_factory</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">session</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_process_cited_articles</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;将引用文献数组整理成以 object_id 为键的字典。</span>
+
+<span class="sd">        :param data: 原始引用数组</span>
+<span class="sd">        :return: 标准化后的引用信息字典</span>
+<span class="sd">        :author: LZD</span>
+<span class="sd">        :date: 2025/11/10</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="k">continue</span>
+
+            <span class="n">object_id</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;object_id&#39;</span><span class="p">)</span>
+            <span class="n">object_type</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;object_type&#39;</span><span class="p">)</span>
+            <span class="n">object_info</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;object_info&#39;</span><span class="p">,</span> <span class="p">{})</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">object_id</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="n">object_type</span> <span class="o">==</span> <span class="s1">&#39;project&#39;</span><span class="p">:</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">object_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataCleaner</span><span class="o">.</span><span class="n">_standardize_project_info</span><span class="p">(</span><span class="n">object_info</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">object_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">object_info</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_process_breadth_search</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;解析 breadth_search，合并项目与文章信息。</span>
+
+<span class="sd">        :param data: breadth_search 字段内容</span>
+<span class="sd">        :return: 扁平化后的数据</span>
+<span class="sd">        :author: LZD</span>
+<span class="sd">        :date: 2025/11/10</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="c1"># 处理项目数据：需要标准化</span>
+        <span class="n">project_addition</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;project_addition&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">project_addition</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">object_id</span><span class="p">,</span> <span class="n">project_data</span> <span class="ow">in</span> <span class="n">project_addition</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">project_data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                    <span class="n">result</span><span class="p">[</span><span class="n">object_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">DataCleaner</span><span class="o">.</span><span class="n">_standardize_project_info</span><span class="p">(</span><span class="n">project_data</span><span class="p">)</span>
+
+        <span class="c1"># 处理文章数据：直接复制</span>
+        <span class="n">article_addition</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;article_addition&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">article_addition</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">object_id</span><span class="p">,</span> <span class="n">article_data</span> <span class="ow">in</span> <span class="n">article_addition</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">article_data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                    <span class="n">result</span><span class="p">[</span><span class="n">object_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">article_data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_standardize_project_info</span><span class="p">(</span><span class="n">object_info</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;将项目 object_info 转换为统一字段命名和格式。</span>
+
+<span class="sd">        :param object_info: 原始项目字段</span>
+<span class="sd">        :return: 标准化后的项目字段</span>
+<span class="sd">        :author: LZD</span>
+<span class="sd">        :date: 2025/11/10</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">object_info</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">{}</span>
+
+        <span class="n">processed</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="n">field_mapping</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;unit_name&#39;</span><span class="p">:</span> <span class="s1">&#39;project_unit&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;leader_name&#39;</span><span class="p">:</span> <span class="s1">&#39;project_leader&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;category_name&#39;</span><span class="p">:</span> <span class="s1">&#39;project_category&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;abstract&#39;</span><span class="p">:</span> <span class="s1">&#39;chs_abstract&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;project_id&#39;</span><span class="p">:</span> <span class="s1">&#39;related_article&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="n">old_field</span><span class="p">,</span> <span class="n">new_field</span> <span class="ow">in</span> <span class="n">field_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">old_field</span> <span class="ow">in</span> <span class="n">object_info</span><span class="p">:</span>
+                <span class="n">processed</span><span class="p">[</span><span class="n">new_field</span><span class="p">]</span> <span class="o">=</span> <span class="n">object_info</span><span class="p">[</span><span class="n">old_field</span><span class="p">]</span>
+
+        <span class="n">apply_code</span> <span class="o">=</span> <span class="n">object_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;apply_code&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">apply_code</span><span class="p">:</span>
+            <span class="n">processed</span><span class="p">[</span><span class="s1">&#39;apply_code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;apply_code&#39;</span><span class="p">:</span> <span class="n">apply_code</span><span class="p">,</span>
+                <span class="s1">&#39;code_name&#39;</span><span class="p">:</span> <span class="n">object_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;subject_info&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+            <span class="p">}</span>
+
+        <span class="n">project_keyword</span> <span class="o">=</span> <span class="n">object_info</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;project_keyword&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">project_keyword</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">processed</span><span class="p">[</span><span class="s1">&#39;project_keyword&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">keyword</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">project_keyword</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">keyword</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">project_keyword</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">processed</span><span class="p">[</span><span class="s1">&#39;project_keyword&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">project_keyword</span>
+
+        <span class="n">processed</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;nsfc_project&#39;</span>
+
+        <span class="c1"># 保留未显式处理的其他字段，避免信息丢失</span>
+        <span class="n">mapped_fields</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">field_mapping</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="n">excluded_fields</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apply_code&#39;</span><span class="p">,</span> <span class="s1">&#39;subject_info&#39;</span><span class="p">,</span> <span class="s1">&#39;related_project&#39;</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">original_key</span><span class="p">,</span> <span class="n">original_value</span> <span class="ow">in</span> <span class="n">object_info</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">original_key</span> <span class="ow">in</span> <span class="n">mapped_fields</span> <span class="ow">or</span> <span class="n">original_key</span> <span class="ow">in</span> <span class="n">excluded_fields</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">original_key</span> <span class="ow">in</span> <span class="n">processed</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">processed</span><span class="p">[</span><span class="n">original_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">original_value</span>
+
+        <span class="k">return</span> <span class="n">processed</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">DataCleaner</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">快速搜索</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="提交" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>导航</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="总索引"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python 模块索引"
+             >模块</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Markdown  文档</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >模块代码</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">data_cleaner</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; 版权所有 2025, Liu zidu.
+      由 <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3创建。
+    </div>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+# 网页标题
+site_name: Python技术文档库
+# 导航标题
+nav:
+  - 国自然选题推荐数据清洗: NTRT.md
+  - RCSB PDB: RCSB_PDB.md
+# 主题，目前预选：readthedocs、material
+theme: material
