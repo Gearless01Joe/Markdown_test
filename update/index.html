@@ -462,6 +462,10 @@ git push markdown test
 mkdocs gh-deploy --clean --remote-name markdown
 </code></pre>
 <p>看到 “Copying … to ‘gh-pages’ branch and pushing to GitHub.” 且没有报错，说明发布成功。</p>
+<p>注意：如果出现了</p>
+<pre><code class="language-powershell">Failed to connect to github.com
+</code></pre>
+<p>执行：git push markdown test，可以成功连接的时候，再执行部署的命令。</p>
 <h2 id="5-github">5. GitHub 页面的更新</h2>
 <p>保持 GitHub 仓库 Pages 设置（Branch: <code>gh-pages</code> / root）不动。几分钟后访问 <code>https://gearless01joe.github.io/Markdown_test/</code>，新页面就会出现。若浏览器缓存导致旧内容未刷新，可以 <code>Ctrl+F5</code> 或换浏览器试一下。</p>
 <p>只要按照这五步（<strong>预览 → 构建 → 提交 → 部署 → 检查</strong>）就能把未来的文档更新自动发布到线上的 GitHub Pages 站点。</p>
