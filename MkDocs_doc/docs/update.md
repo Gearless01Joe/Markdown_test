@@ -30,6 +30,12 @@ mkdocs gh-deploy --clean --remote-name markdown
 ```
 看到 “Copying … to ‘gh-pages’ branch and pushing to GitHub.” 且没有报错，说明发布成功。
 
+注意：如果出现了
+```powershell
+Failed to connect to github.com
+```
+执行：git push markdown test，可以成功连接的时候，再执行部署的命令。
+
 ## 5. GitHub 页面的更新
 保持 GitHub 仓库 Pages 设置（Branch: `gh-pages` / root）不动。几分钟后访问 `https://gearless01joe.github.io/Markdown_test/`，新页面就会出现。若浏览器缓存导致旧内容未刷新，可以 `Ctrl+F5` 或换浏览器试一下。
 

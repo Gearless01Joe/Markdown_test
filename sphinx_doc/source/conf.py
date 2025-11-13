@@ -33,7 +33,7 @@ language = 'zh_CN'  # 改为中文，或使用 'en' 表示英文
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'bizstyle'
+html_theme = 'alabaster'
 html_static_path = ['_static']
 
 # -- Extension configuration -------------------------------------------------
