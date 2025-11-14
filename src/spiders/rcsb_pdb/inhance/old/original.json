@@ -1,0 +1,94 @@
+{
+  "PDB_ID": "7IAQ",
+  "Organism": "Zika virus",
+  "_polymer_entity_ids": [
+    "1",
+    "2"
+  ],
+  "Expression_System": "Escherichia coli BL21(DE3)",
+  "Macromolecule": "NS2B co-factor (5.865 kDa, polypeptide(L), Chains: A,C); NS3 protease (18.877 kDa, polypeptide(L), Chains: B,D); NS2B co-factor (5.865 kDa, polypeptide(L), Chains: A,C); NS3 protease (18.877 kDa, polypeptide(L), Chains: B,D)",
+  "unique_Ligands": "A1CD2 ((1S,3S)-3-ethoxy-7-azaspiro[3.5]nonan-1-ol)",
+  "Mutation": "Yes (engineered mutation x2)",
+  "Title": "Crystal structure of Zika NS2B-NS3 protease in complex with fragment EOS102809 from ECBL-96",
+  "Classification": "VIRAL PROTEIN",
+  "Deposited": "2025-05-21T00:00:00+0000",
+  "Released": "2025-11-12T00:00:00+0000",
+  "Macromolecule_Content": {
+    "Total_Structure_Weight": 49.67,
+    "Atom_Count": 2997,
+    "Modeled_Residue_Count": 383,
+    "Deposited_Residue_Count": 458,
+    "Unique_Protein_Chains": 2,
+    "Solvent_Atom_Count": 71,
+    "Model_Count": 1,
+    "Polymer_Composition": "heteromeric protein",
+    "Nonpolymer_Entity_Count": 1
+  },
+  "Experimental_Data_Snapshot": {
+    "Experimental_Method": "X-RAY DIFFRACTION",
+    "Resolution": 1.83,
+    "R-Value Work": 0.1905,
+    "R-Value Free": 0.2132
+  },
+  "unique_Ligands_Details": [
+    {
+      "pdbx_entity_nonpoly_comp_id": "A1CD2",
+      "pdbx_entity_nonpoly_entity_id": "3",
+      "pdbx_entity_nonpoly_name": "(1S,3S)-3-ethoxy-7-azaspiro[3.5]nonan-1-ol",
+      "rcsb_nonpolymer_entity_formula_weight": 0.185,
+      "rcsb_nonpolymer_entity_pdbx_description": "(1S,3S)-3-ethoxy-7-azaspiro[3.5]nonan-1-ol",
+      "rcsb_nonpolymer_entity_pdbx_number_of_molecules": 1,
+      "rcsb_nonpolymer_entity_annotation": [
+        {
+          "annotation_id": "entity_annotation_1",
+          "assignment_version": "V1.0",
+          "comp_id": "A1CD2",
+          "description": "Ligand targeted in this investigation",
+          "name": "A1CD2",
+          "provenance_source": "PDB",
+          "type": "SUBJECT_OF_INVESTIGATION"
+        }
+      ],
+      "rcsb_nonpolymer_entity_container_identifiers": {
+        "asym_ids": [
+          "E"
+        ],
+        "auth_asym_ids": [
+          "D"
+        ],
+        "chem_ref_def_id": "A1CD2",
+        "entity_id": "3",
+        "entry_id": "7IAQ",
+        "nonpolymer_comp_id": "A1CD2",
+        "rcsb_id": "7IAQ_3"
+      },
+      "rcsb_nonpolymer_entity_feature": [
+        {
+          "assignment_version": "V1.0",
+          "comp_id": "A1CD2",
+          "description": "Ligand targeted in this investigation",
+          "feature_id": "entity_feature_1",
+          "name": "A1CD2",
+          "provenance_source": "PDB",
+          "type": "SUBJECT_OF_INVESTIGATION"
+        }
+      ],
+      "rcsb_nonpolymer_entity_feature_summary": [
+        {
+          "count": 1,
+          "type": "SUBJECT_OF_INVESTIGATION"
+        }
+      ],
+      "rcsb_id": "7IAQ_3",
+      "pdbx_entity_nonpoly_mon_nstd_flag": null,
+      "pdbx_entity_nonpoly_pdbx_number_of_molecules": null,
+      "pdbx_entity_nonpoly_pdbx_formal_charge": null,
+      "pdbx_entity_nonpoly_pdbx_formula_weight": null,
+      "rcsb_nonpolymer_entity_rcsb_id": null,
+      "rcsb_nonpolymer_entity_rcsb_entity_id": null,
+      "rcsb_nonpolymer_entity_rcsb_entry_id": null,
+      "rcsb_nonpolymer_entity_rcsb_chem_comp_molecular_weight": null,
+      "rcsb_nonpolymer_entity_rcsb_chem_comp_formula": null
+    }
+  ]
+}

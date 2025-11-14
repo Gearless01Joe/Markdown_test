@@ -2,25 +2,91 @@
 site_name: Python技术文档库
 # 站点url
 site_url: https://Gearless01Joe.github.io/Markdown_test/
-# 导航标题
+
+# 多层级导航配置
 nav:
+  # 第一层：首页
   - 首页: index.md
-  - 关于更新: update.md
-  # - 关于: about.md
-  - 国自然选题推荐数据清洗: api.md
-  # - RCSB PDB: RCSB_PDB.md
+  
+  # 第二层：项目文档（多项目支持）
+  - 项目文档:
+    - 项目文档首页: projects/index.md
+    - 国自然选题推荐:
+      - 项目首页: projects/nsfc/index.md
+      - API 参考: projects/nsfc/api.md
+      - 使用指南: projects/nsfc/guide.md
+    - 爬虫模块:
+      - 爬虫首页: projects/spiders/index.md
+      - API 参考: projects/spiders/api.md
+    # 可以继续添加更多项目
+    # - 项目2:
+    #   - 项目首页: projects/project2/index.md
+    #   - API 参考: projects/project2/api.md
+  
+  # 第二层：开发指南
+  - 开发指南:
+    - 指南首页: guide/index.md
+    - 快速开始: guide/getting-started.md
+    - 最佳实践: guide/best-practices.md
+    - 高级主题:
+      - 高级主题首页: guide/advanced/index.md
+      - 性能优化: guide/advanced/performance.md
+  
+  # 第二层：参考文档
+  - 参考文档:
+    - 参考首页: reference/index.md
+    - 更新日志: update.md
 
-# 插件
+# 插件配置
 plugins:
-     - search
-     - mkdocstrings:
-         default_handler: python
-         handlers:
-           python:
-             paths: [../src]        # 指向你的源码目录
-             options:
-               docstring_style: google    # 你的 docstring 风格（google/napoleon/numpy）
-               show_source: true
+  - search:
+      lang: ['zh', 'en']
+      prebuild_index: true  # 预构建索引，提升搜索速度
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: 
+            - ../src                    # 当前项目的源码
+            # 可以添加更多项目的源码路径
+            # - projects/project2/src
+            # - projects/project3/src
+          options:
+            docstring_style: google    # Google 风格（兼容团队的 :param: 和 Args: 格式）
+            show_source: true
+            show_root_heading: true
+            show_root_toc_entry: true    # 显示根目录条目
+            show_signature_annotations: true  # 显示类型注解
+            # 处理不完整 docstring 的选项
+            show_if_no_docstring: false  # 没有 docstring 的方法不显示（避免文档混乱）
+            merge_init_into_class: true  # 将 __init__ 合并到类文档中
+            show_submodules: true        # 显示子模块
 
-# 主题，目前预选：readthedocs、material
-theme: material
+# 主题配置（Material 主题的多层级支持）
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs          # 顶部标签导航
+    - navigation.sections      # 章节导航（支持多层级）
+    - navigation.expand        # 可展开导航
+    - navigation.top           # 返回顶部按钮
+    - search.suggest           # 搜索建议
+    - search.highlight         # 搜索结果高亮
+    - content.code.copy        # 代码复制按钮
+    - content.code.annotate    # 代码注释
+  # palette 配置已移除，使用 Material 默认颜色
+  # 如果需要自定义颜色，可以取消下面的注释并修改颜色值
+  # palette:
+  #   - scheme: default
+  #     primary: indigo    # 可选：red, pink, purple, deep-purple, indigo, blue, light-blue, cyan, teal, green, light-green, lime, yellow, amber, orange, deep-orange, brown, grey, blue-grey
+  #     accent: indigo     # 同上
+  #     toggle:
+  #       icon: material/brightness-7
+  #       name: 切换到深色模式
+  #   - scheme: slate
+  #     primary: indigo
+  #     accent: indigo
+  #     toggle:
+  #       icon: material/brightness-4
+  #       name: 切换到浅色模式

@@ -1,0 +1,2830 @@
+[
+  {
+    "页面字段": "PDB_ID",
+    "官方字段": [
+      "rcsb_id",
+      "rcsb_entry_container_identifiers.entry_id"
+    ],
+    "API类型": "GraphQL",
+    "api_endpoint": "https://data.rcsb.org/graphql",
+    "graphql_paths": [
+      {
+        "path": [
+          "rcsb_entry_container_identifiers"
+        ],
+        "resolved_type": "RcsbEntryContainerIdentifiers",
+        "same_level_fields": [
+          "assembly_ids",
+          "branched_entity_ids",
+          "emdb_ids",
+          "entity_ids",
+          "entry_id",
+          "model_ids",
+          "non_polymer_entity_ids",
+          "polymer_entity_ids",
+          "pubmed_id",
+          "rcsb_id",
+          "related_emdb_ids",
+          "water_entity_ids"
+        ],
+        "child_fields": {}
+      }
+    ],
+    "同级字段": [
+      "assembly_ids",
+      "branched_entity_ids",
+      "emdb_ids",
+      "entity_ids",
+      "entry_id",
+      "model_ids",
+      "non_polymer_entity_ids",
+      "polymer_entity_ids",
+      "pubmed_id",
+      "rcsb_id",
+      "related_emdb_ids",
+      "water_entity_ids"
+    ],
+    "子级字段": {},
+    "sample_ids": [
+      "1CBS"
+    ]
+  },
+  {
+    "页面字段": "Macromolecule",
+    "官方字段": [
+      "polymer_entities.rcsb_polymer_entity.pdbx_description",
+      "polymer_entities.rcsb_polymer_entity.formula_weight",
+      "polymer_entities.entity_poly.type",
+      "polymer_entities.entity_poly.pdbx_strand_id"
+    ],
+    "API类型": "GraphQL",
+    "api_endpoint": "https://data.rcsb.org/graphql",
+    "graphql_paths": [
+      {
+        "path": [
+          "polymer_entities"
+        ],
+        "resolved_type": "CorePolymerEntity",
+        "same_level_fields": [
+          "chem_comp_monomers",
+          "chem_comp_nstd_monomers",
+          "entity_poly",
+          "entity_src_gen",
+          "entity_src_nat",
+          "entry",
+          "pdbx_entity_src_syn",
+          "pfams",
+          "polymer_entity_groups",
+          "polymer_entity_instances",
+          "prd",
+          "rcsb_cluster_flexibility",
+          "rcsb_cluster_membership",
+          "rcsb_entity_host_organism",
+          "rcsb_entity_source_organism",
+          "rcsb_genomic_lineage",
+          "rcsb_id",
+          "rcsb_latest_revision",
+          "rcsb_membrane_lineage",
+          "rcsb_membrane_lineage_provenance_code",
+          "rcsb_polymer_entity",
+          "rcsb_polymer_entity_align",
+          "rcsb_polymer_entity_annotation",
+          "rcsb_polymer_entity_container_identifiers",
+          "rcsb_polymer_entity_feature",
+          "rcsb_polymer_entity_feature_summary",
+          "rcsb_polymer_entity_group_membership",
+          "rcsb_polymer_entity_keywords",
+          "rcsb_polymer_entity_name_com",
+          "rcsb_polymer_entity_name_sys",
+          "rcsb_related_target_references",
+          "rcsb_target_cofactors",
+          "uniprots"
+        ],
+        "child_fields": {
+          "chem_comp_monomers": [
+            "chem_comp",
+            "drugbank",
+            "pdbx_chem_comp_audit",
+            "pdbx_chem_comp_descriptor",
+            "pdbx_chem_comp_feature",
+            "pdbx_chem_comp_identifier",
+            "pdbx_family_prd_audit",
+            "pdbx_prd_audit",
+            "pdbx_reference_entity_list",
+            "pdbx_reference_entity_poly",
+            "pdbx_reference_entity_poly_link",
+            "pdbx_reference_entity_poly_seq",
+            "pdbx_reference_entity_sequence",
+            "pdbx_reference_entity_src_nat",
+            "pdbx_reference_molecule",
+            "pdbx_reference_molecule_annotation",
+            "pdbx_reference_molecule_details",
+            "pdbx_reference_molecule_family",
+            "pdbx_reference_molecule_features",
+            "pdbx_reference_molecule_list",
+            "pdbx_reference_molecule_related_structures",
+            "pdbx_reference_molecule_synonyms",
+            "rcsb_bird_citation",
+            "rcsb_chem_comp_annotation",
+            "rcsb_chem_comp_container_identifiers",
+            "rcsb_chem_comp_descriptor",
+            "rcsb_chem_comp_info",
+            "rcsb_chem_comp_related",
+            "rcsb_chem_comp_synonyms",
+            "rcsb_chem_comp_target",
+            "rcsb_id",
+            "rcsb_schema_container_identifiers"
+          ],
+          "chem_comp_nstd_monomers": [
+            "chem_comp",
+            "drugbank",
+            "pdbx_chem_comp_audit",
+            "pdbx_chem_comp_descriptor",
+            "pdbx_chem_comp_feature",
+            "pdbx_chem_comp_identifier",
+            "pdbx_family_prd_audit",
+            "pdbx_prd_audit",
+            "pdbx_reference_entity_list",
+            "pdbx_reference_entity_poly",
+            "pdbx_reference_entity_poly_link",
+            "pdbx_reference_entity_poly_seq",
+            "pdbx_reference_entity_sequence",
+            "pdbx_reference_entity_src_nat",
+            "pdbx_reference_molecule",
+            "pdbx_reference_molecule_annotation",
+            "pdbx_reference_molecule_details",
+            "pdbx_reference_molecule_family",
+            "pdbx_reference_molecule_features",
+            "pdbx_reference_molecule_list",
+            "pdbx_reference_molecule_related_structures",
+            "pdbx_reference_molecule_synonyms",
+            "rcsb_bird_citation",
+            "rcsb_chem_comp_annotation",
+            "rcsb_chem_comp_container_identifiers",
+            "rcsb_chem_comp_descriptor",
+            "rcsb_chem_comp_info",
+            "rcsb_chem_comp_related",
+            "rcsb_chem_comp_synonyms",
+            "rcsb_chem_comp_target",
+            "rcsb_id",
+            "rcsb_schema_container_identifiers"
+          ],
+          "entity_poly": [
+            "nstd_linkage",
+            "nstd_monomer",
+            "pdbx_seq_one_letter_code",
+            "pdbx_seq_one_letter_code_can",
+            "pdbx_sequence_evidence_code",
+            "pdbx_strand_id",
+            "pdbx_target_identifier",
+            "rcsb_artifact_monomer_count",
+            "rcsb_conflict_count",
+            "rcsb_deletion_count",
+            "rcsb_entity_polymer_type",
+            "rcsb_insertion_count",
+            "rcsb_mutation_count",
+            "rcsb_non_std_monomer_count",
+            "rcsb_non_std_monomers",
+            "rcsb_prd_id",
+            "rcsb_sample_sequence_length",
+            "type"
+          ],
+          "entity_src_gen": [
+            "expression_system_id",
+            "gene_src_common_name",
+            "gene_src_details",
+            "gene_src_genus",
+            "gene_src_species",
+            "gene_src_strain",
+            "gene_src_tissue",
+            "gene_src_tissue_fraction",
+            "host_org_common_name",
+            "host_org_details",
+            "host_org_genus",
+            "host_org_species",
+            "pdbx_alt_source_flag",
+            "pdbx_beg_seq_num",
+            "pdbx_description",
+            "pdbx_end_seq_num",
+            "pdbx_gene_src_atcc",
+            "pdbx_gene_src_cell",
+            "pdbx_gene_src_cell_line",
+            "pdbx_gene_src_cellular_location",
+            "pdbx_gene_src_fragment",
+            "pdbx_gene_src_gene",
+            "pdbx_gene_src_ncbi_taxonomy_id",
+            "pdbx_gene_src_organ",
+            "pdbx_gene_src_organelle",
+            "pdbx_gene_src_scientific_name",
+            "pdbx_gene_src_variant",
+            "pdbx_host_org_atcc",
+            "pdbx_host_org_cell",
+            "pdbx_host_org_cell_line",
+            "pdbx_host_org_cellular_location",
+            "pdbx_host_org_culture_collection",
+            "pdbx_host_org_gene",
+            "pdbx_host_org_ncbi_taxonomy_id",
+            "pdbx_host_org_organ",
+            "pdbx_host_org_organelle",
+            "pdbx_host_org_scientific_name",
+            "pdbx_host_org_strain",
+            "pdbx_host_org_tissue",
+            "pdbx_host_org_tissue_fraction",
+            "pdbx_host_org_variant",
+            "pdbx_host_org_vector",
+            "pdbx_host_org_vector_type",
+            "pdbx_seq_type",
+            "pdbx_src_id",
+            "plasmid_details",
+            "plasmid_name"
+          ],
+          "entity_src_nat": [
+            "common_name",
+            "details",
+            "genus",
+            "pdbx_alt_source_flag",
+            "pdbx_atcc",
+            "pdbx_beg_seq_num",
+            "pdbx_cell",
+            "pdbx_cell_line",
+            "pdbx_cellular_location",
+            "pdbx_end_seq_num",
+            "pdbx_fragment",
+            "pdbx_ncbi_taxonomy_id",
+            "pdbx_organ",
+            "pdbx_organelle",
+            "pdbx_organism_scientific",
+            "pdbx_plasmid_details",
+            "pdbx_plasmid_name",
+            "pdbx_secretion",
+            "pdbx_src_id",
+            "pdbx_variant",
+            "species",
+            "strain",
+            "tissue",
+            "tissue_fraction"
+          ],
+          "entry": [
+            "assemblies",
+            "audit_author",
+            "branched_entities",
+            "cell",
+            "citation",
+            "database_2",
+            "diffrn",
+            "diffrn_detector",
+            "diffrn_radiation",
+            "diffrn_source",
+            "em_2d_crystal_entity",
+            "em_3d_crystal_entity",
+            "em_3d_fitting",
+            "em_3d_fitting_list",
+            "em_3d_reconstruction",
+            "em_ctf_correction",
+            "em_diffraction",
+            "em_diffraction_shell",
+            "em_diffraction_stats",
+            "em_embedding",
+            "em_entity_assembly",
+            "em_experiment",
+            "em_helical_entity",
+            "em_image_recording",
+            "em_imaging",
+            "em_particle_selection",
+            "em_single_particle_entity",
+            "em_software",
+            "em_specimen",
+            "em_staining",
+            "em_vitrification",
+            "entry",
+            "entry_groups",
+            "exptl",
+            "exptl_crystal",
+            "exptl_crystal_grow",
+            "ihm_entry_collection_mapping",
+            "ihm_external_reference_info",
+            "ma_data",
+            "nonpolymer_entities",
+            "pdbx_SG_project",
+            "pdbx_audit_revision_category",
+            "pdbx_audit_revision_details",
+            "pdbx_audit_revision_group",
+            "pdbx_audit_revision_history",
+            "pdbx_audit_revision_item",
+            "pdbx_audit_support",
+            "pdbx_database_PDB_obs_spr",
+            "pdbx_database_related",
+            "pdbx_database_status",
+            "pdbx_deposit_group",
+            "pdbx_initial_refinement_model",
+            "pdbx_molecule_features",
+            "pdbx_nmr_details",
+            "pdbx_nmr_ensemble",
+            "pdbx_nmr_exptl",
+            "pdbx_nmr_exptl_sample_conditions",
+            "pdbx_nmr_refine",
+            "pdbx_nmr_representative",
+            "pdbx_nmr_sample_details",
+            "pdbx_nmr_software",
+            "pdbx_nmr_spectrometer",
+            "pdbx_reflns_twin",
+            "pdbx_related_exp_data_set",
+            "pdbx_serial_crystallography_data_reduction",
+            "pdbx_serial_crystallography_measurement",
+            "pdbx_serial_crystallography_sample_delivery",
+            "pdbx_serial_crystallography_sample_delivery_fixed_target",
+            "pdbx_serial_crystallography_sample_delivery_injection",
+            "pdbx_soln_scatter",
+            "pdbx_soln_scatter_model",
+            "pdbx_vrpt_summary",
+            "pdbx_vrpt_summary_diffraction",
+            "pdbx_vrpt_summary_em",
+            "pdbx_vrpt_summary_geometry",
+            "pdbx_vrpt_summary_nmr",
+            "polymer_entities",
+            "pubmed",
+            "rcsb_accession_info",
+            "rcsb_associated_holdings",
+            "rcsb_binding_affinity",
+            "rcsb_comp_model_provenance",
+            "rcsb_entry_container_identifiers",
+            "rcsb_entry_group_membership",
+            "rcsb_entry_info",
+            "rcsb_external_references",
+            "rcsb_id",
+            "rcsb_ihm_dataset_list",
+            "rcsb_ihm_dataset_source_db_reference",
+            "rcsb_ma_qa_metric_global",
+            "rcsb_primary_citation",
+            "refine",
+            "refine_analyze",
+            "refine_hist",
+            "refine_ls_restr",
+            "reflns",
+            "reflns_shell",
+            "software",
+            "struct",
+            "struct_keywords",
+            "symmetry"
+          ],
+          "pdbx_entity_src_syn": [
+            "details",
+            "ncbi_taxonomy_id",
+            "organism_common_name",
+            "organism_scientific",
+            "pdbx_alt_source_flag",
+            "pdbx_beg_seq_num",
+            "pdbx_end_seq_num",
+            "pdbx_src_id"
+          ],
+          "pfams": [
+            "rcsb_id",
+            "rcsb_pfam_accession",
+            "rcsb_pfam_clan_id",
+            "rcsb_pfam_comment",
+            "rcsb_pfam_container_identifiers",
+            "rcsb_pfam_description",
+            "rcsb_pfam_identifier",
+            "rcsb_pfam_provenance_code",
+            "rcsb_pfam_seed_source"
+          ],
+          "polymer_entity_groups": [
+            "group_provenance",
+            "rcsb_group_accession_info",
+            "rcsb_group_container_identifiers",
+            "rcsb_group_info",
+            "rcsb_group_related",
+            "rcsb_group_statistics",
+            "rcsb_id",
+            "rcsb_polymer_entity_group_members_rankings",
+            "rcsb_polymer_entity_group_sequence_alignment"
+          ],
+          "polymer_entity_instances": [
+            "pdbx_struct_special_symmetry",
+            "pdbx_vrpt_summary_entity_fit_to_map",
+            "pdbx_vrpt_summary_entity_geometry",
+            "polymer_entity",
+            "rcsb_id",
+            "rcsb_latest_revision",
+            "rcsb_ligand_neighbors",
+            "rcsb_polymer_entity_instance_container_identifiers",
+            "rcsb_polymer_instance_annotation",
+            "rcsb_polymer_instance_feature",
+            "rcsb_polymer_instance_feature_summary",
+            "rcsb_polymer_instance_info",
+            "rcsb_polymer_struct_conn",
+            "struct_asym"
+          ],
+          "prd": [
+            "chem_comp",
+            "drugbank",
+            "pdbx_chem_comp_audit",
+            "pdbx_chem_comp_descriptor",
+            "pdbx_chem_comp_feature",
+            "pdbx_chem_comp_identifier",
+            "pdbx_family_prd_audit",
+            "pdbx_prd_audit",
+            "pdbx_reference_entity_list",
+            "pdbx_reference_entity_poly",
+            "pdbx_reference_entity_poly_link",
+            "pdbx_reference_entity_poly_seq",
+            "pdbx_reference_entity_sequence",
+            "pdbx_reference_entity_src_nat",
+            "pdbx_reference_molecule",
+            "pdbx_reference_molecule_annotation",
+            "pdbx_reference_molecule_details",
+            "pdbx_reference_molecule_family",
+            "pdbx_reference_molecule_features",
+            "pdbx_reference_molecule_list",
+            "pdbx_reference_molecule_related_structures",
+            "pdbx_reference_molecule_synonyms",
+            "rcsb_bird_citation",
+            "rcsb_chem_comp_annotation",
+            "rcsb_chem_comp_container_identifiers",
+            "rcsb_chem_comp_descriptor",
+            "rcsb_chem_comp_info",
+            "rcsb_chem_comp_related",
+            "rcsb_chem_comp_synonyms",
+            "rcsb_chem_comp_target",
+            "rcsb_id",
+            "rcsb_schema_container_identifiers"
+          ],
+          "rcsb_cluster_flexibility": [
+            "avg_rmsd",
+            "label",
+            "link",
+            "max_rmsd",
+            "provenance_code"
+          ],
+          "rcsb_cluster_membership": [
+            "cluster_id",
+            "identity"
+          ],
+          "rcsb_entity_host_organism": [
+            "beg_seq_num",
+            "common_name",
+            "end_seq_num",
+            "ncbi_common_names",
+            "ncbi_parent_scientific_name",
+            "ncbi_scientific_name",
+            "ncbi_taxonomy_id",
+            "pdbx_src_id",
+            "provenance_source",
+            "scientific_name",
+            "taxonomy_lineage"
+          ],
+          "rcsb_entity_source_organism": [
+            "beg_seq_num",
+            "common_name",
+            "end_seq_num",
+            "ncbi_common_names",
+            "ncbi_parent_scientific_name",
+            "ncbi_scientific_name",
+            "ncbi_taxonomy_id",
+            "pdbx_src_id",
+            "provenance_source",
+            "rcsb_gene_name",
+            "scientific_name",
+            "source_type",
+            "taxonomy_lineage"
+          ],
+          "rcsb_genomic_lineage": [
+            "depth",
+            "id",
+            "name"
+          ],
+          "rcsb_latest_revision": [
+            "major_revision",
+            "minor_revision",
+            "revision_date"
+          ],
+          "rcsb_membrane_lineage": [
+            "depth",
+            "id",
+            "name"
+          ],
+          "rcsb_polymer_entity": [
+            "details",
+            "formula_weight",
+            "pdbx_description",
+            "pdbx_ec",
+            "pdbx_fragment",
+            "pdbx_mutation",
+            "pdbx_number_of_molecules",
+            "rcsb_ec_lineage",
+            "rcsb_enzyme_class_combined",
+            "rcsb_macromolecular_names_combined",
+            "rcsb_multiple_source_flag",
+            "rcsb_polymer_name_combined",
+            "rcsb_source_part_count",
+            "rcsb_source_taxonomy_count",
+            "src_method"
+          ],
+          "rcsb_polymer_entity_align": [
+            "aligned_regions",
+            "provenance_source",
+            "reference_database_accession",
+            "reference_database_isoform",
+            "reference_database_name"
+          ],
+          "rcsb_polymer_entity_annotation": [
+            "additional_properties",
+            "annotation_id",
+            "annotation_lineage",
+            "assignment_version",
+            "description",
+            "name",
+            "provenance_source",
+            "type"
+          ],
+          "rcsb_polymer_entity_container_identifiers": [
+            "asym_ids",
+            "auth_asym_ids",
+            "chem_comp_monomers",
+            "chem_comp_nstd_monomers",
+            "chem_ref_def_id",
+            "entity_id",
+            "entry_id",
+            "prd_id",
+            "rcsb_id",
+            "reference_sequence_identifiers",
+            "uniprot_ids"
+          ],
+          "rcsb_polymer_entity_feature": [
+            "additional_properties",
+            "assignment_version",
+            "description",
+            "feature_id",
+            "feature_positions",
+            "name",
+            "provenance_source",
+            "reference_scheme",
+            "type"
+          ],
+          "rcsb_polymer_entity_feature_summary": [
+            "count",
+            "coverage",
+            "maximum_length",
+            "maximum_value",
+            "minimum_length",
+            "minimum_value",
+            "type"
+          ],
+          "rcsb_polymer_entity_group_membership": [
+            "aggregation_method",
+            "aligned_regions",
+            "group_id",
+            "similarity_cutoff"
+          ],
+          "rcsb_polymer_entity_keywords": [
+            "text"
+          ],
+          "rcsb_polymer_entity_name_com": [
+            "name"
+          ],
+          "rcsb_polymer_entity_name_sys": [
+            "name",
+            "system"
+          ],
+          "rcsb_related_target_references": [
+            "aligned_target",
+            "related_resource_name",
+            "related_resource_version",
+            "related_target_id",
+            "target_taxonomy_id"
+          ],
+          "rcsb_target_cofactors": [
+            "binding_assay_value",
+            "binding_assay_value_type",
+            "cofactor_InChIKey",
+            "cofactor_SMILES",
+            "cofactor_chem_comp_id",
+            "cofactor_description",
+            "cofactor_name",
+            "cofactor_prd_id",
+            "cofactor_resource_id",
+            "mechanism_of_action",
+            "neighbor_flag",
+            "patent_nos",
+            "pubmed_ids",
+            "resource_name",
+            "resource_version",
+            "target_resource_id"
+          ],
+          "uniprots": [
+            "rcsb_id",
+            "rcsb_uniprot_accession",
+            "rcsb_uniprot_alignments",
+            "rcsb_uniprot_annotation",
+            "rcsb_uniprot_container_identifiers",
+            "rcsb_uniprot_entry_name",
+            "rcsb_uniprot_external_reference",
+            "rcsb_uniprot_feature",
+            "rcsb_uniprot_keyword",
+            "rcsb_uniprot_protein"
+          ]
+        }
+      },
+      {
+        "path": [
+          "polymer_entities",
+          "rcsb_polymer_entity"
+        ],
+        "resolved_type": "RcsbPolymerEntity",
+        "same_level_fields": [
+          "details",
+          "formula_weight",
+          "pdbx_description",
+          "pdbx_ec",
+          "pdbx_fragment",
+          "pdbx_mutation",
+          "pdbx_number_of_molecules",
+          "rcsb_ec_lineage",
+          "rcsb_enzyme_class_combined",
+          "rcsb_macromolecular_names_combined",
+          "rcsb_multiple_source_flag",
+          "rcsb_polymer_name_combined",
+          "rcsb_source_part_count",
+          "rcsb_source_taxonomy_count",
+          "src_method"
+        ],
+        "child_fields": {
+          "rcsb_ec_lineage": [
+            "depth",
+            "id",
+            "name"
+          ],
+          "rcsb_enzyme_class_combined": [
+            "depth",
+            "ec",
+            "provenance_source"
+          ],
+          "rcsb_macromolecular_names_combined": [
+            "name",
+            "provenance_code",
+            "provenance_source"
+          ],
+          "rcsb_polymer_name_combined": [
+            "names",
+            "provenance_source"
+          ]
+        }
+      },
+      {
+        "path": [
+          "polymer_entities",
+          "entity_poly"
+        ],
+        "resolved_type": "EntityPoly",
+        "same_level_fields": [
+          "nstd_linkage",
+          "nstd_monomer",
+          "pdbx_seq_one_letter_code",
+          "pdbx_seq_one_letter_code_can",
+          "pdbx_sequence_evidence_code",
+          "pdbx_strand_id",
+          "pdbx_target_identifier",
+          "rcsb_artifact_monomer_count",
+          "rcsb_conflict_count",
+          "rcsb_deletion_count",
+          "rcsb_entity_polymer_type",
+          "rcsb_insertion_count",
+          "rcsb_mutation_count",
+          "rcsb_non_std_monomer_count",
+          "rcsb_non_std_monomers",
+          "rcsb_prd_id",
+          "rcsb_sample_sequence_length",
+          "type"
+        ],
+        "child_fields": {}
+      }
+    ],
+    "同级字段": [
+      "chem_comp_monomers",
+      "chem_comp_nstd_monomers",
+      "details",
+      "entity_poly",
+      "entity_src_gen",
+      "entity_src_nat",
+      "entry",
+      "formula_weight",
+      "nstd_linkage",
+      "nstd_monomer",
+      "pdbx_description",
+      "pdbx_ec",
+      "pdbx_entity_src_syn",
+      "pdbx_fragment",
+      "pdbx_mutation",
+      "pdbx_number_of_molecules",
+      "pdbx_seq_one_letter_code",
+      "pdbx_seq_one_letter_code_can",
+      "pdbx_sequence_evidence_code",
+      "pdbx_strand_id",
+      "pdbx_target_identifier",
+      "pfams",
+      "polymer_entity_groups",
+      "polymer_entity_instances",
+      "prd",
+      "rcsb_artifact_monomer_count",
+      "rcsb_cluster_flexibility",
+      "rcsb_cluster_membership",
+      "rcsb_conflict_count",
+      "rcsb_deletion_count",
+      "rcsb_ec_lineage",
+      "rcsb_entity_host_organism",
+      "rcsb_entity_polymer_type",
+      "rcsb_entity_source_organism",
+      "rcsb_enzyme_class_combined",
+      "rcsb_genomic_lineage",
+      "rcsb_id",
+      "rcsb_insertion_count",
+      "rcsb_latest_revision",
+      "rcsb_macromolecular_names_combined",
+      "rcsb_membrane_lineage",
+      "rcsb_membrane_lineage_provenance_code",
+      "rcsb_multiple_source_flag",
+      "rcsb_mutation_count",
+      "rcsb_non_std_monomer_count",
+      "rcsb_non_std_monomers",
+      "rcsb_polymer_entity",
+      "rcsb_polymer_entity_align",
+      "rcsb_polymer_entity_annotation",
+      "rcsb_polymer_entity_container_identifiers",
+      "rcsb_polymer_entity_feature",
+      "rcsb_polymer_entity_feature_summary",
+      "rcsb_polymer_entity_group_membership",
+      "rcsb_polymer_entity_keywords",
+      "rcsb_polymer_entity_name_com",
+      "rcsb_polymer_entity_name_sys",
+      "rcsb_polymer_name_combined",
+      "rcsb_prd_id",
+      "rcsb_related_target_references",
+      "rcsb_sample_sequence_length",
+      "rcsb_source_part_count",
+      "rcsb_source_taxonomy_count",
+      "rcsb_target_cofactors",
+      "src_method",
+      "type",
+      "uniprots"
+    ],
+    "子级字段": {
+      "chem_comp_monomers": [
+        "chem_comp",
+        "drugbank",
+        "pdbx_chem_comp_audit",
+        "pdbx_chem_comp_descriptor",
+        "pdbx_chem_comp_feature",
+        "pdbx_chem_comp_identifier",
+        "pdbx_family_prd_audit",
+        "pdbx_prd_audit",
+        "pdbx_reference_entity_list",
+        "pdbx_reference_entity_poly",
+        "pdbx_reference_entity_poly_link",
+        "pdbx_reference_entity_poly_seq",
+        "pdbx_reference_entity_sequence",
+        "pdbx_reference_entity_src_nat",
+        "pdbx_reference_molecule",
+        "pdbx_reference_molecule_annotation",
+        "pdbx_reference_molecule_details",
+        "pdbx_reference_molecule_family",
+        "pdbx_reference_molecule_features",
+        "pdbx_reference_molecule_list",
+        "pdbx_reference_molecule_related_structures",
+        "pdbx_reference_molecule_synonyms",
+        "rcsb_bird_citation",
+        "rcsb_chem_comp_annotation",
+        "rcsb_chem_comp_container_identifiers",
+        "rcsb_chem_comp_descriptor",
+        "rcsb_chem_comp_info",
+        "rcsb_chem_comp_related",
+        "rcsb_chem_comp_synonyms",
+        "rcsb_chem_comp_target",
+        "rcsb_id",
+        "rcsb_schema_container_identifiers"
+      ],
+      "chem_comp_nstd_monomers": [
+        "chem_comp",
+        "drugbank",
+        "pdbx_chem_comp_audit",
+        "pdbx_chem_comp_descriptor",
+        "pdbx_chem_comp_feature",
+        "pdbx_chem_comp_identifier",
+        "pdbx_family_prd_audit",
+        "pdbx_prd_audit",
+        "pdbx_reference_entity_list",
+        "pdbx_reference_entity_poly",
+        "pdbx_reference_entity_poly_link",
+        "pdbx_reference_entity_poly_seq",
+        "pdbx_reference_entity_sequence",
+        "pdbx_reference_entity_src_nat",
+        "pdbx_reference_molecule",
+        "pdbx_reference_molecule_annotation",
+        "pdbx_reference_molecule_details",
+        "pdbx_reference_molecule_family",
+        "pdbx_reference_molecule_features",
+        "pdbx_reference_molecule_list",
+        "pdbx_reference_molecule_related_structures",
+        "pdbx_reference_molecule_synonyms",
+        "rcsb_bird_citation",
+        "rcsb_chem_comp_annotation",
+        "rcsb_chem_comp_container_identifiers",
+        "rcsb_chem_comp_descriptor",
+        "rcsb_chem_comp_info",
+        "rcsb_chem_comp_related",
+        "rcsb_chem_comp_synonyms",
+        "rcsb_chem_comp_target",
+        "rcsb_id",
+        "rcsb_schema_container_identifiers"
+      ],
+      "entity_poly": [
+        "nstd_linkage",
+        "nstd_monomer",
+        "pdbx_seq_one_letter_code",
+        "pdbx_seq_one_letter_code_can",
+        "pdbx_sequence_evidence_code",
+        "pdbx_strand_id",
+        "pdbx_target_identifier",
+        "rcsb_artifact_monomer_count",
+        "rcsb_conflict_count",
+        "rcsb_deletion_count",
+        "rcsb_entity_polymer_type",
+        "rcsb_insertion_count",
+        "rcsb_mutation_count",
+        "rcsb_non_std_monomer_count",
+        "rcsb_non_std_monomers",
+        "rcsb_prd_id",
+        "rcsb_sample_sequence_length",
+        "type"
+      ],
+      "entity_src_gen": [
+        "expression_system_id",
+        "gene_src_common_name",
+        "gene_src_details",
+        "gene_src_genus",
+        "gene_src_species",
+        "gene_src_strain",
+        "gene_src_tissue",
+        "gene_src_tissue_fraction",
+        "host_org_common_name",
+        "host_org_details",
+        "host_org_genus",
+        "host_org_species",
+        "pdbx_alt_source_flag",
+        "pdbx_beg_seq_num",
+        "pdbx_description",
+        "pdbx_end_seq_num",
+        "pdbx_gene_src_atcc",
+        "pdbx_gene_src_cell",
+        "pdbx_gene_src_cell_line",
+        "pdbx_gene_src_cellular_location",
+        "pdbx_gene_src_fragment",
+        "pdbx_gene_src_gene",
+        "pdbx_gene_src_ncbi_taxonomy_id",
+        "pdbx_gene_src_organ",
+        "pdbx_gene_src_organelle",
+        "pdbx_gene_src_scientific_name",
+        "pdbx_gene_src_variant",
+        "pdbx_host_org_atcc",
+        "pdbx_host_org_cell",
+        "pdbx_host_org_cell_line",
+        "pdbx_host_org_cellular_location",
+        "pdbx_host_org_culture_collection",
+        "pdbx_host_org_gene",
+        "pdbx_host_org_ncbi_taxonomy_id",
+        "pdbx_host_org_organ",
+        "pdbx_host_org_organelle",
+        "pdbx_host_org_scientific_name",
+        "pdbx_host_org_strain",
+        "pdbx_host_org_tissue",
+        "pdbx_host_org_tissue_fraction",
+        "pdbx_host_org_variant",
+        "pdbx_host_org_vector",
+        "pdbx_host_org_vector_type",
+        "pdbx_seq_type",
+        "pdbx_src_id",
+        "plasmid_details",
+        "plasmid_name"
+      ],
+      "entity_src_nat": [
+        "common_name",
+        "details",
+        "genus",
+        "pdbx_alt_source_flag",
+        "pdbx_atcc",
+        "pdbx_beg_seq_num",
+        "pdbx_cell",
+        "pdbx_cell_line",
+        "pdbx_cellular_location",
+        "pdbx_end_seq_num",
+        "pdbx_fragment",
+        "pdbx_ncbi_taxonomy_id",
+        "pdbx_organ",
+        "pdbx_organelle",
+        "pdbx_organism_scientific",
+        "pdbx_plasmid_details",
+        "pdbx_plasmid_name",
+        "pdbx_secretion",
+        "pdbx_src_id",
+        "pdbx_variant",
+        "species",
+        "strain",
+        "tissue",
+        "tissue_fraction"
+      ],
+      "entry": [
+        "assemblies",
+        "audit_author",
+        "branched_entities",
+        "cell",
+        "citation",
+        "database_2",
+        "diffrn",
+        "diffrn_detector",
+        "diffrn_radiation",
+        "diffrn_source",
+        "em_2d_crystal_entity",
+        "em_3d_crystal_entity",
+        "em_3d_fitting",
+        "em_3d_fitting_list",
+        "em_3d_reconstruction",
+        "em_ctf_correction",
+        "em_diffraction",
+        "em_diffraction_shell",
+        "em_diffraction_stats",
+        "em_embedding",
+        "em_entity_assembly",
+        "em_experiment",
+        "em_helical_entity",
+        "em_image_recording",
+        "em_imaging",
+        "em_particle_selection",
+        "em_single_particle_entity",
+        "em_software",
+        "em_specimen",
+        "em_staining",
+        "em_vitrification",
+        "entry",
+        "entry_groups",
+        "exptl",
+        "exptl_crystal",
+        "exptl_crystal_grow",
+        "ihm_entry_collection_mapping",
+        "ihm_external_reference_info",
+        "ma_data",
+        "nonpolymer_entities",
+        "pdbx_SG_project",
+        "pdbx_audit_revision_category",
+        "pdbx_audit_revision_details",
+        "pdbx_audit_revision_group",
+        "pdbx_audit_revision_history",
+        "pdbx_audit_revision_item",
+        "pdbx_audit_support",
+        "pdbx_database_PDB_obs_spr",
+        "pdbx_database_related",
+        "pdbx_database_status",
+        "pdbx_deposit_group",
+        "pdbx_initial_refinement_model",
+        "pdbx_molecule_features",
+        "pdbx_nmr_details",
+        "pdbx_nmr_ensemble",
+        "pdbx_nmr_exptl",
+        "pdbx_nmr_exptl_sample_conditions",
+        "pdbx_nmr_refine",
+        "pdbx_nmr_representative",
+        "pdbx_nmr_sample_details",
+        "pdbx_nmr_software",
+        "pdbx_nmr_spectrometer",
+        "pdbx_reflns_twin",
+        "pdbx_related_exp_data_set",
+        "pdbx_serial_crystallography_data_reduction",
+        "pdbx_serial_crystallography_measurement",
+        "pdbx_serial_crystallography_sample_delivery",
+        "pdbx_serial_crystallography_sample_delivery_fixed_target",
+        "pdbx_serial_crystallography_sample_delivery_injection",
+        "pdbx_soln_scatter",
+        "pdbx_soln_scatter_model",
+        "pdbx_vrpt_summary",
+        "pdbx_vrpt_summary_diffraction",
+        "pdbx_vrpt_summary_em",
+        "pdbx_vrpt_summary_geometry",
+        "pdbx_vrpt_summary_nmr",
+        "polymer_entities",
+        "pubmed",
+        "rcsb_accession_info",
+        "rcsb_associated_holdings",
+        "rcsb_binding_affinity",
+        "rcsb_comp_model_provenance",
+        "rcsb_entry_container_identifiers",
+        "rcsb_entry_group_membership",
+        "rcsb_entry_info",
+        "rcsb_external_references",
+        "rcsb_id",
+        "rcsb_ihm_dataset_list",
+        "rcsb_ihm_dataset_source_db_reference",
+        "rcsb_ma_qa_metric_global",
+        "rcsb_primary_citation",
+        "refine",
+        "refine_analyze",
+        "refine_hist",
+        "refine_ls_restr",
+        "reflns",
+        "reflns_shell",
+        "software",
+        "struct",
+        "struct_keywords",
+        "symmetry"
+      ],
+      "pdbx_entity_src_syn": [
+        "details",
+        "ncbi_taxonomy_id",
+        "organism_common_name",
+        "organism_scientific",
+        "pdbx_alt_source_flag",
+        "pdbx_beg_seq_num",
+        "pdbx_end_seq_num",
+        "pdbx_src_id"
+      ],
+      "pfams": [
+        "rcsb_id",
+        "rcsb_pfam_accession",
+        "rcsb_pfam_clan_id",
+        "rcsb_pfam_comment",
+        "rcsb_pfam_container_identifiers",
+        "rcsb_pfam_description",
+        "rcsb_pfam_identifier",
+        "rcsb_pfam_provenance_code",
+        "rcsb_pfam_seed_source"
+      ],
+      "polymer_entity_groups": [
+        "group_provenance",
+        "rcsb_group_accession_info",
+        "rcsb_group_container_identifiers",
+        "rcsb_group_info",
+        "rcsb_group_related",
+        "rcsb_group_statistics",
+        "rcsb_id",
+        "rcsb_polymer_entity_group_members_rankings",
+        "rcsb_polymer_entity_group_sequence_alignment"
+      ],
+      "polymer_entity_instances": [
+        "pdbx_struct_special_symmetry",
+        "pdbx_vrpt_summary_entity_fit_to_map",
+        "pdbx_vrpt_summary_entity_geometry",
+        "polymer_entity",
+        "rcsb_id",
+        "rcsb_latest_revision",
+        "rcsb_ligand_neighbors",
+        "rcsb_polymer_entity_instance_container_identifiers",
+        "rcsb_polymer_instance_annotation",
+        "rcsb_polymer_instance_feature",
+        "rcsb_polymer_instance_feature_summary",
+        "rcsb_polymer_instance_info",
+        "rcsb_polymer_struct_conn",
+        "struct_asym"
+      ],
+      "prd": [
+        "chem_comp",
+        "drugbank",
+        "pdbx_chem_comp_audit",
+        "pdbx_chem_comp_descriptor",
+        "pdbx_chem_comp_feature",
+        "pdbx_chem_comp_identifier",
+        "pdbx_family_prd_audit",
+        "pdbx_prd_audit",
+        "pdbx_reference_entity_list",
+        "pdbx_reference_entity_poly",
+        "pdbx_reference_entity_poly_link",
+        "pdbx_reference_entity_poly_seq",
+        "pdbx_reference_entity_sequence",
+        "pdbx_reference_entity_src_nat",
+        "pdbx_reference_molecule",
+        "pdbx_reference_molecule_annotation",
+        "pdbx_reference_molecule_details",
+        "pdbx_reference_molecule_family",
+        "pdbx_reference_molecule_features",
+        "pdbx_reference_molecule_list",
+        "pdbx_reference_molecule_related_structures",
+        "pdbx_reference_molecule_synonyms",
+        "rcsb_bird_citation",
+        "rcsb_chem_comp_annotation",
+        "rcsb_chem_comp_container_identifiers",
+        "rcsb_chem_comp_descriptor",
+        "rcsb_chem_comp_info",
+        "rcsb_chem_comp_related",
+        "rcsb_chem_comp_synonyms",
+        "rcsb_chem_comp_target",
+        "rcsb_id",
+        "rcsb_schema_container_identifiers"
+      ],
+      "rcsb_cluster_flexibility": [
+        "avg_rmsd",
+        "label",
+        "link",
+        "max_rmsd",
+        "provenance_code"
+      ],
+      "rcsb_cluster_membership": [
+        "cluster_id",
+        "identity"
+      ],
+      "rcsb_entity_host_organism": [
+        "beg_seq_num",
+        "common_name",
+        "end_seq_num",
+        "ncbi_common_names",
+        "ncbi_parent_scientific_name",
+        "ncbi_scientific_name",
+        "ncbi_taxonomy_id",
+        "pdbx_src_id",
+        "provenance_source",
+        "scientific_name",
+        "taxonomy_lineage"
+      ],
+      "rcsb_entity_source_organism": [
+        "beg_seq_num",
+        "common_name",
+        "end_seq_num",
+        "ncbi_common_names",
+        "ncbi_parent_scientific_name",
+        "ncbi_scientific_name",
+        "ncbi_taxonomy_id",
+        "pdbx_src_id",
+        "provenance_source",
+        "rcsb_gene_name",
+        "scientific_name",
+        "source_type",
+        "taxonomy_lineage"
+      ],
+      "rcsb_genomic_lineage": [
+        "depth",
+        "id",
+        "name"
+      ],
+      "rcsb_latest_revision": [
+        "major_revision",
+        "minor_revision",
+        "revision_date"
+      ],
+      "rcsb_membrane_lineage": [
+        "depth",
+        "id",
+        "name"
+      ],
+      "rcsb_polymer_entity": [
+        "details",
+        "formula_weight",
+        "pdbx_description",
+        "pdbx_ec",
+        "pdbx_fragment",
+        "pdbx_mutation",
+        "pdbx_number_of_molecules",
+        "rcsb_ec_lineage",
+        "rcsb_enzyme_class_combined",
+        "rcsb_macromolecular_names_combined",
+        "rcsb_multiple_source_flag",
+        "rcsb_polymer_name_combined",
+        "rcsb_source_part_count",
+        "rcsb_source_taxonomy_count",
+        "src_method"
+      ],
+      "rcsb_polymer_entity_align": [
+        "aligned_regions",
+        "provenance_source",
+        "reference_database_accession",
+        "reference_database_isoform",
+        "reference_database_name"
+      ],
+      "rcsb_polymer_entity_annotation": [
+        "additional_properties",
+        "annotation_id",
+        "annotation_lineage",
+        "assignment_version",
+        "description",
+        "name",
+        "provenance_source",
+        "type"
+      ],
+      "rcsb_polymer_entity_container_identifiers": [
+        "asym_ids",
+        "auth_asym_ids",
+        "chem_comp_monomers",
+        "chem_comp_nstd_monomers",
+        "chem_ref_def_id",
+        "entity_id",
+        "entry_id",
+        "prd_id",
+        "rcsb_id",
+        "reference_sequence_identifiers",
+        "uniprot_ids"
+      ],
+      "rcsb_polymer_entity_feature": [
+        "additional_properties",
+        "assignment_version",
+        "description",
+        "feature_id",
+        "feature_positions",
+        "name",
+        "provenance_source",
+        "reference_scheme",
+        "type"
+      ],
+      "rcsb_polymer_entity_feature_summary": [
+        "count",
+        "coverage",
+        "maximum_length",
+        "maximum_value",
+        "minimum_length",
+        "minimum_value",
+        "type"
+      ],
+      "rcsb_polymer_entity_group_membership": [
+        "aggregation_method",
+        "aligned_regions",
+        "group_id",
+        "similarity_cutoff"
+      ],
+      "rcsb_polymer_entity_keywords": [
+        "text"
+      ],
+      "rcsb_polymer_entity_name_com": [
+        "name"
+      ],
+      "rcsb_polymer_entity_name_sys": [
+        "name",
+        "system"
+      ],
+      "rcsb_related_target_references": [
+        "aligned_target",
+        "related_resource_name",
+        "related_resource_version",
+        "related_target_id",
+        "target_taxonomy_id"
+      ],
+      "rcsb_target_cofactors": [
+        "binding_assay_value",
+        "binding_assay_value_type",
+        "cofactor_InChIKey",
+        "cofactor_SMILES",
+        "cofactor_chem_comp_id",
+        "cofactor_description",
+        "cofactor_name",
+        "cofactor_prd_id",
+        "cofactor_resource_id",
+        "mechanism_of_action",
+        "neighbor_flag",
+        "patent_nos",
+        "pubmed_ids",
+        "resource_name",
+        "resource_version",
+        "target_resource_id"
+      ],
+      "uniprots": [
+        "rcsb_id",
+        "rcsb_uniprot_accession",
+        "rcsb_uniprot_alignments",
+        "rcsb_uniprot_annotation",
+        "rcsb_uniprot_container_identifiers",
+        "rcsb_uniprot_entry_name",
+        "rcsb_uniprot_external_reference",
+        "rcsb_uniprot_feature",
+        "rcsb_uniprot_keyword",
+        "rcsb_uniprot_protein"
+      ],
+      "rcsb_ec_lineage": [
+        "depth",
+        "id",
+        "name"
+      ],
+      "rcsb_enzyme_class_combined": [
+        "depth",
+        "ec",
+        "provenance_source"
+      ],
+      "rcsb_macromolecular_names_combined": [
+        "name",
+        "provenance_code",
+        "provenance_source"
+      ],
+      "rcsb_polymer_name_combined": [
+        "names",
+        "provenance_source"
+      ]
+    },
+    "sample_ids": [
+      "1CBS"
+    ]
+  },
+  {
+    "页面字段": "unique_Ligands",
+    "官方字段": [
+      "nonpolymer_entities.pdbx_entity_nonpoly.comp_id",
+      "nonpolymer_entities.pdbx_entity_nonpoly.name"
+    ],
+    "API类型": "GraphQL",
+    "api_endpoint": "https://data.rcsb.org/graphql",
+    "graphql_paths": [
+      {
+        "path": [
+          "nonpolymer_entities"
+        ],
+        "resolved_type": "CoreNonpolymerEntity",
+        "same_level_fields": [
+          "entry",
+          "nonpolymer_comp",
+          "nonpolymer_entity_instances",
+          "pdbx_entity_nonpoly",
+          "prd",
+          "rcsb_id",
+          "rcsb_latest_revision",
+          "rcsb_nonpolymer_entity",
+          "rcsb_nonpolymer_entity_annotation",
+          "rcsb_nonpolymer_entity_container_identifiers",
+          "rcsb_nonpolymer_entity_feature",
+          "rcsb_nonpolymer_entity_feature_summary",
+          "rcsb_nonpolymer_entity_keywords",
+          "rcsb_nonpolymer_entity_name_com"
+        ],
+        "child_fields": {
+          "entry": [
+            "assemblies",
+            "audit_author",
+            "branched_entities",
+            "cell",
+            "citation",
+            "database_2",
+            "diffrn",
+            "diffrn_detector",
+            "diffrn_radiation",
+            "diffrn_source",
+            "em_2d_crystal_entity",
+            "em_3d_crystal_entity",
+            "em_3d_fitting",
+            "em_3d_fitting_list",
+            "em_3d_reconstruction",
+            "em_ctf_correction",
+            "em_diffraction",
+            "em_diffraction_shell",
+            "em_diffraction_stats",
+            "em_embedding",
+            "em_entity_assembly",
+            "em_experiment",
+            "em_helical_entity",
+            "em_image_recording",
+            "em_imaging",
+            "em_particle_selection",
+            "em_single_particle_entity",
+            "em_software",
+            "em_specimen",
+            "em_staining",
+            "em_vitrification",
+            "entry",
+            "entry_groups",
+            "exptl",
+            "exptl_crystal",
+            "exptl_crystal_grow",
+            "ihm_entry_collection_mapping",
+            "ihm_external_reference_info",
+            "ma_data",
+            "nonpolymer_entities",
+            "pdbx_SG_project",
+            "pdbx_audit_revision_category",
+            "pdbx_audit_revision_details",
+            "pdbx_audit_revision_group",
+            "pdbx_audit_revision_history",
+            "pdbx_audit_revision_item",
+            "pdbx_audit_support",
+            "pdbx_database_PDB_obs_spr",
+            "pdbx_database_related",
+            "pdbx_database_status",
+            "pdbx_deposit_group",
+            "pdbx_initial_refinement_model",
+            "pdbx_molecule_features",
+            "pdbx_nmr_details",
+            "pdbx_nmr_ensemble",
+            "pdbx_nmr_exptl",
+            "pdbx_nmr_exptl_sample_conditions",
+            "pdbx_nmr_refine",
+            "pdbx_nmr_representative",
+            "pdbx_nmr_sample_details",
+            "pdbx_nmr_software",
+            "pdbx_nmr_spectrometer",
+            "pdbx_reflns_twin",
+            "pdbx_related_exp_data_set",
+            "pdbx_serial_crystallography_data_reduction",
+            "pdbx_serial_crystallography_measurement",
+            "pdbx_serial_crystallography_sample_delivery",
+            "pdbx_serial_crystallography_sample_delivery_fixed_target",
+            "pdbx_serial_crystallography_sample_delivery_injection",
+            "pdbx_soln_scatter",
+            "pdbx_soln_scatter_model",
+            "pdbx_vrpt_summary",
+            "pdbx_vrpt_summary_diffraction",
+            "pdbx_vrpt_summary_em",
+            "pdbx_vrpt_summary_geometry",
+            "pdbx_vrpt_summary_nmr",
+            "polymer_entities",
+            "pubmed",
+            "rcsb_accession_info",
+            "rcsb_associated_holdings",
+            "rcsb_binding_affinity",
+            "rcsb_comp_model_provenance",
+            "rcsb_entry_container_identifiers",
+            "rcsb_entry_group_membership",
+            "rcsb_entry_info",
+            "rcsb_external_references",
+            "rcsb_id",
+            "rcsb_ihm_dataset_list",
+            "rcsb_ihm_dataset_source_db_reference",
+            "rcsb_ma_qa_metric_global",
+            "rcsb_primary_citation",
+            "refine",
+            "refine_analyze",
+            "refine_hist",
+            "refine_ls_restr",
+            "reflns",
+            "reflns_shell",
+            "software",
+            "struct",
+            "struct_keywords",
+            "symmetry"
+          ],
+          "nonpolymer_comp": [
+            "chem_comp",
+            "drugbank",
+            "pdbx_chem_comp_audit",
+            "pdbx_chem_comp_descriptor",
+            "pdbx_chem_comp_feature",
+            "pdbx_chem_comp_identifier",
+            "pdbx_family_prd_audit",
+            "pdbx_prd_audit",
+            "pdbx_reference_entity_list",
+            "pdbx_reference_entity_poly",
+            "pdbx_reference_entity_poly_link",
+            "pdbx_reference_entity_poly_seq",
+            "pdbx_reference_entity_sequence",
+            "pdbx_reference_entity_src_nat",
+            "pdbx_reference_molecule",
+            "pdbx_reference_molecule_annotation",
+            "pdbx_reference_molecule_details",
+            "pdbx_reference_molecule_family",
+            "pdbx_reference_molecule_features",
+            "pdbx_reference_molecule_list",
+            "pdbx_reference_molecule_related_structures",
+            "pdbx_reference_molecule_synonyms",
+            "rcsb_bird_citation",
+            "rcsb_chem_comp_annotation",
+            "rcsb_chem_comp_container_identifiers",
+            "rcsb_chem_comp_descriptor",
+            "rcsb_chem_comp_info",
+            "rcsb_chem_comp_related",
+            "rcsb_chem_comp_synonyms",
+            "rcsb_chem_comp_target",
+            "rcsb_id",
+            "rcsb_schema_container_identifiers"
+          ],
+          "nonpolymer_entity_instances": [
+            "nonpolymer_entity",
+            "pdbx_struct_special_symmetry",
+            "pdbx_vrpt_summary_entity_fit_to_map",
+            "pdbx_vrpt_summary_entity_geometry",
+            "rcsb_id",
+            "rcsb_latest_revision",
+            "rcsb_nonpolymer_entity_instance_container_identifiers",
+            "rcsb_nonpolymer_instance_annotation",
+            "rcsb_nonpolymer_instance_feature",
+            "rcsb_nonpolymer_instance_feature_summary",
+            "rcsb_nonpolymer_instance_validation_score",
+            "rcsb_nonpolymer_struct_conn",
+            "rcsb_target_neighbors",
+            "struct_asym"
+          ],
+          "pdbx_entity_nonpoly": [
+            "comp_id",
+            "entity_id",
+            "name",
+            "rcsb_prd_id"
+          ],
+          "prd": [
+            "chem_comp",
+            "drugbank",
+            "pdbx_chem_comp_audit",
+            "pdbx_chem_comp_descriptor",
+            "pdbx_chem_comp_feature",
+            "pdbx_chem_comp_identifier",
+            "pdbx_family_prd_audit",
+            "pdbx_prd_audit",
+            "pdbx_reference_entity_list",
+            "pdbx_reference_entity_poly",
+            "pdbx_reference_entity_poly_link",
+            "pdbx_reference_entity_poly_seq",
+            "pdbx_reference_entity_sequence",
+            "pdbx_reference_entity_src_nat",
+            "pdbx_reference_molecule",
+            "pdbx_reference_molecule_annotation",
+            "pdbx_reference_molecule_details",
+            "pdbx_reference_molecule_family",
+            "pdbx_reference_molecule_features",
+            "pdbx_reference_molecule_list",
+            "pdbx_reference_molecule_related_structures",
+            "pdbx_reference_molecule_synonyms",
+            "rcsb_bird_citation",
+            "rcsb_chem_comp_annotation",
+            "rcsb_chem_comp_container_identifiers",
+            "rcsb_chem_comp_descriptor",
+            "rcsb_chem_comp_info",
+            "rcsb_chem_comp_related",
+            "rcsb_chem_comp_synonyms",
+            "rcsb_chem_comp_target",
+            "rcsb_id",
+            "rcsb_schema_container_identifiers"
+          ],
+          "rcsb_latest_revision": [
+            "major_revision",
+            "minor_revision",
+            "revision_date"
+          ],
+          "rcsb_nonpolymer_entity": [
+            "details",
+            "formula_weight",
+            "pdbx_description",
+            "pdbx_number_of_molecules"
+          ],
+          "rcsb_nonpolymer_entity_annotation": [
+            "annotation_id",
+            "annotation_lineage",
+            "assignment_version",
+            "comp_id",
+            "description",
+            "name",
+            "provenance_source",
+            "type"
+          ],
+          "rcsb_nonpolymer_entity_container_identifiers": [
+            "asym_ids",
+            "auth_asym_ids",
+            "chem_ref_def_id",
+            "entity_id",
+            "entry_id",
+            "nonpolymer_comp_id",
+            "prd_id",
+            "rcsb_id",
+            "reference_chemical_identifiers_provenance_source",
+            "reference_chemical_identifiers_resource_accession",
+            "reference_chemical_identifiers_resource_name"
+          ],
+          "rcsb_nonpolymer_entity_feature": [
+            "additional_properties",
+            "assignment_version",
+            "comp_id",
+            "description",
+            "feature_id",
+            "name",
+            "provenance_source",
+            "type",
+            "value"
+          ],
+          "rcsb_nonpolymer_entity_feature_summary": [
+            "comp_id",
+            "count",
+            "maximum_length",
+            "maximum_value",
+            "minimum_length",
+            "minimum_value",
+            "type"
+          ],
+          "rcsb_nonpolymer_entity_keywords": [
+            "text"
+          ],
+          "rcsb_nonpolymer_entity_name_com": [
+            "name"
+          ]
+        }
+      },
+      {
+        "path": [
+          "nonpolymer_entities",
+          "pdbx_entity_nonpoly"
+        ],
+        "resolved_type": "PdbxEntityNonpoly",
+        "same_level_fields": [
+          "comp_id",
+          "entity_id",
+          "name",
+          "rcsb_prd_id"
+        ],
+        "child_fields": {}
+      }
+    ],
+    "同级字段": [
+      "comp_id",
+      "entity_id",
+      "entry",
+      "name",
+      "nonpolymer_comp",
+      "nonpolymer_entity_instances",
+      "pdbx_entity_nonpoly",
+      "prd",
+      "rcsb_id",
+      "rcsb_latest_revision",
+      "rcsb_nonpolymer_entity",
+      "rcsb_nonpolymer_entity_annotation",
+      "rcsb_nonpolymer_entity_container_identifiers",
+      "rcsb_nonpolymer_entity_feature",
+      "rcsb_nonpolymer_entity_feature_summary",
+      "rcsb_nonpolymer_entity_keywords",
+      "rcsb_nonpolymer_entity_name_com",
+      "rcsb_prd_id"
+    ],
+    "子级字段": {
+      "entry": [
+        "assemblies",
+        "audit_author",
+        "branched_entities",
+        "cell",
+        "citation",
+        "database_2",
+        "diffrn",
+        "diffrn_detector",
+        "diffrn_radiation",
+        "diffrn_source",
+        "em_2d_crystal_entity",
+        "em_3d_crystal_entity",
+        "em_3d_fitting",
+        "em_3d_fitting_list",
+        "em_3d_reconstruction",
+        "em_ctf_correction",
+        "em_diffraction",
+        "em_diffraction_shell",
+        "em_diffraction_stats",
+        "em_embedding",
+        "em_entity_assembly",
+        "em_experiment",
+        "em_helical_entity",
+        "em_image_recording",
+        "em_imaging",
+        "em_particle_selection",
+        "em_single_particle_entity",
+        "em_software",
+        "em_specimen",
+        "em_staining",
+        "em_vitrification",
+        "entry",
+        "entry_groups",
+        "exptl",
+        "exptl_crystal",
+        "exptl_crystal_grow",
+        "ihm_entry_collection_mapping",
+        "ihm_external_reference_info",
+        "ma_data",
+        "nonpolymer_entities",
+        "pdbx_SG_project",
+        "pdbx_audit_revision_category",
+        "pdbx_audit_revision_details",
+        "pdbx_audit_revision_group",
+        "pdbx_audit_revision_history",
+        "pdbx_audit_revision_item",
+        "pdbx_audit_support",
+        "pdbx_database_PDB_obs_spr",
+        "pdbx_database_related",
+        "pdbx_database_status",
+        "pdbx_deposit_group",
+        "pdbx_initial_refinement_model",
+        "pdbx_molecule_features",
+        "pdbx_nmr_details",
+        "pdbx_nmr_ensemble",
+        "pdbx_nmr_exptl",
+        "pdbx_nmr_exptl_sample_conditions",
+        "pdbx_nmr_refine",
+        "pdbx_nmr_representative",
+        "pdbx_nmr_sample_details",
+        "pdbx_nmr_software",
+        "pdbx_nmr_spectrometer",
+        "pdbx_reflns_twin",
+        "pdbx_related_exp_data_set",
+        "pdbx_serial_crystallography_data_reduction",
+        "pdbx_serial_crystallography_measurement",
+        "pdbx_serial_crystallography_sample_delivery",
+        "pdbx_serial_crystallography_sample_delivery_fixed_target",
+        "pdbx_serial_crystallography_sample_delivery_injection",
+        "pdbx_soln_scatter",
+        "pdbx_soln_scatter_model",
+        "pdbx_vrpt_summary",
+        "pdbx_vrpt_summary_diffraction",
+        "pdbx_vrpt_summary_em",
+        "pdbx_vrpt_summary_geometry",
+        "pdbx_vrpt_summary_nmr",
+        "polymer_entities",
+        "pubmed",
+        "rcsb_accession_info",
+        "rcsb_associated_holdings",
+        "rcsb_binding_affinity",
+        "rcsb_comp_model_provenance",
+        "rcsb_entry_container_identifiers",
+        "rcsb_entry_group_membership",
+        "rcsb_entry_info",
+        "rcsb_external_references",
+        "rcsb_id",
+        "rcsb_ihm_dataset_list",
+        "rcsb_ihm_dataset_source_db_reference",
+        "rcsb_ma_qa_metric_global",
+        "rcsb_primary_citation",
+        "refine",
+        "refine_analyze",
+        "refine_hist",
+        "refine_ls_restr",
+        "reflns",
+        "reflns_shell",
+        "software",
+        "struct",
+        "struct_keywords",
+        "symmetry"
+      ],
+      "nonpolymer_comp": [
+        "chem_comp",
+        "drugbank",
+        "pdbx_chem_comp_audit",
+        "pdbx_chem_comp_descriptor",
+        "pdbx_chem_comp_feature",
+        "pdbx_chem_comp_identifier",
+        "pdbx_family_prd_audit",
+        "pdbx_prd_audit",
+        "pdbx_reference_entity_list",
+        "pdbx_reference_entity_poly",
+        "pdbx_reference_entity_poly_link",
+        "pdbx_reference_entity_poly_seq",
+        "pdbx_reference_entity_sequence",
+        "pdbx_reference_entity_src_nat",
+        "pdbx_reference_molecule",
+        "pdbx_reference_molecule_annotation",
+        "pdbx_reference_molecule_details",
+        "pdbx_reference_molecule_family",
+        "pdbx_reference_molecule_features",
+        "pdbx_reference_molecule_list",
+        "pdbx_reference_molecule_related_structures",
+        "pdbx_reference_molecule_synonyms",
+        "rcsb_bird_citation",
+        "rcsb_chem_comp_annotation",
+        "rcsb_chem_comp_container_identifiers",
+        "rcsb_chem_comp_descriptor",
+        "rcsb_chem_comp_info",
+        "rcsb_chem_comp_related",
+        "rcsb_chem_comp_synonyms",
+        "rcsb_chem_comp_target",
+        "rcsb_id",
+        "rcsb_schema_container_identifiers"
+      ],
+      "nonpolymer_entity_instances": [
+        "nonpolymer_entity",
+        "pdbx_struct_special_symmetry",
+        "pdbx_vrpt_summary_entity_fit_to_map",
+        "pdbx_vrpt_summary_entity_geometry",
+        "rcsb_id",
+        "rcsb_latest_revision",
+        "rcsb_nonpolymer_entity_instance_container_identifiers",
+        "rcsb_nonpolymer_instance_annotation",
+        "rcsb_nonpolymer_instance_feature",
+        "rcsb_nonpolymer_instance_feature_summary",
+        "rcsb_nonpolymer_instance_validation_score",
+        "rcsb_nonpolymer_struct_conn",
+        "rcsb_target_neighbors",
+        "struct_asym"
+      ],
+      "pdbx_entity_nonpoly": [
+        "comp_id",
+        "entity_id",
+        "name",
+        "rcsb_prd_id"
+      ],
+      "prd": [
+        "chem_comp",
+        "drugbank",
+        "pdbx_chem_comp_audit",
+        "pdbx_chem_comp_descriptor",
+        "pdbx_chem_comp_feature",
+        "pdbx_chem_comp_identifier",
+        "pdbx_family_prd_audit",
+        "pdbx_prd_audit",
+        "pdbx_reference_entity_list",
+        "pdbx_reference_entity_poly",
+        "pdbx_reference_entity_poly_link",
+        "pdbx_reference_entity_poly_seq",
+        "pdbx_reference_entity_sequence",
+        "pdbx_reference_entity_src_nat",
+        "pdbx_reference_molecule",
+        "pdbx_reference_molecule_annotation",
+        "pdbx_reference_molecule_details",
+        "pdbx_reference_molecule_family",
+        "pdbx_reference_molecule_features",
+        "pdbx_reference_molecule_list",
+        "pdbx_reference_molecule_related_structures",
+        "pdbx_reference_molecule_synonyms",
+        "rcsb_bird_citation",
+        "rcsb_chem_comp_annotation",
+        "rcsb_chem_comp_container_identifiers",
+        "rcsb_chem_comp_descriptor",
+        "rcsb_chem_comp_info",
+        "rcsb_chem_comp_related",
+        "rcsb_chem_comp_synonyms",
+        "rcsb_chem_comp_target",
+        "rcsb_id",
+        "rcsb_schema_container_identifiers"
+      ],
+      "rcsb_latest_revision": [
+        "major_revision",
+        "minor_revision",
+        "revision_date"
+      ],
+      "rcsb_nonpolymer_entity": [
+        "details",
+        "formula_weight",
+        "pdbx_description",
+        "pdbx_number_of_molecules"
+      ],
+      "rcsb_nonpolymer_entity_annotation": [
+        "annotation_id",
+        "annotation_lineage",
+        "assignment_version",
+        "comp_id",
+        "description",
+        "name",
+        "provenance_source",
+        "type"
+      ],
+      "rcsb_nonpolymer_entity_container_identifiers": [
+        "asym_ids",
+        "auth_asym_ids",
+        "chem_ref_def_id",
+        "entity_id",
+        "entry_id",
+        "nonpolymer_comp_id",
+        "prd_id",
+        "rcsb_id",
+        "reference_chemical_identifiers_provenance_source",
+        "reference_chemical_identifiers_resource_accession",
+        "reference_chemical_identifiers_resource_name"
+      ],
+      "rcsb_nonpolymer_entity_feature": [
+        "additional_properties",
+        "assignment_version",
+        "comp_id",
+        "description",
+        "feature_id",
+        "name",
+        "provenance_source",
+        "type",
+        "value"
+      ],
+      "rcsb_nonpolymer_entity_feature_summary": [
+        "comp_id",
+        "count",
+        "maximum_length",
+        "maximum_value",
+        "minimum_length",
+        "minimum_value",
+        "type"
+      ],
+      "rcsb_nonpolymer_entity_keywords": [
+        "text"
+      ],
+      "rcsb_nonpolymer_entity_name_com": [
+        "name"
+      ]
+    },
+    "sample_ids": [
+      "1CBS"
+    ]
+  },
+  {
+    "页面字段": "Organism",
+    "官方字段": [
+      "polymer_entities.rcsb_entity_source_organism.ncbi_scientific_name"
+    ],
+    "API类型": "GraphQL",
+    "api_endpoint": "https://data.rcsb.org/graphql",
+    "graphql_paths": [
+      {
+        "path": [
+          "polymer_entities",
+          "rcsb_entity_source_organism"
+        ],
+        "resolved_type": "RcsbEntitySourceOrganism",
+        "same_level_fields": [
+          "beg_seq_num",
+          "common_name",
+          "end_seq_num",
+          "ncbi_common_names",
+          "ncbi_parent_scientific_name",
+          "ncbi_scientific_name",
+          "ncbi_taxonomy_id",
+          "pdbx_src_id",
+          "provenance_source",
+          "rcsb_gene_name",
+          "scientific_name",
+          "source_type",
+          "taxonomy_lineage"
+        ],
+        "child_fields": {
+          "rcsb_gene_name": [
+            "provenance_source",
+            "value"
+          ],
+          "taxonomy_lineage": [
+            "depth",
+            "id",
+            "name"
+          ]
+        }
+      }
+    ],
+    "同级字段": [
+      "beg_seq_num",
+      "common_name",
+      "end_seq_num",
+      "ncbi_common_names",
+      "ncbi_parent_scientific_name",
+      "ncbi_scientific_name",
+      "ncbi_taxonomy_id",
+      "pdbx_src_id",
+      "provenance_source",
+      "rcsb_gene_name",
+      "scientific_name",
+      "source_type",
+      "taxonomy_lineage"
+    ],
+    "子级字段": {
+      "rcsb_gene_name": [
+        "provenance_source",
+        "value"
+      ],
+      "taxonomy_lineage": [
+        "depth",
+        "id",
+        "name"
+      ]
+    },
+    "sample_ids": [
+      "1CBS"
+    ]
+  },
+  {
+    "页面字段": "Expression_System",
+    "官方字段": [
+      "polymer_entities.rcsb_entity_host_organism.ncbi_scientific_name"
+    ],
+    "API类型": "GraphQL",
+    "api_endpoint": "https://data.rcsb.org/graphql",
+    "graphql_paths": [
+      {
+        "path": [
+          "polymer_entities",
+          "rcsb_entity_host_organism"
+        ],
+        "resolved_type": "RcsbEntityHostOrganism",
+        "same_level_fields": [
+          "beg_seq_num",
+          "common_name",
+          "end_seq_num",
+          "ncbi_common_names",
+          "ncbi_parent_scientific_name",
+          "ncbi_scientific_name",
+          "ncbi_taxonomy_id",
+          "pdbx_src_id",
+          "provenance_source",
+          "scientific_name",
+          "taxonomy_lineage"
+        ],
+        "child_fields": {
+          "taxonomy_lineage": [
+            "depth",
+            "id",
+            "name"
+          ]
+        }
+      }
+    ],
+    "同级字段": [
+      "beg_seq_num",
+      "common_name",
+      "end_seq_num",
+      "ncbi_common_names",
+      "ncbi_parent_scientific_name",
+      "ncbi_scientific_name",
+      "ncbi_taxonomy_id",
+      "pdbx_src_id",
+      "provenance_source",
+      "scientific_name",
+      "taxonomy_lineage"
+    ],
+    "子级字段": {
+      "taxonomy_lineage": [
+        "depth",
+        "id",
+        "name"
+      ]
+    },
+    "sample_ids": [
+      "1CBS"
+    ]
+  },
+  {
+    "页面字段": "Mutation",
+    "官方字段": [
+      "polymer_entities.rcsb_polymer_entity_feature.type",
+      "polymer_entities.rcsb_polymer_entity_feature.name",
+      "polymer_entities.rcsb_polymer_entity_feature.description"
+    ],
+    "API类型": "GraphQL",
+    "api_endpoint": "https://data.rcsb.org/graphql",
+    "graphql_paths": [
+      {
+        "path": [
+          "polymer_entities",
+          "rcsb_polymer_entity_feature"
+        ],
+        "resolved_type": "RcsbPolymerEntityFeature",
+        "same_level_fields": [
+          "additional_properties",
+          "assignment_version",
+          "description",
+          "feature_id",
+          "feature_positions",
+          "name",
+          "provenance_source",
+          "reference_scheme",
+          "type"
+        ],
+        "child_fields": {
+          "additional_properties": [
+            "name",
+            "values"
+          ],
+          "feature_positions": [
+            "beg_comp_id",
+            "beg_seq_id",
+            "end_seq_id",
+            "value",
+            "values"
+          ]
+        }
+      }
+    ],
+    "同级字段": [
+      "additional_properties",
+      "assignment_version",
+      "description",
+      "feature_id",
+      "feature_positions",
+      "name",
+      "provenance_source",
+      "reference_scheme",
+      "type"
+    ],
+    "子级字段": {
+      "additional_properties": [
+        "name",
+        "values"
+      ],
+      "feature_positions": [
+        "beg_comp_id",
+        "beg_seq_id",
+        "end_seq_id",
+        "value",
+        "values"
+      ]
+    },
+    "sample_ids": [
+      "7TES",
+      "5X2Q"
+    ]
+  },
+  {
+    "页面字段": "Title",
+    "官方字段": [
+      "struct.title"
+    ],
+    "API类型": "REST",
+    "api_endpoint": "https://data.rcsb.org/rest/v1/core/entry/{pdb_id}",
+    "rest_paths": [
+      {
+        "path": [
+          "struct"
+        ],
+        "same_level_fields": [
+          "title"
+        ],
+        "child_fields": {}
+      }
+    ],
+    "同级字段": [
+      "title"
+    ],
+    "子级字段": {},
+    "sample_ids": [
+      "1CBS"
+    ]
+  },
+  {
+    "页面字段": "PDB_DOI",
+    "官方字段": [
+      "database2[].pdbx_doi"
+    ],
+    "API类型": "REST",
+    "api_endpoint": "https://data.rcsb.org/rest/v1/core/entry/{pdb_id}",
+    "rest_paths": [
+      {
+        "path": [
+          "database2",
+          "[]"
+        ],
+        "same_level_fields": [
+          "database_code",
+          "database_id",
+          "pdbx_database_accession",
+          "pdbx_doi"
+        ],
+        "child_fields": {}
+      }
+    ],
+    "同级字段": [
+      "database_code",
+      "database_id",
+      "pdbx_database_accession",
+      "pdbx_doi"
+    ],
+    "子级字段": {},
+    "sample_ids": [
+      "1CBS"
+    ]
+  },
+  {
+    "页面字段": "Classification",
+    "官方字段": [
+      "struct_keywords.pdbx_keywords"
+    ],
+    "API类型": "REST",
+    "api_endpoint": "https://data.rcsb.org/rest/v1/core/entry/{pdb_id}",
+    "rest_paths": [
+      {
+        "path": [
+          "struct_keywords"
+        ],
+        "same_level_fields": [
+          "pdbx_keywords",
+          "text"
+        ],
+        "child_fields": {}
+      }
+    ],
+    "同级字段": [
+      "pdbx_keywords",
+      "text"
+    ],
+    "子级字段": {},
+    "sample_ids": [
+      "1CBS"
+    ]
+  },
+  {
+    "页面字段": "Deposited",
+    "官方字段": [
+      "rcsb_accession_info.deposit_date"
+    ],
+    "API类型": "REST",
+    "api_endpoint": "https://data.rcsb.org/rest/v1/core/entry/{pdb_id}",
+    "rest_paths": [
+      {
+        "path": [
+          "rcsb_accession_info"
+        ],
+        "same_level_fields": [
+          "deposit_date",
+          "has_released_experimental_data",
+          "initial_release_date",
+          "major_revision",
+          "minor_revision",
+          "revision_date",
+          "status_code"
+        ],
+        "child_fields": {}
+      }
+    ],
+    "同级字段": [
+      "deposit_date",
+      "has_released_experimental_data",
+      "initial_release_date",
+      "major_revision",
+      "minor_revision",
+      "revision_date",
+      "status_code"
+    ],
+    "子级字段": {},
+    "sample_ids": [
+      "1CBS"
+    ]
+  },
+  {
+    "页面字段": "Released",
+    "官方字段": [
+      "rcsb_accession_info.initial_release_date"
+    ],
+    "API类型": "REST",
+    "api_endpoint": "https://data.rcsb.org/rest/v1/core/entry/{pdb_id}",
+    "rest_paths": [
+      {
+        "path": [
+          "rcsb_accession_info"
+        ],
+        "same_level_fields": [
+          "deposit_date",
+          "has_released_experimental_data",
+          "initial_release_date",
+          "major_revision",
+          "minor_revision",
+          "revision_date",
+          "status_code"
+        ],
+        "child_fields": {}
+      }
+    ],
+    "同级字段": [
+      "deposit_date",
+      "has_released_experimental_data",
+      "initial_release_date",
+      "major_revision",
+      "minor_revision",
+      "revision_date",
+      "status_code"
+    ],
+    "子级字段": {},
+    "sample_ids": [
+      "1CBS"
+    ]
+  },
+  {
+    "页面字段": "Deposition_Author",
+    "官方字段": [
+      "audit_author[].name"
+    ],
+    "API类型": "REST",
+    "api_endpoint": "https://data.rcsb.org/rest/v1/core/entry/{pdb_id}",
+    "rest_paths": [
+      {
+        "path": [
+          "audit_author",
+          "[]"
+        ],
+        "same_level_fields": [
+          "name",
+          "pdbx_ordinal"
+        ],
+        "child_fields": {}
+      }
+    ],
+    "同级字段": [
+      "name",
+      "pdbx_ordinal"
+    ],
+    "子级字段": {},
+    "sample_ids": [
+      "1CBS"
+    ]
+  },
+  {
+    "页面字段": "PMID",
+    "官方字段": [
+      "citation[].pdbx_database_id_pub_med"
+    ],
+    "API类型": "REST",
+    "api_endpoint": "https://data.rcsb.org/rest/v1/core/entry/{pdb_id}",
+    "rest_paths": [
+      {
+        "path": [
+          "citation",
+          "[]"
+        ],
+        "same_level_fields": [
+          "country",
+          "id",
+          "journal_abbrev",
+          "journal_id_astm",
+          "journal_id_csd",
+          "journal_id_issn",
+          "journal_volume",
+          "page_first",
+          "page_last",
+          "pdbx_database_id_doi",
+          "pdbx_database_id_pub_med",
+          "rcsb_authors",
+          "rcsb_is_primary",
+          "rcsb_journal_abbrev",
+          "title",
+          "year"
+        ],
+        "child_fields": {}
+      }
+    ],
+    "同级字段": [
+      "country",
+      "id",
+      "journal_abbrev",
+      "journal_id_astm",
+      "journal_id_csd",
+      "journal_id_issn",
+      "journal_volume",
+      "page_first",
+      "page_last",
+      "pdbx_database_id_doi",
+      "pdbx_database_id_pub_med",
+      "rcsb_authors",
+      "rcsb_is_primary",
+      "rcsb_journal_abbrev",
+      "title",
+      "year"
+    ],
+    "子级字段": {},
+    "sample_ids": [
+      "1CBS"
+    ]
+  },
+  {
+    "页面字段": "Macromolecule_Content",
+    "官方字段": [
+      "rcsb_entry_info.molecular_weight",
+      "rcsb_entry_info.deposited_atom_count",
+      "rcsb_entry_info.polymer_entity_count"
+    ],
+    "API类型": "REST",
+    "api_endpoint": "https://data.rcsb.org/rest/v1/core/entry/{pdb_id}",
+    "rest_paths": [
+      {
+        "path": [
+          "rcsb_entry_info"
+        ],
+        "same_level_fields": [
+          "assembly_count",
+          "branched_entity_count",
+          "cis_peptide_count",
+          "deposited_atom_count",
+          "deposited_deuterated_water_count",
+          "deposited_hydrogen_atom_count",
+          "deposited_model_count",
+          "deposited_modeled_polymer_monomer_count",
+          "deposited_nonpolymer_entity_instance_count",
+          "deposited_polymer_entity_instance_count",
+          "deposited_polymer_monomer_count",
+          "deposited_solvent_atom_count",
+          "deposited_unmodeled_polymer_monomer_count",
+          "diffrn_resolution_high",
+          "disulfide_bond_count",
+          "entity_count",
+          "experimental_method",
+          "experimental_method_count",
+          "inter_mol_covalent_bond_count",
+          "inter_mol_metalic_bond_count",
+          "molecular_weight",
+          "na_polymer_entity_types",
+          "nonpolymer_entity_count",
+          "nonpolymer_molecular_weight_maximum",
+          "nonpolymer_molecular_weight_minimum",
+          "polymer_composition",
+          "polymer_entity_count",
+          "polymer_entity_count_dna",
+          "polymer_entity_count_nucleic_acid",
+          "polymer_entity_count_nucleic_acid_hybrid",
+          "polymer_entity_count_protein",
+          "polymer_entity_count_rna",
+          "polymer_entity_taxonomy_count",
+          "polymer_molecular_weight_maximum",
+          "polymer_molecular_weight_minimum",
+          "polymer_monomer_count_maximum",
+          "polymer_monomer_count_minimum",
+          "resolution_combined",
+          "selected_polymer_entity_types",
+          "software_programs_combined",
+          "solvent_entity_count",
+          "structure_determination_methodology",
+          "structure_determination_methodology_priority"
+        ],
+        "child_fields": {
+          "diffrn_resolution_high": [
+            "provenance_source",
+            "value"
+          ]
+        }
+      }
+    ],
+    "同级字段": [
+      "assembly_count",
+      "branched_entity_count",
+      "cis_peptide_count",
+      "deposited_atom_count",
+      "deposited_deuterated_water_count",
+      "deposited_hydrogen_atom_count",
+      "deposited_model_count",
+      "deposited_modeled_polymer_monomer_count",
+      "deposited_nonpolymer_entity_instance_count",
+      "deposited_polymer_entity_instance_count",
+      "deposited_polymer_monomer_count",
+      "deposited_solvent_atom_count",
+      "deposited_unmodeled_polymer_monomer_count",
+      "diffrn_resolution_high",
+      "disulfide_bond_count",
+      "entity_count",
+      "experimental_method",
+      "experimental_method_count",
+      "inter_mol_covalent_bond_count",
+      "inter_mol_metalic_bond_count",
+      "molecular_weight",
+      "na_polymer_entity_types",
+      "nonpolymer_entity_count",
+      "nonpolymer_molecular_weight_maximum",
+      "nonpolymer_molecular_weight_minimum",
+      "polymer_composition",
+      "polymer_entity_count",
+      "polymer_entity_count_dna",
+      "polymer_entity_count_nucleic_acid",
+      "polymer_entity_count_nucleic_acid_hybrid",
+      "polymer_entity_count_protein",
+      "polymer_entity_count_rna",
+      "polymer_entity_taxonomy_count",
+      "polymer_molecular_weight_maximum",
+      "polymer_molecular_weight_minimum",
+      "polymer_monomer_count_maximum",
+      "polymer_monomer_count_minimum",
+      "resolution_combined",
+      "selected_polymer_entity_types",
+      "software_programs_combined",
+      "solvent_entity_count",
+      "structure_determination_methodology",
+      "structure_determination_methodology_priority"
+    ],
+    "子级字段": {
+      "diffrn_resolution_high": [
+        "provenance_source",
+        "value"
+      ]
+    },
+    "sample_ids": [
+      "1CBS"
+    ]
+  },
+  {
+    "页面字段": "Experimental_Data_Snapshot",
+    "官方字段": [
+      "rcsb_entry_info.diffrn_resolution_high",
+      "refine.ls_rfactor_rfree",
+      "pdbx_vrpt_summary_diffraction.dccrfree",
+      "em3d_reconstruction.resolution",
+      "em_experiment.aggregation_state",
+      "pdbx_nmr_ensemble.conformers_calculated_total_number",
+      "pdbx_nmr_representative.selection_criteria"
+    ],
+    "API类型": "REST",
+    "api_endpoint": "https://data.rcsb.org/rest/v1/core/entry/{pdb_id}",
+    "rest_paths": [
+      {
+        "path": [
+          "rcsb_entry_info"
+        ],
+        "same_level_fields": [
+          "assembly_count",
+          "branched_entity_count",
+          "cis_peptide_count",
+          "deposited_atom_count",
+          "deposited_deuterated_water_count",
+          "deposited_hydrogen_atom_count",
+          "deposited_model_count",
+          "deposited_modeled_polymer_monomer_count",
+          "deposited_nonpolymer_entity_instance_count",
+          "deposited_polymer_entity_instance_count",
+          "deposited_polymer_monomer_count",
+          "deposited_solvent_atom_count",
+          "deposited_unmodeled_polymer_monomer_count",
+          "diffrn_radiation_wavelength_maximum",
+          "diffrn_radiation_wavelength_minimum",
+          "diffrn_resolution_high",
+          "disulfide_bond_count",
+          "entity_count",
+          "experimental_method",
+          "experimental_method_count",
+          "inter_mol_covalent_bond_count",
+          "inter_mol_metalic_bond_count",
+          "molecular_weight",
+          "na_polymer_entity_types",
+          "nonpolymer_bound_components",
+          "nonpolymer_entity_count",
+          "nonpolymer_molecular_weight_maximum",
+          "nonpolymer_molecular_weight_minimum",
+          "polymer_composition",
+          "polymer_entity_count",
+          "polymer_entity_count_dna",
+          "polymer_entity_count_nucleic_acid",
+          "polymer_entity_count_nucleic_acid_hybrid",
+          "polymer_entity_count_protein",
+          "polymer_entity_count_rna",
+          "polymer_entity_taxonomy_count",
+          "polymer_molecular_weight_maximum",
+          "polymer_molecular_weight_minimum",
+          "polymer_monomer_count_maximum",
+          "polymer_monomer_count_minimum",
+          "resolution_combined",
+          "selected_polymer_entity_types",
+          "software_programs_combined",
+          "solvent_entity_count",
+          "structure_determination_methodology",
+          "structure_determination_methodology_priority"
+        ],
+        "child_fields": {
+          "diffrn_resolution_high": [
+            "provenance_source",
+            "value"
+          ]
+        }
+      },
+      {
+        "path": [
+          "refine",
+          "[]"
+        ],
+        "same_level_fields": [
+          "biso_mean",
+          "ls_dres_high",
+          "ls_dres_low",
+          "ls_number_reflns_obs",
+          "ls_percent_reflns_obs",
+          "ls_percent_reflns_rfree",
+          "ls_rfactor_obs",
+          "ls_rfactor_rfree",
+          "ls_rfactor_rwork",
+          "pdbx_diffrn_id",
+          "pdbx_ls_sigma_f",
+          "pdbx_method_to_determine_struct",
+          "pdbx_refine_id",
+          "pdbx_rfree_selection_details"
+        ],
+        "child_fields": {}
+      },
+      {
+        "path": [
+          "pdbx_vrpt_summary_diffraction",
+          "[]"
+        ],
+        "same_level_fields": [
+          "acentric_outliers",
+          "babinet_b",
+          "babinet_k",
+          "bfactor_type",
+          "bulk_solvent_b",
+          "bulk_solvent_k",
+          "centric_outliers",
+          "data_anisotropy",
+          "data_completeness",
+          "dcc_r",
+          "dccrfree",
+          "eds_r",
+          "edsres_high",
+          "edsres_low",
+          "exp_method",
+          "fo_fc_correlation",
+          "iover_sigma",
+          "num_miller_indices",
+          "number_reflns_rfree",
+          "padilla_yeates_l2_mean",
+          "padilla_yeates_lmean",
+          "percent_free_reflections",
+          "percent_rsrzoutliers",
+          "trans_ncsdetails",
+          "twin_fraction",
+          "wilson_baniso",
+          "wilson_bestimate"
+        ],
+        "child_fields": {}
+      },
+      {
+        "path": [
+          "em3d_reconstruction",
+          "[]"
+        ],
+        "same_level_fields": [],
+        "child_fields": {}
+      },
+      {
+        "path": [
+          "em_experiment"
+        ],
+        "same_level_fields": [],
+        "child_fields": {}
+      },
+      {
+        "path": [
+          "pdbx_nmr_ensemble"
+        ],
+        "same_level_fields": [],
+        "child_fields": {}
+      },
+      {
+        "path": [
+          "pdbx_nmr_representative"
+        ],
+        "same_level_fields": [],
+        "child_fields": {}
+      }
+    ],
+    "同级字段": [
+      "acentric_outliers",
+      "assembly_count",
+      "babinet_b",
+      "babinet_k",
+      "bfactor_type",
+      "biso_mean",
+      "branched_entity_count",
+      "bulk_solvent_b",
+      "bulk_solvent_k",
+      "centric_outliers",
+      "cis_peptide_count",
+      "data_anisotropy",
+      "data_completeness",
+      "dcc_r",
+      "dccrfree",
+      "deposited_atom_count",
+      "deposited_deuterated_water_count",
+      "deposited_hydrogen_atom_count",
+      "deposited_model_count",
+      "deposited_modeled_polymer_monomer_count",
+      "deposited_nonpolymer_entity_instance_count",
+      "deposited_polymer_entity_instance_count",
+      "deposited_polymer_monomer_count",
+      "deposited_solvent_atom_count",
+      "deposited_unmodeled_polymer_monomer_count",
+      "diffrn_radiation_wavelength_maximum",
+      "diffrn_radiation_wavelength_minimum",
+      "diffrn_resolution_high",
+      "disulfide_bond_count",
+      "eds_r",
+      "edsres_high",
+      "edsres_low",
+      "entity_count",
+      "exp_method",
+      "experimental_method",
+      "experimental_method_count",
+      "fo_fc_correlation",
+      "inter_mol_covalent_bond_count",
+      "inter_mol_metalic_bond_count",
+      "iover_sigma",
+      "ls_dres_high",
+      "ls_dres_low",
+      "ls_number_reflns_obs",
+      "ls_percent_reflns_obs",
+      "ls_percent_reflns_rfree",
+      "ls_rfactor_obs",
+      "ls_rfactor_rfree",
+      "ls_rfactor_rwork",
+      "molecular_weight",
+      "na_polymer_entity_types",
+      "nonpolymer_bound_components",
+      "nonpolymer_entity_count",
+      "nonpolymer_molecular_weight_maximum",
+      "nonpolymer_molecular_weight_minimum",
+      "num_miller_indices",
+      "number_reflns_rfree",
+      "padilla_yeates_l2_mean",
+      "padilla_yeates_lmean",
+      "pdbx_diffrn_id",
+      "pdbx_ls_sigma_f",
+      "pdbx_method_to_determine_struct",
+      "pdbx_refine_id",
+      "pdbx_rfree_selection_details",
+      "percent_free_reflections",
+      "percent_rsrzoutliers",
+      "polymer_composition",
+      "polymer_entity_count",
+      "polymer_entity_count_dna",
+      "polymer_entity_count_nucleic_acid",
+      "polymer_entity_count_nucleic_acid_hybrid",
+      "polymer_entity_count_protein",
+      "polymer_entity_count_rna",
+      "polymer_entity_taxonomy_count",
+      "polymer_molecular_weight_maximum",
+      "polymer_molecular_weight_minimum",
+      "polymer_monomer_count_maximum",
+      "polymer_monomer_count_minimum",
+      "resolution_combined",
+      "selected_polymer_entity_types",
+      "software_programs_combined",
+      "solvent_entity_count",
+      "structure_determination_methodology",
+      "structure_determination_methodology_priority",
+      "trans_ncsdetails",
+      "twin_fraction",
+      "wilson_baniso",
+      "wilson_bestimate"
+    ],
+    "子级字段": {
+      "diffrn_resolution_high": [
+        "provenance_source",
+        "value"
+      ]
+    },
+    "sample_ids": [
+      "1CBS",
+      "7AHL",
+      "2MNR"
+    ]
+  },
+  {
+    "页面字段": "Global_Symmetry",
+    "官方字段": [
+      "rcsb_struct_symmetry[].type",
+      "rcsb_struct_symmetry[].symbol"
+    ],
+    "API类型": "REST",
+    "api_endpoint": "https://data.rcsb.org/rest/v1/core/assembly/{pdb_id}/1",
+    "assembly_path": [
+      "rcsb_struct_symmetry",
+      "[]"
+    ],
+    "同级字段": [
+      "clusters",
+      "kind",
+      "oligomeric_state",
+      "rotation_axes",
+      "stoichiometry",
+      "symbol",
+      "type"
+    ],
+    "子级字段": {
+      "clusters": [
+        "avg_rmsd",
+        "members"
+      ],
+      "rotation_axes": [
+        "end",
+        "order",
+        "start"
+      ]
+    },
+    "sample_ids": [
+      "1CBS",
+      "7AHL"
+    ]
+  },
+  {
+    "页面字段": "Global_Stoichiometry",
+    "官方字段": [
+      "rcsb_struct_symmetry[].stoichiometry",
+      "rcsb_struct_symmetry[].oligomeric_state"
+    ],
+    "API类型": "REST",
+    "api_endpoint": "https://data.rcsb.org/rest/v1/core/assembly/{pdb_id}/1",
+    "assembly_path": [
+      "rcsb_struct_symmetry",
+      "[]"
+    ],
+    "同级字段": [
+      "clusters",
+      "kind",
+      "oligomeric_state",
+      "rotation_axes",
+      "stoichiometry",
+      "symbol",
+      "type"
+    ],
+    "子级字段": {
+      "clusters": [
+        "avg_rmsd",
+        "members"
+      ],
+      "rotation_axes": [
+        "end",
+        "order",
+        "start"
+      ]
+    },
+    "sample_ids": [
+      "1CBS",
+      "7AHL"
+    ]
+  },
+  {
+    "页面字段": "cif_file",
+    "官方字段": [
+      "https://files.rcsb.org/download/{pdb_id}.cif"
+    ],
+    "API类型": "Download",
+    "api_endpoint": "https://files.rcsb.org/download/{pdb_id}.cif",
+    "同级字段": [],
+    "子级字段": {},
+    "notes": "直接下载CIF结构文件；无需额外字段。"
+  },
+  {
+    "页面字段": "validation_image",
+    "官方字段": [
+      "https://files.rcsb.org/validation/view/{pdb_id}_multipercentile_validation.png"
+    ],
+    "API类型": "Download",
+    "api_endpoint": "https://files.rcsb.org/validation/view/{pdb_id}_multipercentile_validation.png",
+    "同级字段": [],
+    "子级字段": {},
+    "notes": "可获取多分位验证图像；同级无额外字段。"
+  }
+]

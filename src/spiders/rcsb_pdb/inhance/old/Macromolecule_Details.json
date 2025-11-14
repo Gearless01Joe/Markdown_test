@@ -1,0 +1,279 @@
+{
+  "PDB_ID": "9GW2",
+  "Macromolecule_Content": {
+    "Total_Structure_Weight": 471.44,
+    "Atom_Count": 13114,
+    "Modeled_Residue_Count": 1253,
+    "Deposited_Residue_Count": 3546,
+    "Unique_Protein_Chains": 8,
+    "Solvent_Atom_Count": 0,
+    "Model_Count": 1,
+    "Polymer_Composition": "protein/NA",
+    "Nonpolymer_Entity_Count": 0
+  },
+  "Macromolecule_Details": [
+    {
+      "rcsb_polymer_entity_formula_weight": 56.471,
+      "rcsb_polymer_entity_pdbx_description": "Non-Template DNA",
+      "rcsb_polymer_entity_pdbx_number_of_molecules": 1,
+      "rcsb_polymer_entity_rcsb_multiple_source_flag": "N",
+      "rcsb_polymer_entity_rcsb_source_part_count": 1,
+      "rcsb_polymer_entity_rcsb_source_taxonomy_count": 1,
+      "rcsb_polymer_entity_src_method": "syn",
+      "rcsb_polymer_entity_rcsb_macromolecular_names_combined": [
+        {
+          "name": "Non-Template DNA",
+          "provenance_code": "ECO:0000304",
+          "provenance_source": "PDB Preferred Name"
+        }
+      ],
+      "rcsb_polymer_entity_rcsb_polymer_name_combined": {
+        "names": [
+          "Non-template dna"
+        ],
+        "provenance_source": "PDB Preferred Name"
+      },
+      "entity_poly_nstd_linkage": "no",
+      "entity_poly_nstd_monomer": "no",
+      "entity_poly_pdbx_seq_one_letter_code": "(DA)(DT)(DC)(DG)(DA)(DT)(DG)(DT)(DA)(DT)(DA)(DT)(DA)(DT)(DC)(DT)(DG)(DA)(DC)(DA)(DC)(DG)(DT)(DG)(DC)(DC)(DT)(DG)(DG)(DA)(DG)(DA)(DC)(DT)(DA)(DG)(DG)(DG)(DA)(DG)(DT)(DA)(DA)(DT)(DC)(DC)(DC)(DC)(DT)(DT)(DG)(DG)(DC)(DG)(DG)(DT)(DT)(DA)(DA)(DA)(DA)(DC)(DG)(DC)(DG)(DG)(DG)(DG)(DG)(DA)(DC)(DA)(DG)(DC)(DG)(DC)(DG)(DT)(DA)(DC)(DG)(DT)(DG)(DC)(DG)(DT)(DT)(DT)(DA)(DA)(DG)(DC)(DG)(DG)(DT)(DG)(DC)(DT)(DA)(DG)(DA)(DG)(DC)(DT)(DG)(DT)(DC)(DT)(DA)(DC)(DG)(DA)(DC)(DC)(DA)(DA)(DT)(DT)(DG)(DA)(DG)(DC)(DG)(DG)(DC)(DC)(DT)(DC)(DG)(DG)(DC)(DA)(DC)(DC)(DA)(DT)(DC)(DA)(DC)(DT)(DG)(DT)(DC)(DG)(DC)(DG)(DG)(DC)(DC)(DC)(DT)(DT)(DG)(DT)(DG)(DT)(DT)(DC)(DA)(DG)(DG)(DA)(DG)(DC)(DC)(DA)(DG)(DC)(DA)(DG)(DG)(DG)(DA)(DG)(DC)(DT)(DG)(DG)(DG)(DA)(DG)(DC)",
+      "entity_poly_pdbx_seq_one_letter_code_can": "ATCGATGTATATATCTGACACGTGCCTGGAGACTAGGGAGTAATCCCCTTGGCGGTTAAAACGCGGGGGACAGCGCGTACGTGCGTTTAAGCGGTGCTAGAGCTGTCTACGACCAATTGAGCGGCCTCGGCACCATCACTGTCGCGGCCCTTGTGTTCAGGAGCCAGCAGGGAGCTGGGAGC",
+      "entity_poly_pdbx_strand_id": "N",
+      "entity_poly_rcsb_artifact_monomer_count": 0,
+      "entity_poly_rcsb_conflict_count": 0,
+      "entity_poly_rcsb_deletion_count": 0,
+      "entity_poly_rcsb_entity_polymer_type": "DNA",
+      "entity_poly_rcsb_insertion_count": 0,
+      "entity_poly_rcsb_mutation_count": 0,
+      "entity_poly_rcsb_non_std_monomer_count": 0,
+      "entity_poly_rcsb_sample_sequence_length": 182,
+      "entity_poly_type": "polydeoxyribonucleotide",
+      "rcsb_polymer_entity_pdbx_mutation": null,
+      "rcsb_polymer_entity_pdbx_fragment": null,
+      "rcsb_polymer_entity_pdbx_ec_number": null,
+      "rcsb_polymer_entity_rcsb_id": null,
+      "rcsb_polymer_entity_rcsb_entity_id": null,
+      "rcsb_polymer_entity_rcsb_entry_id": null,
+      "entity_poly_pdbx_target_identifier": null,
+      "entity_poly_pdbx_seq_one_letter_code_pro": null,
+      "entity_poly_pdbx_seq_one_letter_code_pro_can": null,
+      "entity_poly_nstd_chirality": null
+    },
+    {
+      "rcsb_polymer_entity_formula_weight": 127.887,
+      "rcsb_polymer_entity_pdbx_description": "Histone-lysine N-methyltransferase SETD2",
+      "rcsb_polymer_entity_pdbx_ec": "2.1.1.359,2.1.1",
+      "rcsb_polymer_entity_pdbx_number_of_molecules": 1,
+      "rcsb_polymer_entity_rcsb_multiple_source_flag": "N",
+      "rcsb_polymer_entity_rcsb_source_part_count": 1,
+      "rcsb_polymer_entity_rcsb_source_taxonomy_count": 1,
+      "rcsb_polymer_entity_src_method": "man",
+      "rcsb_polymer_entity_rcsb_ec_lineage": [
+        {
+          "depth": 1,
+          "id": "2",
+          "name": "Transferases"
+        },
+        {
+          "depth": 2,
+          "id": "2.1",
+          "name": "Transferring one-carbon groups"
+        },
+        {
+          "depth": 3,
+          "id": "2.1.1",
+          "name": "Methyltransferases"
+        },
+        {
+          "depth": 4,
+          "id": "2.1.1.359",
+          "name": "[histone H3]-lysine36 N-trimethyltransferase"
+        },
+        {
+          "depth": 1,
+          "id": "2",
+          "name": "Transferases"
+        },
+        {
+          "depth": 2,
+          "id": "2.1",
+          "name": "Transferring one-carbon groups"
+        },
+        {
+          "depth": 3,
+          "id": "2.1.1",
+          "name": "Methyltransferases"
+        }
+      ],
+      "rcsb_polymer_entity_rcsb_macromolecular_names_combined": [
+        {
+          "name": "Histone-lysine N-methyltransferase SETD2",
+          "provenance_code": "ECO:0000304",
+          "provenance_source": "PDB Preferred Name"
+        },
+        {
+          "name": "HIF-1",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        },
+        {
+          "name": "Huntingtin yeast partner B",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        },
+        {
+          "name": "Huntingtin-interacting protein 1",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        },
+        {
+          "name": "HIP-1",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        },
+        {
+          "name": "Huntingtin-interacting protein B",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        },
+        {
+          "name": "Lysine N-methyltransferase 3A",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        },
+        {
+          "name": "Protein-lysine N-methyltransferase SETD2",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        },
+        {
+          "name": "SET domain-containing protein 2",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        },
+        {
+          "name": "hSET2",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        },
+        {
+          "name": "p231HBP",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        }
+      ],
+      "rcsb_polymer_entity_rcsb_enzyme_class_combined": [
+        {
+          "depth": 4,
+          "ec": "2.1.1.359",
+          "provenance_source": "PDB Primary Data"
+        },
+        {
+          "depth": 3,
+          "ec": "2.1.1",
+          "provenance_source": "PDB Primary Data"
+        }
+      ],
+      "rcsb_polymer_entity_rcsb_polymer_name_combined": {
+        "names": [
+          "Histone-lysine N-methyltransferase SETD2"
+        ],
+        "provenance_source": "UniProt Name"
+      },
+      "entity_poly_nstd_linkage": "no",
+      "entity_poly_nstd_monomer": "no",
+      "entity_poly_pdbx_seq_one_letter_code": "SNAETSVPPGSALVGPSCVMDDFRDPQRWKECAKQGKMPCYFDLIEENVYLTERKKNKSHRDIKRMQCECTPLSKDERAQGEIACGEDCLNRLLMIECSSRCPNGDYCSNRRFQRKQHADVEVILTEKKGWGLRAAKDLPSNTFVLEYCGEVLDHKEFKARVKEYARNKNIHYYFMALKNDEIIDATQKGNCSRFMNHSCEPNCETQKWTVNGQLRVGFFTTKLVPSGSELTFDYQFQRYGKEAQKCFCGSANCRGYLGGENRVSIRAAGGKMKKERSRKKDSVDGELEALMENGEGLSDKNQVLSLSRLMVRIETLEQKLTCLELIQNTHSQSCLKSFLERHGLSLLWIWMAELGDGRESNQKLQEEIIKTLEHLPIPTKNMLEESKVLPIIQRWSQTKTAVPPLSEGDGYSSENTSRAHTPLNTPDPSTKLSTEADTDTPKKLMFRRLKIISENSMDSAISDATSELEGKDGKEDLDQLENVPVEEEEELQSQQLLPQQLPECKVDSETNIEASKLPTSEPEADAEIELKESNGTKLEEPINEETPSQDEEEGVSDVESERSQEQPDKTVDISDLATKLLDSWKDLKEVYRIPKKSQTEKENTTTERGRDAVGFRDQTPAPKTPNRSRERDPDKQTQNKEKRKRRSSLSPPSSAYERGTKRPDDRYDTPTSKKKVRIKDRNKLSTEERRKLFEQEVAQREAQKQQQQMQNLGMTSPLPYDSLGYNAPHHPFAGYPPGYPMQAYVDPSNPNAGKVLLPTPSMDPVCSPAPYDHAQPLVGHSTEPLSAPPPVPVVPHVAAPVEVSSSQYVAQSDGVVHQDSSVAVLPVPAPGPVQGQNYSVWDSNQQSVSVQQQYSPAQSQATIYYQGQTCPTVYGVTSPYSQTTPPIVQSYAQPSLQYIQGQQIFTAHPQGVVVQPAAAVTTIVAPGQPQPLQPSEMVVTNNLLDLPPPSPPKPKTIVLPPNWKTARDPEGKIYYYHVITRQTQWDPPTWESPGDDASLEHEAEMDLGTPTYDENPMKASKKPKTAEADTSSELAKKSKEVFRKEMSQFIVQCLNPYRKPDCKVGRITTTEDFKHLARKLTHGVMNKELKYCKNPEDLECNENVKHKTKEYIKKYMQKFGAVYKPKEDTELE",
+      "entity_poly_pdbx_seq_one_letter_code_can": "SNAETSVPPGSALVGPSCVMDDFRDPQRWKECAKQGKMPCYFDLIEENVYLTERKKNKSHRDIKRMQCECTPLSKDERAQGEIACGEDCLNRLLMIECSSRCPNGDYCSNRRFQRKQHADVEVILTEKKGWGLRAAKDLPSNTFVLEYCGEVLDHKEFKARVKEYARNKNIHYYFMALKNDEIIDATQKGNCSRFMNHSCEPNCETQKWTVNGQLRVGFFTTKLVPSGSELTFDYQFQRYGKEAQKCFCGSANCRGYLGGENRVSIRAAGGKMKKERSRKKDSVDGELEALMENGEGLSDKNQVLSLSRLMVRIETLEQKLTCLELIQNTHSQSCLKSFLERHGLSLLWIWMAELGDGRESNQKLQEEIIKTLEHLPIPTKNMLEESKVLPIIQRWSQTKTAVPPLSEGDGYSSENTSRAHTPLNTPDPSTKLSTEADTDTPKKLMFRRLKIISENSMDSAISDATSELEGKDGKEDLDQLENVPVEEEEELQSQQLLPQQLPECKVDSETNIEASKLPTSEPEADAEIELKESNGTKLEEPINEETPSQDEEEGVSDVESERSQEQPDKTVDISDLATKLLDSWKDLKEVYRIPKKSQTEKENTTTERGRDAVGFRDQTPAPKTPNRSRERDPDKQTQNKEKRKRRSSLSPPSSAYERGTKRPDDRYDTPTSKKKVRIKDRNKLSTEERRKLFEQEVAQREAQKQQQQMQNLGMTSPLPYDSLGYNAPHHPFAGYPPGYPMQAYVDPSNPNAGKVLLPTPSMDPVCSPAPYDHAQPLVGHSTEPLSAPPPVPVVPHVAAPVEVSSSQYVAQSDGVVHQDSSVAVLPVPAPGPVQGQNYSVWDSNQQSVSVQQQYSPAQSQATIYYQGQTCPTVYGVTSPYSQTTPPIVQSYAQPSLQYIQGQQIFTAHPQGVVVQPAAAVTTIVAPGQPQPLQPSEMVVTNNLLDLPPPSPPKPKTIVLPPNWKTARDPEGKIYYYHVITRQTQWDPPTWESPGDDASLEHEAEMDLGTPTYDENPMKASKKPKTAEADTSSELAKKSKEVFRKEMSQFIVQCLNPYRKPDCKVGRITTTEDFKHLARKLTHGVMNKELKYCKNPEDLECNENVKHKTKEYIKKYMQKFGAVYKPKEDTELE",
+      "entity_poly_pdbx_strand_id": "O",
+      "entity_poly_rcsb_artifact_monomer_count": 1,
+      "entity_poly_rcsb_conflict_count": 0,
+      "entity_poly_rcsb_deletion_count": 0,
+      "entity_poly_rcsb_entity_polymer_type": "Protein",
+      "entity_poly_rcsb_insertion_count": 0,
+      "entity_poly_rcsb_mutation_count": 1,
+      "entity_poly_rcsb_non_std_monomer_count": 0,
+      "entity_poly_rcsb_sample_sequence_length": 1133,
+      "entity_poly_type": "polypeptide(L)",
+      "rcsb_polymer_entity_pdbx_mutation": null,
+      "rcsb_polymer_entity_pdbx_fragment": null,
+      "rcsb_polymer_entity_pdbx_ec_number": null,
+      "rcsb_polymer_entity_rcsb_id": null,
+      "rcsb_polymer_entity_rcsb_entity_id": null,
+      "rcsb_polymer_entity_rcsb_entry_id": null,
+      "entity_poly_pdbx_target_identifier": null,
+      "entity_poly_pdbx_seq_one_letter_code_pro": null,
+      "entity_poly_pdbx_seq_one_letter_code_pro_can": null,
+      "entity_poly_nstd_chirality": null
+    },
+    {
+      "rcsb_polymer_entity_formula_weight": 15.391,
+      "rcsb_polymer_entity_pdbx_description": "Histone H3.2",
+      "rcsb_polymer_entity_pdbx_number_of_molecules": 2,
+      "rcsb_polymer_entity_rcsb_multiple_source_flag": "N",
+      "rcsb_polymer_entity_rcsb_source_part_count": 1,
+      "rcsb_polymer_entity_rcsb_source_taxonomy_count": 1,
+      "rcsb_polymer_entity_src_method": "man",
+      "rcsb_polymer_entity_rcsb_macromolecular_names_combined": [
+        {
+          "name": "Histone H3.2",
+          "provenance_code": "ECO:0000304",
+          "provenance_source": "PDB Preferred Name"
+        },
+        {
+          "name": "H3-clustered histone 13",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        },
+        {
+          "name": "H3-clustered histone 14",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        },
+        {
+          "name": "H3-clustered histone 15",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        },
+        {
+          "name": "Histone H3/m",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        },
+        {
+          "name": "Histone H3/o",
+          "provenance_code": "ECO:0000303",
+          "provenance_source": "PDB Synonym"
+        }
+      ],
+      "rcsb_polymer_entity_rcsb_polymer_name_combined": {
+        "names": [
+          "Histone H3.2"
+        ],
+        "provenance_source": "UniProt Name"
+      },
+      "entity_poly_nstd_linkage": "no",
+      "entity_poly_nstd_monomer": "no",
+      "entity_poly_pdbx_seq_one_letter_code": "MARTKQTARKSTGGKAPRKQLATKAARKSAPATGGVMKPHRYRPGTVALREIRRYQKSTELLIRKLPFQRLVREIAQDFKTDLRFQSSAVMALQEASEAYLVGLFEDTNLAAIHAKRVTIMPKDIQLARRIRGERA",
+      "entity_poly_pdbx_seq_one_letter_code_can": "MARTKQTARKSTGGKAPRKQLATKAARKSAPATGGVMKPHRYRPGTVALREIRRYQKSTELLIRKLPFQRLVREIAQDFKTDLRFQSSAVMALQEASEAYLVGLFEDTNLAAIHAKRVTIMPKDIQLARRIRGERA",
+      "entity_poly_pdbx_strand_id": "a,e",
+      "entity_poly_rcsb_artifact_monomer_count": 0,
+      "entity_poly_rcsb_conflict_count": 0,
+      "entity_poly_rcsb_deletion_count": 0,
+      "entity_poly_rcsb_entity_polymer_type": "Protein",
+      "entity_poly_rcsb_insertion_count": 0,
+      "entity_poly_rcsb_mutation_count": 2,
+      "entity_poly_rcsb_non_std_monomer_count": 0,
+      "entity_poly_rcsb_sample_sequence_length": 136,
+      "entity_poly_type": "polypeptide(L)",
+      "rcsb_polymer_entity_pdbx_mutation": null,
+      "rcsb_polymer_entity_pdbx_fragment": null,
+      "rcsb_polymer_entity_pdbx_ec_number": null,
+      "rcsb_polymer_entity_rcsb_id": null,
+      "rcsb_polymer_entity_rcsb_entity_id": null,
+      "rcsb_polymer_entity_rcsb_entry_id": null,
+      "entity_poly_pdbx_target_identifier": null,
+      "entity_poly_pdbx_seq_one_letter_code_pro": null,
+      "entity_poly_pdbx_seq_one_letter_code_pro_can": null,
+      "entity_poly_nstd_chirality": null
+    }
+  ]
+}

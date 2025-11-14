@@ -1,0 +1,295 @@
+import scrapy
+import json
+import time
+from urllib.parse import urlencode
+from typing import Dict, List, Optional
+
+class RcsbPdbSpider(scrapy.Spider):
+    name = "rcsb_pdb"
+    
+    def __init__(self, pdb_ids=None, *args, **kwargs):
+        super(RcsbPdbSpider, self).__init__(*args, **kwargs)
+        self.base_url = "https://data.rcsb.org/rest/v1/core"
+        self.graphql_url = "https://data.rcsb.org/graphql"
+        
+        # 默认要爬取的PDB IDs
+        self.default_pdb_ids = ["4HHB", "1STP", "2JEF", "1CDG", "7NHM", "5L2G"]
+        self.pdb_ids = pdb_ids.split(',') if pdb_ids else self.default_pdb_ids
+        
+        # 添加延迟避免请求过快
+        self.download_delay = 1.0
+
+    def start_requests(self):
+        """生成初始请求"""
+        for pdb_id in self.pdb_ids:
+            # 获取条目基本信息
+            entry_url = f"{self.base_url}/entry/{pdb_id}"
+            yield scrapy.Request(
+                url=entry_url,
+                callback=self.parse_entry_info,
+                meta={'pdb_id': pdb_id, 'depth': 0}
+            )
+
+    def parse_entry_info(self, response):
+        """解析条目基本信息"""
+        pdb_id = response.meta['pdb_id']
+        depth = response.meta['depth']
+        
+        if response.status == 200:
+            try:
+                entry_data = json.loads(response.text)
+                
+                # 提取基本信息
+                protein_data = {
+                    'pdb_id': pdb_id,
+                    'protein_description': entry_data.get('struct', {}).get('title'),
+                    'deposition_date': entry_data.get('rcsb_accession_info', {}).get('deposit_date'),
+                    'release_date': entry_data.get('rcsb_accession_info', {}).get('initial_release_date'),
+                    'classification': entry_data.get('struct_keywords', {}).get('text'),
+                    'extraction_timestamp': time.strftime("%Y-%m-%d %H:%M:%S")
+                }
+                
+                # 获取聚合物实体信息
+                entity_url = f"{self.base_url}/polymer_entity/{pdb_id}/1"
+                yield scrapy.Request(
+                    url=entity_url,
+                    callback=self.parse_polymer_entity,
+                    meta={
+                        'pdb_id': pdb_id,
+                        'protein_data': protein_data,
+                        'depth': depth + 1,
+                        'entity_id': 1
+                    }
+                )
+                
+            except json.JSONDecodeError as e:
+                self.logger.error(f"JSON解析错误 {pdb_id}: {e}")
+                
+        else:
+            self.logger.error(f"获取条目信息失败 {pdb_id}: {response.status}")
+
+    def parse_polymer_entity(self, response):
+        """解析聚合物实体信息"""
+        pdb_id = response.meta['pdb_id']
+        protein_data = response.meta['protein_data']
+        depth = response.meta['depth']
+        entity_id = response.meta['entity_id']
+        
+        if response.status == 200:
+            try:
+                entity_data = json.loads(response.text)
+                
+                # 第一次处理实体信息时初始化相关字段
+                if entity_id == 1:
+                    protein_data['source_organism'] = []
+                    protein_data['expression_system'] = []
+                    protein_data['entity_types'] = []
+                    protein_data['sequence_lengths'] = []
+                
+                # 提取实体信息
+                entity_type = entity_data.get('entity_poly', {}).get('type')
+                if entity_type:
+                    protein_data['entity_types'].append(entity_type)
+                
+                # 提取序列长度
+                sequence = entity_data.get('entity_poly', {}).get('pdbx_seq_one_letter_code')
+                if sequence:
+                    protein_data['sequence_lengths'].append(len(sequence))
+                
+                # 提取来源生物体
+                src_org = entity_data.get('rcsb_entity_source_organism', [{}])[0]
+                if src_org.get('ncbi_scientific_name'):
+                    protein_data['source_organism'].append(src_org['ncbi_scientific_name'])
+                
+                # 提取表达系统
+                src_gen = entity_data.get('rcsb_source_organism_source', [{}])[0]
+                if src_gen.get('ncbi_scientific_name'):
+                    protein_data['expression_system'].append(src_gen['ncbi_scientific_name'])
+                
+                # 检查是否有更多实体
+                next_entity_id = entity_id + 1
+                next_entity_url = f"{self.base_url}/polymer_entity/{pdb_id}/{next_entity_id}"
+                
+                # 先尝试获取实验数据
+                experimental_data = self.get_experimental_data(pdb_id)
+                if experimental_data:
+                    protein_data.update(experimental_data)
+                
+                # 然后继续处理下一个实体或完成数据收集
+                yield scrapy.Request(
+                    url=next_entity_url,
+                    callback=self.parse_polymer_entity,
+                    meta={
+                        'pdb_id': pdb_id,
+                        'protein_data': protein_data,
+                        'depth': depth,
+                        'entity_id': next_entity_id
+                    },
+                    dont_filter=True
+                )
+                
+            except json.JSONDecodeError as e:
+                self.logger.error(f"JSON解析错误 {pdb_id} 实体{entity_id}: {e}")
+                
+        elif response.status == 404:
+            # 没有更多实体，开始获取实验数据
+            experimental_data = self.get_experimental_data(pdb_id)
+            if experimental_data:
+                protein_data.update(experimental_data)
+            
+            # 获取引用信息
+            citation_data = self.get_citation_data(pdb_id)
+            if citation_data:
+                protein_data.update(citation_data)
+            
+            # 返回最终数据
+            yield protein_data
+            
+        else:
+            self.logger.error(f"获取实体信息失败 {pdb_id} 实体{entity_id}: {response.status}")
+
+    def get_experimental_data(self, pdb_id):
+        """获取实验数据（同步方式）"""
+        import requests
+        
+        url = f"{self.base_url}/entry/{pdb_id}"
+        try:
+            response = requests.get(url, timeout=10)
+            if response.status_code == 200:
+                data = response.json()
+                
+                experimental_data = {}
+                
+                # 提取实验方法
+                exptl_methods = []
+                for exptl in data.get('exptl', []):
+                    if exptl.get('method'):
+                        exptl_methods.append(exptl['method'])
+                if exptl_methods:
+                    experimental_data['experimental_method'] = ', '.join(exptl_methods)
+                
+                # 提取分辨率
+                resolution = data.get('rcsb_entry_info', {}).get('resolution_combined')
+                if resolution:
+                    experimental_data['resolution'] = resolution
+                
+                # 提取晶胞参数
+                cell_data = data.get('cell', {})
+                if cell_data:
+                    experimental_data['cell_parameters'] = {
+                        'a': cell_data.get('length_a'),
+                        'b': cell_data.get('length_b'),
+                        'c': cell_data.get('length_c'),
+                        'alpha': cell_data.get('angle_alpha'),
+                        'beta': cell_data.get('angle_beta'),
+                        'gamma': cell_data.get('angle_gamma')
+                    }
+                
+                return experimental_data
+                
+        except Exception as e:
+            self.logger.error(f"获取实验数据失败 {pdb_id}: {e}")
+        
+        return None
+
+    def get_citation_data(self, pdb_id):
+        """获取引用信息（同步方式）"""
+        import requests
+        
+        query = """
+        query GetCitation($id: String!) {
+            entry(entry_id: $id) {
+                rcsb_primary_citation {
+                    title
+                    journal_abbrev
+                    journal_volume
+                    page_first
+                    page_last
+                    year
+                    pdbx_database_id_PubMed
+                    pdbx_database_id_DOI
+                    rcsb_authors
+                }
+                audit_author {
+                    name
+                }
+            }
+        }
+        """
+        
+        variables = {"id": pdb_id}
+        
+        try:
+            response = requests.post(
+                self.graphql_url,
+                json={"query": query, "variables": variables},
+                headers={"Content-Type": "application/json"},
+                timeout=10
+            )
+            
+            if response.status_code == 200:
+                data = response.json()
+                entry_data = data.get('data', {}).get('entry', {})
+                
+                citation_info = {}
+                
+                # 提取作者信息
+                authors = [author['name'] for author in entry_data.get('audit_author', [])]
+                if authors:
+                    citation_info['authors'] = authors
+                
+                # 提取引用信息
+                citation = entry_data.get('rcsb_primary_citation', {})
+                if citation:
+                    citation_info['citation_title'] = citation.get('title')
+                    citation_info['journal'] = citation.get('journal_abbrev')
+                    citation_info['year'] = citation.get('year')
+                    citation_info['doi'] = citation.get('pdbx_database_id_DOI')
+                    citation_info['pmid'] = citation.get('pdbx_database_id_PubMed')
+                
+                return citation_info
+                
+        except Exception as e:
+            self.logger.error(f"获取引用信息失败 {pdb_id}: {e}")
+        
+        return None
+
+    def closed(self, reason):
+        """爬虫关闭时调用"""
+        self.logger.info(f"爬虫关闭原因: {reason}")
+        self.logger.info("RCSB PDB数据爬取完成")
+
+
+# 爬虫设置和运行配置
+class RcsbPdbPipeline:
+    def process_item(self, item, spider):
+        """处理爬取的数据"""
+        # 这里可以添加数据清洗、验证或保存到数据库的逻辑
+        return item
+
+# 运行爬虫的示例代码
+if __name__ == "__main__":
+    from scrapy.crawler import CrawlerProcess
+    from scrapy.utils.project import get_project_settings
+    
+    # 配置Scrapy设置
+    settings = get_project_settings()
+    settings.update({
+        'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+        'CONCURRENT_REQUESTS': 1,  # 限制并发请求
+        'DOWNLOAD_DELAY': 1.0,     # 下载延迟
+        'AUTOTHROTTLE_ENABLED': True,
+        'AUTOTHROTTLE_START_DELAY': 1,
+        'AUTOTHROTTLE_MAX_DELAY': 5,
+        'LOG_LEVEL': 'INFO',
+        'FEED_FORMAT': 'json',
+        'FEED_URI': 'rcsb_pdb_results.json'
+    })
+    
+    process = CrawlerProcess(settings)
+    
+    # 可以指定要爬取的PDB IDs，用逗号分隔
+    # process.crawl(RcsbPdbSpider, pdb_ids='4HHB,1STP,2JEF')
+    process.crawl(RcsbPdbSpider)
+    
+    process.start()
