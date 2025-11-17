@@ -12,12 +12,15 @@ nav:
   - 项目文档:
     - 项目文档首页: projects/index.md
     - 国自然选题推荐数据清洗:
-      - 项目首页: projects/nsfc/index.md
-      - API 参考: projects/nsfc/api.md
-      - 使用指南: projects/nsfc/guide.md
-    - RCSB PDB爬虫项目:
-      - 项目首页: projects/spiders/index.md
-      - API 参考: projects/spiders/api.md
+      - 文档概述: projects/nsfc/index.md
+      - 系统全景: projects/nsfc/api.md
+      - 核心模块: projects/nsfc/guide.md
+      - 更新日志: projects/nsfc/update.md
+    - RCSB PDB爬虫项目: 
+      - 文档概述: projects/spiders/index.md
+      - 系统全景: projects/spiders/api.md
+      - 核心模块: projects/spiders/guide.md
+      - 更新日志: projects/spiders/update.md
     # 可以继续添加更多项目
     # - 项目2:
     #   - 项目首页: projects/project2/index.md
