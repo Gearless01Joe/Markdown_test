@@ -11,12 +11,12 @@ nav:
   # 第二层：项目文档（多项目支持）
   - 项目文档:
     - 项目文档首页: projects/index.md
-    - 国自然选题推荐:
+    - 国自然选题推荐数据清洗:
       - 项目首页: projects/nsfc/index.md
       - API 参考: projects/nsfc/api.md
       - 使用指南: projects/nsfc/guide.md
-    - 爬虫模块:
-      - 爬虫首页: projects/spiders/index.md
+    - RCSB PDB爬虫项目:
+      - 项目首页: projects/spiders/index.md
       - API 参考: projects/spiders/api.md
     # 可以继续添加更多项目
     # - 项目2:
@@ -41,7 +41,7 @@ nav:
 plugins:
   - search:
       lang: ['zh', 'en']
-      prebuild_index: true  # 预构建索引，提升搜索速度
+      # prebuild_index: true  # 此选项已被移除，不再支持
   - mkdocstrings:
       default_handler: python
       handlers:
