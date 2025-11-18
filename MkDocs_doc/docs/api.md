@@ -1,9 +1,13 @@
 # 总览
 
-::: data_cleaner
+::: NTRT.data_cleaner
     handler: python
     options:
       show_root_heading: true
       show_source: true
 
-::: base_mysql
+::: NTRT.base_mysql
+    handler: python
+    options:
+      show_root_heading: true
+      show_source: true

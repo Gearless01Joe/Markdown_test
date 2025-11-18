@@ -12,15 +12,26 @@ nav:
   - 项目文档:
     - 项目文档首页: projects/index.md
     - 国自然选题推荐数据清洗:
-      - 文档概述: projects/nsfc/index.md
-      - 系统全景: projects/nsfc/api.md
-      - 核心模块: projects/nsfc/guide.md
-      - 更新日志: projects/nsfc/update.md
-    - RCSB PDB爬虫项目: 
-      - 文档概述: projects/spiders/index.md
-      - 系统全景: projects/spiders/api.md
-      - 核心模块: projects/spiders/guide.md
-      - 更新日志: projects/spiders/update.md
+      - 文档概述: projects/ntrt/index.md
+      - 快速开始: projects/ntrt/getting-started.md
+      - 架构设计: projects/ntrt/architecture.md
+      - 系统全景: projects/ntrt/api.md
+      - 核心模块: projects/ntrt/guide.md
+      - 配置说明: projects/ntrt/configuration.md
+      - 使用示例: projects/ntrt/examples.md
+      - 故障排查: projects/ntrt/troubleshooting.md
+      - 更新日志: projects/ntrt/update.md
+    - RCSB PDB爬虫项目:
+      - 文档概述: projects/rcsb_pdb/index.md
+      - 快速开始: projects/rcsb_pdb/getting-started.md
+      - 架构设计: projects/rcsb_pdb/architecture.md
+      - 系统全景: projects/rcsb_pdb/api.md
+      - 核心模块: projects/rcsb_pdb/guide.md
+      - 配置说明: projects/rcsb_pdb/configuration.md
+      - 使用示例: projects/rcsb_pdb/examples.md
+      - 故障排查: projects/rcsb_pdb/troubleshooting.md
+      - 更新日志: projects/rcsb_pdb/update.md
+    
     # 可以继续添加更多项目
     # - 项目2:
     #   - 项目首页: projects/project2/index.md
@@ -29,8 +40,12 @@ nav:
   # 第二层：开发指南
   - 开发指南:
     - 指南首页: guide/index.md
-    - 快速开始: guide/getting-started.md
+    - 笔记项目结构: guide/PROJECT_STRUCTURE.md
     - 最佳实践: guide/best-practices.md
+    - mkdocstrings 工作流程: guide/mkdocstrings-workflow.md
+    - mkdocstrings 语法参考: guide/mkdocstrings-syntax.md
+    - mkdocstrings 与注释: guide/mkdocstrings-comments.md
+    - mkdocstrings 适合哪些文档: guide/mkdocstrings-file-types.md
     - 高级主题:
       - 高级主题首页: guide/advanced/index.md
       - 性能优化: guide/advanced/performance.md
@@ -38,7 +53,27 @@ nav:
   # 第二层：参考文档
   - 参考文档:
     - 参考首页: reference/index.md
+    - 工具库: reference/glossary.md
     - 更新日志: update.md
+    - API 总览: api.md
+
+# Markdown 扩展，增强排版、卡片、标签页、Mermaid 等能力
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums_style: pymdownx-inline
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 # 插件配置
 plugins:
@@ -52,7 +87,8 @@ plugins:
       handlers:
         python:
           paths: 
-            - ../src                    # 当前项目的源码
+            - ../code_liu                    # code_liu 项目的源码
+            - ../src                         # src 目录的源码（spiders 等）
             # 可以添加更多项目的源码路径
             # - projects/project2/src
             # - projects/project3/src
@@ -71,6 +107,9 @@ plugins:
 theme:
   name: material
   language: zh
+  font:
+    text: "Inter"
+    code: "JetBrains Mono"
   features:
     - navigation.tabs          # 顶部标签导航
     - navigation.sections      # 章节导航（支持多层级）
@@ -80,18 +119,24 @@ theme:
     - search.highlight         # 搜索结果高亮
     - content.code.copy        # 代码复制按钮
     - content.code.annotate    # 代码注释
-  # palette 配置已移除，使用 Material 默认颜色
-  # 如果需要自定义颜色，可以取消下面的注释并修改颜色值
-  # palette:
-  #   - scheme: default
-  #     primary: indigo    # 可选：red, pink, purple, deep-purple, indigo, blue, light-blue, cyan, teal, green, light-green, lime, yellow, amber, orange, deep-orange, brown, grey, blue-grey
-  #     accent: indigo     # 同上
-  #     toggle:
-  #       icon: material/brightness-7
-  #       name: 切换到深色模式
-  #   - scheme: slate
-  #     primary: indigo
-  #     accent: indigo
-  #     toggle:
-  #       icon: material/brightness-4
-  #       name: 切换到浅色模式
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: 切换到夜间模式
+    - scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: 切换到日间模式
+
+extra_css:
+  - stylesheets/custom-nav.css
+  - stylesheets/theme-overrides.css
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - javascripts/init-mermaid.js

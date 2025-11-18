@@ -1,0 +1,20 @@
+[{
+    "object_id": "pr202509011807455619152631",
+    "object_info": {
+      "order": 11,
+      "unit_name": "同济大学",
+      "apply_code": "F0213",
+      "project_id": "pr202509011807455619152631",
+      "leader_name": "周驰",
+      "approval_num": "62202333",
+      "project_name": "基于单细胞测序和半监督多模态学习的免疫检查点抑制剂疗效预测研究",
+      "subject_info": "生物信息计算与数字健康",
+      "approval_year": "2022",
+      "category_name": "青年科学基金项目",
+      "project_funding": "30",
+      "related_project": "pp202302071923053193949895"
+    },
+    "object_type": "project",
+    "related_object": "pp202302071923053193949895",
+    "article_quotation": "周驰.基于单细胞测序和半监督多模态学习的免疫检查点抑制剂疗效预测研究.青年科学基金项目(62202333)."
+  }]

@@ -1,0 +1,145 @@
+{"ar202510281656402098929580": {
+    "type": "nsfc_project",
+    "order": 31,
+    "end_date": "2022-12-31",
+    "keywords": "情感感知；生理感知；情感识别",
+    "gain_info": [
+      {
+        "gain_id": "gain202309020837031094893728",
+        "gain_name": "Uncertainty-aware Cross-dataset Facial Expression Recognition via Regularized Conditional Alignment",
+        "gain_type": "会议论文",
+        "gain_author": [
+          "Linyi Zhou",
+          "Xijian Fan",
+          "Yingjie Ma",
+          "T. Tjahjadi",
+          "Qiaolin Ye"
+        ]
+      },
+      {
+        "gain_id": "gain202309020837031094673811",
+        "gain_name": "BASNet: Burned Area Segmentation Network for Real-time Detection of Damage Maps in Remote Sensing Images",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Weihao Bo",
+          "Jie Liu",
+          "Xijian Fan",
+          "Tardi Tjahjadi",
+          "Qiaolin Ye",
+          "Liyong Fu"
+        ]
+      },
+      {
+        "gain_id": "gain202309020837031094909555",
+        "gain_name": "PlantNet: transfer learning-based fine-grained network for high-throughput plants recognition",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Ze Yang",
+          "Wenyan He",
+          "Xijian Fan",
+          "Tardi Tjahjadi"
+        ]
+      },
+      {
+        "gain_id": "gain202309020837031094643335",
+        "gain_name": "Leaf image based plant disease identification using transfer learning and feature fusion",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Xijian Fan",
+          "Peng Luo",
+          "Yuen Mu",
+          "Rui Zhou",
+          "Tardi Tjahjadi",
+          "Yi Ren"
+        ]
+      },
+      {
+        "gain_id": "gain202309020837031094888385",
+        "gain_name": "一种融合视觉和听觉信息的双模态情感识别算法",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "范习健",
+          "杨绪兵",
+          "张礼",
+          "业巧林",
+          "业宁"
+        ]
+      },
+      {
+        "gain_id": "gain202309020837031094495945",
+        "gain_name": "Discriminative attention-augmented feature learning for facial expression recognition in the wild",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Linyi Zhou",
+          "Xijian Fan",
+          "Tardi Tjahjadi",
+          "Sruti Das Choudhury"
+        ]
+      },
+      {
+        "gain_id": "gain202309020837031094811322",
+        "gain_name": "基于自注意力卷积网络的遥感图像分类",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "李彦甫",
+          "范习健",
+          "杨绪兵",
+          "徐新洲"
+        ]
+      },
+      {
+        "gain_id": "gain202309020837031094663101",
+        "gain_name": "Rethinking Auditory Affective Descriptors Through Zero-Shot Emotion Recognition in Speech",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Xinzhou Xu",
+          "Jun Deng",
+          "Zixing Zhang",
+          "Xijian Fan",
+          "Li Zhao",
+          "Laurence Devillers",
+          "Bjorn W. Schuller"
+        ]
+      },
+      {
+        "gain_id": "gain202309020837031093660222",
+        "gain_name": "A Segmentation-Guided Deep Learning Framework for Leaf Counting",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Xijian Fan",
+          "Rui Zhou",
+          "Tardi Tjahjadi",
+          "Sruti Das Choudhury",
+          "Qiaolin Ye"
+        ]
+      }
+    ],
+    "apply_code": {
+      "code_name": "计算机图形学与虚拟现实",
+      "apply_code": "F0209"
+    },
+    "article_id": "ar202510281656402098929580",
+    "final_year": "2022",
+    "project_id": "fp202308210940384815851907",
+    "start_date": "2020-01-01",
+    "approval_num": "61902187",
+    "chs_abstract": "多模态情感识别是情感计算和人机交互领域的新兴研究方向，对实现更高效更智能的人机交互起着至关重要的作用。生理信号与情感联系紧密，能真实和客观地反映人的情感状态变化。因此，本项目从生理信号的自身特性出发，在多模态情感识别的相关理论基础上，开展面向维度情感识别的多模态生理信号融合研究。内容包括：第一，针对单模态多通道生理信号中冗余信息多和数据量大的问题，建立有效的特征融合模型，降低计算复杂度的同时，去除冗余信息并保留与情感相关的信息。第二，针对多模态多通道生理信号中存在的相关信息形式复杂的问题，构建基于分级思想的多模态特征融合模型，有效地挖掘模态内和模态间的内在联系。第三，针对生理信号中的模态缺失问题，充分挖掘模态间的隐藏语义信息，建立鲁棒的联合表示融合模型。最后通过实验验证各模型在维度情感识别中的有效性。该项目研究及其成果对于丰富多模态情感识别的研究内涵，有着重要的理论和实际意义。",
+    "eng_abstract": "Multimodal emotion recognition is an emerging research direction in the field of emotional computing and human-computer interaction， which plays a vital role in achieving more efficient and intelligent human-computer interaction experience. Most of the current multimodal emotion recognition methods are based on the external information such as facial expressions, speech signals, body postures etc. Such information is susceptible to illumination changes and environmental noise, and can be consciously controlled and deceived. Due to the intrinsic relation with human emotion, physiological signals can reflect the changes of human emotional state more realistically and objectively than the external information. Therefore, this project aims to combine the physiological characteristics of good characteristics in the representation of emotions and multi-modal emotion recognition theory, and carry out multi-modal physiological signal fusion research for dimensional emotion recognition. To overcome the key problems of combining physiological signals and multimodal emotion recognition, we first construct the specific feature fusion model to represent the single-modal multi-channel signal, which can remove the redundant information while retaining the useful information as much as possible. Secondly, in order to capture the complicated intra-modal and inter-modal relation among the physiological signals, a feature fusion model is established to extract the discriminative and salient information. Third, in order to deal with the case of incomplete modal data, a robust model based on deep joint learning is proposed to capture the semantic information. Finally, we embedded the proposed models into the dimensional emotion recognition, and test the effectiveness of the proposed multimodal feature fusion models. The project as well as its results have important theoretical and practical significance for enriching the research field of multimodal emotion recognition.",
+    "project_name": "面向维度情感识别的多模态生理信号特征融合方法研究",
+    "project_unit": "南京林业大学",
+    "approval_year": "2019",
+    "final_abstract": "神经学、心理学诸多研究成果表明，生理信号与人类情感关系密切。本项目在多模态特征融合的理论基础上，充分考虑生理信号的自身特性，针对多模态生理信号情感识别中面对的关键问题，探索与构建了针对生理信号的多模态特征融合模型，有效提高了情感识别的准确性和鲁棒性。主要成果包括：1）提出了自适应改进生理信号质量的方法，降低了噪声干扰和伪迹对信号的干扰，提升了生理信号的质量；2）提出了融合手工特征和深度特征的情感识别方法，有效提升了情绪特征的判别性和鲁棒性，提高了情感识别的准确度；3）考虑生理特征的个性化差异，提出了基于聚类算法的个性化多模态情感识别算法。基于本项目构建的多模态情感分析与识别方法在公共安全、医疗健康、人机交互等领域具有重要理论意义和学术价值。",
+    "project_leader": "范习健",
+    "project_status": 1,
+    "project_funding": "25.0",
+    "project_keyword": [
+      "情感感知",
+      "生理感知",
+      "情感识别"
+    ],
+    "related_article": "fp202308210940384815851907",
+    "project_category": "青年科学基金项目",
+    "project_personnel": [
+
+    ]
+  }}

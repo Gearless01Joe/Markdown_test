@@ -1,0 +1,27 @@
+[{
+    "object_id": "ar202509261438332230793866",
+    "object_info": {
+      "doi": "10.1109/jbhi.2016.2636665",
+      "url": "",
+      "pmid": "28055930",
+      "type": "journal_papers",
+      "order": 1,
+      "stage": "1",
+      "volume": "21",
+      "medpeer": 0,
+      "abstract": "With a massive influx of multimodality data, the role of data analytics in health informatics has grown rapidly in the last decade. This has also prompted increasing interests in the generation of analytical, data driven models based on machine learning in health informatics. Deep learning, a technique with its foundation in artificial neural networks, is emerging in recent years as a powerful tool for machine learning, promising to reshape the future of artificial intelligence. Rapid improvements in computational power, fast data storage, and parallelization have also contributed to the rapid uptake of the technology in addition to its predictive power and ability to generate automatically optimized high-level features and semantic interpretation from the input data. This article presents a comprehensive up-to-date review of research employing deep learning in health informatics, providing a critical analysis of the relative merit, and potential pitfalls of the technique as well as its future outlook. The paper mainly focuses on key applications of deep learning in the fields of translational bioinformatics, medical imaging, pervasive sensing, medical informatics, and public health.",
+      "article_id": "ar202509261438332230793866",
+      "page_range": "4-21",
+      "title_name": "Deep Learning for Health Informatics",
+      "author_name": "Daniele Ravì;Charence Wong;Fani Deligianni;Melissa Berthelot;Javier Andreu-Pérez;Benny Lo;Guang‐Zhong Yang",
+      "is_fulltext": 0,
+      "publish_time": "2016-12-29",
+      "publish_year": 2016,
+      "periodical_name": "IEEE Journal of Biomedical and Health Informatics",
+      "related_article": ""
+    },
+    "object_type": "article",
+    "related_object": "",
+    "article_quotation": "Ravì Daniele, Wong Charence, Deligianni Fani, et al. Deep Learning for Health Informatics[J]. IEEE Journal of Biomedical and Health Informatics, 2016, 21(1): 4-21. doi:10.1109/jbhi.2016.2636665."
+  }
+]

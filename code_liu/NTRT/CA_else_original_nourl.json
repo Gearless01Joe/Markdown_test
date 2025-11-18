@@ -1,0 +1,29 @@
+[
+  {
+    "object_id": "ar202509081543300013877325",
+    "object_info": {
+      "doi": "10.1109/TBME.2024.3361893",
+      "pmid": "38315600",
+      "type": "journal_papers",
+      "order": 1,
+      "stage": "7",
+      "volume": "71",
+      "medpeer": 1,
+      "abstract": "OBJECTIVEComputational model of bone healing can replace animal experiments to study the parameters affecting the bone healing process, thus reducing the damage to experimental animals and saving a lot of time. We propose a computational model for continuous simulation of four phases of bone healing to study the effects of mechanical environmental and biological factors, including initial conditions at the fracture site, mechanical stimulus loading, and vascular growth rate.METHODSA finite element model of mechanobiological fracture healing containing several pre-determined variables was developed for bone healing after fracture in sheep, which included many relevant parameters and biological effects during fracture healing, such as the effects of mechanical environment, blood supply level in the local fracture area, cell migration and diffusion, and resorption effects of fracture healing. The effects of several parameters on indices such as Young's modulus of the callus during bone healing were obtained by simulation.RESULTSThe initial geometry of the healing tissue and mechanical loading had the greatest effect on fracture healing, and different preset values were likely to cause delayed or non-healing fractures. Changed initial tissue properties of the healing tissue showed a nonlinear effect on fracture healing rather than a linear delay or advancement. Parameters related to angiogenesis had a greater effect on fracture healing compared to those related to cell migration.CONCLUSIONThis paper quantified the effect of fracture healing pre-determined variables on fracture healing to better understand the application of mechanobiology in fracture healing simulation models and optimization of treatment strategies.SIGNIFICANCEThe importance of initial conditions and loads on fracture healing has been shown to help physicians treat bone nonunion or delayed bone healing after a fracture.",
+      "article_id": "ar202509081543300013877325",
+      "page_range": "2105-2118",
+      "title_name": "Computational Modeling of Bone Fracture Healing Under Different Initial Conditions and Mechanical Load",
+      "author_name": "Yuanyuan Yang;Zeyu Zhao;Xiaozhi Qi;Ying Hu;Bing Li;Lihai Zhang",
+      "chs_section": "",
+      "is_fulltext": 0,
+      "publish_time": "2024-06-19",
+      "publish_year": "2024",
+      "translate_name": null,
+      "periodical_name": "IEEE Transactions on Bio-Medical Engineering",
+      "related_article": "abs20240207143046841611875156"
+    },
+    "object_type": "article",
+    "related_object": "abs20240207143046841611875156",
+    "article_quotation": "Yang Yuanyuan, Zhao Zeyu, Qi Xiaozhi, et al. Computational Modeling of Bone Fracture Healing Under Different Initial Conditions and Mechanical Load[J]. IEEE Transactions on Bio-Medical Engineering, 2024, 71(7): 2105-2118. doi:10.1109/TBME.2024.3361893."
+  }
+]

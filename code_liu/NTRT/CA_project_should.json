@@ -1,0 +1,426 @@
+{"ar202510301415201641231053": {
+    "type": "nsfc_project",
+    "order": 4,
+    "end_date": "2021-12-31",
+    "keywords": "糖尿病视网膜病变；深度学习；彩色眼底图像",
+    "gain_info": [
+      {
+        "gain_id": "gain202206170433054740497723",
+        "gain_name": "Remote Sensing Image Deblurring Algorithm Based on WGAN",
+        "gain_type": "会议论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Chenxu Liu"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054739482084",
+        "gain_name": "Expanded Mask R-CNN's Retinal Edema Detection Network",
+        "gain_type": "会议论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Fuyu Zhu"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054739284798",
+        "gain_name": "Retinal Image Registration Based on Bifurcation Point and SURF",
+        "gain_type": "会议论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Danhua Chen"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054740648039",
+        "gain_name": "Combination of multi-scale and residual learning in deep CNN for image denoising",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Fuyu Zhu",
+          "Haisheng Li",
+          "Shuxiang Song",
+          "Xiangwei Mou"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054739518741",
+        "gain_name": "The quantum Fourier transform based on quantum vision representation",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Li Hai-Sheng",
+          "Fan Ping",
+          "Xia Hai-ying",
+          "Song Shuxiang",
+          "He Xiangjian"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054738493347",
+        "gain_name": "MFC-Net: Multi-scale fusion coding network for Image Deblurring",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Bo Wu",
+          "Yumei Tan",
+          "Xiaohu Tang",
+          "Shuxiang Song"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054743332846",
+        "gain_name": "Fast single image de-raining via a weighted residual network",
+        "gain_type": "会议论文",
+        "gain_author": [
+          "Ruibin Zhuge",
+          "Haiying Xia",
+          "Haisheng Li",
+          "Shuxiang Song"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054742377602",
+        "gain_name": "Retinal vessel segmentation via a coarse-to-fine convolutinal neural network",
+        "gain_type": "会议论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Ruibin Zhuge",
+          "Haisheng Li"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054743305244",
+        "gain_name": "一种基于像素种类和权重统计的颜色采样方法",
+        "gain_type": "专利",
+        "gain_author": [
+          "夏海英",
+          "林佩珍",
+          "蒋清红",
+          "丁志峰",
+          "张宗健",
+          "赵芙"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054743605116",
+        "gain_name": "一种基于MaskRcnn的膀胱肿瘤检测方法",
+        "gain_type": "专利",
+        "gain_author": [
+          "夏海英",
+          "孙伟凡",
+          "夏伟",
+          "丁志峰"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054741377121",
+        "gain_name": "一种基于盲解卷积的彩色图像去模糊的方法",
+        "gain_type": "专利",
+        "gain_author": [
+          "夏海英",
+          "刘晨旭",
+          "黎海生",
+          "陆辉辉"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054745309950",
+        "gain_name": "HT-Net: hierarchical context-attention transformer network for medical ct image segmentation",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Mingjun Ma",
+          "Haiying Xia",
+          "Yumei Tan",
+          "Haisheng Li",
+          "Shuxiang Song"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054745116884",
+        "gain_name": "基于分组残差结构的轻量级卷积神经网络设计",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "李鹏",
+          "蒋品群",
+          "曾上游",
+          "夏海英",
+          "廖志贤",
+          "范瑞"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054745771323",
+        "gain_name": "A multi-scale segmentation-to-classification network for tiny microaneurysm detection in fundus images",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Yang Lan",
+          "Shuxiang Song",
+          "Hai-Sheng Li"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054744986598",
+        "gain_name": "Fast Template Matching Based on Deformable Best-Buddies Similarity Measure",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Wenxian Zhao",
+          "Frank Jiang",
+          "Haisheng Li",
+          "Jing Xin",
+          "Zheng Zhou"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054744262748",
+        "gain_name": "基于卷积神经网络的眼底图像配准研究",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "吴玲玉",
+          "蓝洋",
+          "夏海英"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054744185848",
+        "gain_name": "多尺度并行融合的轻量级卷积神经网络设计",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "范瑞",
+          "蒋品群",
+          "曾上游",
+          "夏海英",
+          "廖志贤",
+          "李鹏"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054744834882",
+        "gain_name": "Quantum circuit design of approximate median filtering with noise tolerance threshold",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Yufang Xiao",
+          "Shuxiang Song",
+          "Hai-Sheng Li"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054743980817",
+        "gain_name": "Mapping Functions Driven Robust Retinal Vessel Segmentation via Training Patches",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Frank Jiang",
+          "Shuaifei Deng",
+          "Jing Xin",
+          "Robin Doss"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054743227568",
+        "gain_name": "Microaneurysm detection in fundus images based on a novel end-to-end convolutional neural network",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Yinhan Liao",
+          "Haiying Xia",
+          "Shuxiang Song",
+          "Haisheng Li"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054742590003",
+        "gain_name": "Single Image Rain Removal via A Simplified Residual Dense Network",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Ruibin Zhuge",
+          "Haisheng Li",
+          "Shuxiang Song",
+          "Frank Jiang",
+          "Min Xu"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054742601210",
+        "gain_name": "An efficient design of quantum comparator via only a single ancilary bit",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Haisheng Li",
+          "Han Zhang",
+          "Yan Liang",
+          "Jing Xin"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054742668805",
+        "gain_name": "Quantum Implementation Circuits of Quantum Signal Representation and Type Conversion",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Li Hai Sheng",
+          "Fan Ping",
+          "Xia Hai Ying",
+          "Peng Huiling",
+          "Song Shuxiang"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054742625228",
+        "gain_name": "Ensemble One-Dimensional Convolution Neural Networks for Skeleton-based Action Recognition",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Yangyang Xu",
+          "Jun Cheng",
+          "Lei Wang",
+          "Haiying Xia",
+          "Feng Liu",
+          "Datao Peng"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054741150519",
+        "gain_name": "Md-Net: Multi-scale Dilated Convolution Network for CT Images Segmentation",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Weifan Sun",
+          "Shuxiang Song",
+          "Xiangwei Mou"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054741767393",
+        "gain_name": "基于网格变形和余弦函数权重的图像拼接方法",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "李加亮",
+          "蒋品群",
+          "夏海英"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054741192955",
+        "gain_name": "Destruction and Reconstruction Learning for Facial Expression Recognition",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Changyuan Li",
+          "Yumei Tan",
+          "Shuxiang Song",
+          "Lingyun Li"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054740509341",
+        "gain_name": "MC-Net: multi-scale context-attention network for medical CT image segmentation",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Mingjun Ma",
+          "Haisheng Li",
+          "Shuxiang Song"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054740572583",
+        "gain_name": "Raindrop removal from a single image using a two-step generative adversarial network",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Yang Lan",
+          "Haisheng Li",
+          "Shuxiang Song"
+        ]
+      },
+      {
+        "gain_id": "gain202206170433054740544721",
+        "gain_name": "Novel multi-bit quantum comparators and their application in image binarization",
+        "gain_type": "期刊论文",
+        "gain_author": [
+          "Haiying Xia",
+          "Hai-Sheng Li",
+          "Han Zhang",
+          "Yan Liang",
+          "Jing Xin"
+        ]
+      }
+    ],
+    "apply_code": {
+      "code_name": "模式识别与数据挖掘",
+      "apply_code": "F0605"
+    },
+    "article_id": "ar202510301415201641231053",
+    "final_year": "2021",
+    "project_id": "fp202206170433042896248022",
+    "start_date": "2018-01-01",
+    "approval_num": "61762014",
+    "chs_abstract": "糖尿病视网膜病变发病 率高，对视力损伤具有不可逆性，已经成为致盲的重要病因之一。本项目着眼于糖尿病视网膜病变自动分析研究，主要贡献是引入一套完善的，针对海量彩色眼底图像的糖尿病视网膜病变信息增强与自动分析框架，包含如下三个研究点：(1)彩色眼底图像中视网膜血管分割研究；(2) 彩色眼底图像中糖尿病视网膜病变信息的有效增强；(3) 彩色眼底图像中糖尿病视网膜病变的自动分析。通过本项目的研究挖掘彩色眼底图像中蕴含的糖尿病视网膜病变信息，建立相应的分析模型，完成彩色眼底图像中糖尿病视网膜病变信息的有效增强和自动分析，为眼科糖尿病视网膜病变诊断提供新方法和依据，并可望为眼科大规模糖尿病视网膜病变筛查提供自动化分析工具。",
+    "eng_abstract": "Diabetic retinopathy (DR) traditionally suffers from a high incidence rate, has irreversible damage to vision, and has become one of the important causes of blindness. Our project targets at how to automatically analyze DR, making a significant contribution by introducing a DR information enhancement and automatic analysis framework based on color fundus images, including: (1)the study of retinal vessels segmentation in color fundus images, (2) the effective enhancement of DR in color fundus images, (3) the automatic analysis of DR in color fundus images. The research outcome includes the mining of the information of diabetic retinopathy, designing of the corresponding analysis model, realizing the enhancement and automatic classification of DR in color fundus image, and therefore providing a new method and evidence for the diagnosis of DR. This project will produce automatic analysis tools for large-scale screening of DR.",
+    "project_name": "彩色眼底图像在糖尿病视网膜病变辅助诊断中的关键技术研究",
+    "project_unit": "广西师范大学",
+    "approval_year": "2017",
+    "final_abstract": "本项目围绕着糖尿病视网膜病变自动分析，研究了（1）彩色眼底图像中视网膜血管分割，建立了基于 U-Net 的分层循环卷积网络（HR-Net），将DRIVE、CHASE_DB1和STARE彩色眼底数据集中血管分割精度分别提升至96.21%、97.02%和97.15%；（2）彩色眼底图像的有效增强，建立了基于分叉点和SURF算法的图像配准模型、基于卷积神经网络的图像配准模型、基于多尺度融合的图像去模糊网络模型、基于多尺度和残差学习的图像去噪网络模型等，为彩色眼底图像预处理提供了工具支撑；（3）彩色眼底图像中糖尿病视网膜病变自动分析，设计出基于卷积神经网络的检测、分类模型，实现了彩色眼底图像中微动脉瘤、出血点、病变等级等的检测或分类，为糖尿病视网膜病变辅助诊断提供了技术支撑。",
+    "project_leader": "夏海英",
+    "project_status": 1,
+    "project_funding": "37.0",
+    "project_keyword": [
+      "糖尿病视网膜病变",
+      "深度学习",
+      "彩色眼底图像"
+    ],
+    "related_article": "fp202206170433042896248022",
+    "project_category": "地区科学基金项目",
+    "project_personnel": [
+      {
+        "person_id": "6dbd012fabade84dbf3e48708712ceeb",
+        "personnel_name": "Frank Jiang",
+        "personnel_unit": "广西师范大学",
+        "personnel_title": "教授"
+      },
+      {
+        "person_id": "d1fecee76301f859c22bed27a642c907",
+        "personnel_name": "黎海生",
+        "personnel_unit": "广西师范大学",
+        "personnel_title": "副教授"
+      },
+      {
+        "person_id": "89093571036c2faae34cd78263c1e94f",
+        "personnel_name": "何富运",
+        "personnel_unit": "广西师范大学",
+        "personnel_title": "工程师"
+      },
+      {
+        "person_id": "3b7ad97bf010264c66955c76351cd898",
+        "personnel_name": "邓帅飞",
+        "personnel_unit": "广西师范大学",
+        "personnel_title": null
+      },
+      {
+        "person_id": "20b491b59f766766bab768ffba4cf033",
+        "personnel_name": "金凯跃",
+        "personnel_unit": "广西师范大学",
+        "personnel_title": null
+      },
+      {
+        "person_id": "063566655dfc1589a7befc1ab1a1363b",
+        "personnel_name": "赵文鲜",
+        "personnel_unit": "广西师范大学",
+        "personnel_title": null
+      },
+      {
+        "person_id": "086fd39891fcfcf4fde731b8ec072450",
+        "personnel_name": "黄荔",
+        "personnel_unit": "广西医科大学",
+        "personnel_title": "主治医师"
+      },
+      {
+        "person_id": "086fd39891fcfcf4fde731b8ec072450",
+        "personnel_name": "黄荔",
+        "personnel_unit": "广西医科大学",
+        "personnel_title": "主治医师"
+      }
+    ]
+  }
+}
