@@ -45,6 +45,8 @@ plugins:
   - search:
       lang: ['zh', 'en']
       # prebuild_index: true  # 此选项已被移除，不再支持
+  - autorefs:
+      link_titles: auto
   - mkdocstrings:
       default_handler: python
       handlers:
