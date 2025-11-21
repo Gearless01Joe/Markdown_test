@@ -4,7 +4,7 @@ RCSB PDB All API Pipeline
 
 负责将 RcsbAllApiItem 写入 MongoDB（或其他存储，依据项目 Pipeline 基类实现）
 """
-from src.items.other.rcsb_pdb_item import RcsbAllApiItem
+from src.items.rcsb_pdb_item import RcsbAllApiItem
 from src.pipelines.raw_storage_pipeline import MongoDBRawStoragePipeline
 
 

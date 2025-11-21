@@ -2,7 +2,7 @@
 
 RCSB PDB 爬虫 - 支持单条拉取、批量全量、增量更新
 
-**模块路径**: `code_liu.RCSB_PDB.src.spider.rcsb_pdb.rcsb_pdb_spider`
+**模块路径**: `code_liu.RCSB_PDB.src.spiders.rcsb_pdb.rcsb_pdb_spider`
 
 ## 导入
 

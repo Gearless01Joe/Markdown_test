@@ -25,7 +25,7 @@ plugins:
 |---------|---------|
 | `code_liu/NTRT/data_cleaner.py` | `NTRT.data_cleaner` |
 | `code_liu/NTRT/application/NsfcTopicRcmdModels.py` | `NTRT.application.NsfcTopicRcmdModels` |
-| `code_liu/RCSB_PDB/src/spider/rcsb_pdb/rcsb_pdb_spider.py` | `RCSB_PDB.src.spider.rcsb_pdb.rcsb_pdb_spider` |
+| `code_liu/RCSB_PDB/src/spiders/rcsb_pdb/rcsb_pdb_spider.py` | `RCSB_PDB.src.spiders.rcsb_pdb.rcsb_pdb_spider` |
 
 **注意**：
 - 路径中的 `/` 或 `\` 替换为 `.`
@@ -101,9 +101,9 @@ mkdocs build
 
 | 文件 | 模块路径 | 引用语法 |
 |------|---------|---------|
-| `code_liu/RCSB_PDB/src/spider/rcsb_pdb/rcsb_pdb_spider.py` | `RCSB_PDB.src.spider.rcsb_pdb.rcsb_pdb_spider` | `::: RCSB_PDB.src.spider.rcsb_pdb.rcsb_pdb_spider` |
-| `RcsbAllApiSpider` 类 | `RCSB_PDB.src.spider.rcsb_pdb.rcsb_pdb_spider.RcsbAllApiSpider` | `::: RCSB_PDB.src.spider.rcsb_pdb.rcsb_pdb_spider.RcsbAllApiSpider` |
-| `code_liu/RCSB_PDB/src/spider/rcsb_pdb/field_filter.py` | `RCSB_PDB.src.spider.rcsb_pdb.field_filter` | `::: RCSB_PDB.src.spider.rcsb_pdb.field_filter` |
+| `code_liu/RCSB_PDB/src/spiders/rcsb_pdb/rcsb_pdb_spider.py` | `RCSB_PDB.src.spiders.rcsb_pdb.rcsb_pdb_spider` | `::: RCSB_PDB.src.spiders.rcsb_pdb.rcsb_pdb_spider` |
+| `RcsbAllApiSpider` 类 | `RCSB_PDB.src.spiders.rcsb_pdb.rcsb_pdb_spider.RcsbAllApiSpider` | `::: RCSB_PDB.src.spiders.rcsb_pdb.rcsb_pdb_spider.RcsbAllApiSpider` |
+| `code_liu/RCSB_PDB/src/spiders/rcsb_pdb/field_filter.py` | `RCSB_PDB.src.spiders.rcsb_pdb.field_filter` | `::: RCSB_PDB.src.spiders.rcsb_pdb.field_filter` |
 
 ## 常见问题
 

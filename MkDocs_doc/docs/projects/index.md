@@ -34,7 +34,7 @@
       </div>
       <div>
         <strong>状态</strong>
-        <p>稳定运行中</p>
+        <p>已部署</p>
       </div>
     </div>
   </article>

@@ -40,7 +40,7 @@
       <li>批量处理、任务拆分与调度集成建议</li>
     </ul>
   </a>
-  <a class="overview-card" href="reference/update/">
+  <a class="overview-card" href="update/">
     <h3>参考文档 · 更新日志</h3>
     <p>集中查看全站更新记录、通用术语及支撑工具说明。</p>
     <ul>

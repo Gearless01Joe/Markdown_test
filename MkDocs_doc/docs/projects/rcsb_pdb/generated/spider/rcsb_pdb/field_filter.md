@@ -2,7 +2,7 @@
 
 字段过滤模块 - 根据配置精确控制提取哪些字段
 
-**模块路径**: `code_liu.RCSB_PDB.src.spider.rcsb_pdb.field_filter`
+**模块路径**: `code_liu.RCSB_PDB.src.spiders.rcsb_pdb.field_filter`
 
 ## 导入
 

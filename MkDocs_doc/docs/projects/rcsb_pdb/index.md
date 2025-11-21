@@ -42,9 +42,9 @@ code_liu/RCSB_PDB/
     │   └── rcsb_pdb_item.py   # Item 定义
     ├── pipelines/
     │   └── rcsb_pdb_pipeline.py
-    └── spider/rcsb_pdb/
+    └── spiders/rcsb_pdb/
         ├── field_filter.py    # 字段裁剪
         └── rcsb_pdb_spider.py # 主爬虫
 ```
 
-所有文档均位于 `MkDocs_doc/docs/projects/ntrt/` 目录，可直接通过 `mkdocs serve` 浏览。若需新增内容，建议遵循概览 → 快速开始 → 架构 → 模块 → 配置 → 排障的阅读顺序，确保团队成员能在 5 分钟内定位到所需信息。
+所有文档均位于 `MkDocs_doc/docs/projects/rcsb_pdb/` 目录，可直接通过 `mkdocs serve` 浏览。若需新增内容，建议遵循概览 → 快速开始 → 架构 → 模块 → 配置 → 排障的阅读顺序，确保团队成员能在 5 分钟内定位到所需信息。
