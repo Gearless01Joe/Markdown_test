@@ -1,0 +1,44 @@
+/* 自定义导航层级样式，增强不同标题的区分度 */
+
+:root {
+  --custom-nav-muted: rgba(0, 0, 0, 0.35);
+}
+
+/* 第一层（大类） */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--md-primary-fg-color);
+  margin-top: 0.4rem;
+}
+
+/* 第二层（项目/章节） */
+.md-nav--primary > .md-nav__list > .md-nav__item .md-nav__list > .md-nav__item > .md-nav__link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+
+/* 第三层及以下（页面） */
+.md-nav--primary > .md-nav__list > .md-nav__item .md-nav__list > .md-nav__item .md-nav__list > .md-nav__item > .md-nav__link {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--md-default-fg-color);
+  padding-left: 0.8rem;
+}
+
+/* 嵌套列表左边界，用于视觉分组 */
+.md-nav--primary .md-nav__item .md-nav__list {
+  margin-left: 0.35rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* 保持激活状态更显眼 */
+.md-nav--primary .md-nav__link--active {
+  color: var(--md-accent-fg-color);
+  font-weight: 600;
+}
+

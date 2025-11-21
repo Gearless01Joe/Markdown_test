@@ -1,0 +1,3035 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://Gearless01Joe.github.io/Markdown_test/guide/PROJECT_STRUCTURE/">
+      
+      
+        <link rel="prev" href="../../platform/">
+      
+      
+        <link rel="next" href="../../platform/components/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>标准目录模板 - Python技术文档库</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom-nav.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/theme-overrides.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Python技术文档库" class="md-header__button md-logo" aria-label="Python技术文档库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python技术文档库
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              标准目录模板
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="切换到夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="切换到日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../handbook/" class="md-tabs__link">
+          
+  
+  团队概览与快速入门
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../standards/" class="md-tabs__link">
+          
+  
+  编码规范与风格指南
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../platform/" class="md-tabs__link">
+          
+  
+  项目结构与公共组件库
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../process/" class="md-tabs__link">
+          
+  
+  开发流程与协作规范
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../operations/" class="md-tabs__link">
+          
+  
+  维护与故障处理
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/" class="md-tabs__link">
+          
+  
+  附录与资源
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Python技术文档库" class="md-nav__button md-logo" aria-label="Python技术文档库" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Python技术文档库
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    团队概览与快速入门
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            团队概览与快速入门
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    模块总览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handbook/team/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    团队介绍
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    环境搭建指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../handbook/first-hour/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第一小时任务
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    编码规范与风格指南
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            编码规范与风格指南
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    模块总览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python 风格基线
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocstrings-comments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文档字符串标准
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../standards/tooling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    工具链集成
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocstrings-workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mkdocstrings 工作流程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mkdocstrings-syntax/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mkdocstrings 语法参考
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    项目结构与公共组件库
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            项目结构与公共组件库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    模块总览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    标准目录模板
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    标准目录模板
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 整体目录结构
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 核心组件说明
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 核心组件说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-code_liu" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 源代码目录 (code_liu/)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mkdocs_docdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 文档源文件 (MkDocs_doc/docs/)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mkdocs_docscripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 自动化脚本 (MkDocs_doc/scripts/)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 自动化脚本 (MkDocs_doc/scripts/)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate_mkdocstrings_mdpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      generate_mkdocstrings_md.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code_to_markdownpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      code_to_markdown.py
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mkdocsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 配置文件 (mkdocs.yml)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 配置文件 (mkdocs.yml)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      导航配置 (nav)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      插件配置 (plugins)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      主题配置 (theme)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 工作流程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 工作流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      文档生成流程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      自动部署流程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 文档组织
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 文档组织">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      项目文档结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      开发指南结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ 工具和脚本
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ 工具和脚本">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      主要工具
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      自动化脚本
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 关键文件说明
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 关键文件说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdocs.yml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      requirements.txt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#githubworkflowsmkdocs-deployyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      .github/workflows/mkdocs-deploy.yml
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 文档特性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 文档特性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#material" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material 主题功能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdocstrings" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdocstrings 功能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 项目统计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 项目统计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      当前项目
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      文档页面
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 快速开始
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 快速开始">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 本地开发
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 更新文档
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 部署
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 相关文档
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platform/components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    公共组件文档
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    项目资产
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            项目资产
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    项目文档首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    国自然选题推荐数据清洗
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            国自然选题推荐数据清洗
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/ntrt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文档概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/ntrt/getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    快速开始
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/ntrt/architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    架构设计
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/ntrt/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    系统全景
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/ntrt/guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    核心模块
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/ntrt/configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    配置说明
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/ntrt/examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用示例
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/ntrt/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    故障排查
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/ntrt/update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    更新日志
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_3" id="__nav_4_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RCSB PDB 爬虫项目
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            RCSB PDB 爬虫项目
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/rcsb_pdb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    文档概述
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/rcsb_pdb/getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    快速开始
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/rcsb_pdb/architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    架构设计
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/rcsb_pdb/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    系统全景
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/rcsb_pdb/guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    核心模块
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/rcsb_pdb/configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    配置说明
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/rcsb_pdb/examples/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用示例
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/rcsb_pdb/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    故障排查
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/rcsb_pdb/update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    更新日志
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    开发流程与协作规范
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            开发流程与协作规范
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    模块总览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git 工作流
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process/code-review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代码评审清单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../process/cicd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CI/CD 流水线
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    维护与故障处理
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            维护与故障处理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    模块总览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/logging-monitoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    日志与监控指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常见问题排查
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    高级主题首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced/performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    性能优化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    附录与资源
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            附录与资源
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    资源索引
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    术语表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API 总览
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    更新日志
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/external/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    外部资源清单
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实施路线图
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 整体目录结构
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 核心组件说明
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 核心组件说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-code_liu" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 源代码目录 (code_liu/)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mkdocs_docdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 文档源文件 (MkDocs_doc/docs/)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-mkdocs_docscripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 自动化脚本 (MkDocs_doc/scripts/)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 自动化脚本 (MkDocs_doc/scripts/)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate_mkdocstrings_mdpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      generate_mkdocstrings_md.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code_to_markdownpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      code_to_markdown.py
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-mkdocsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 配置文件 (mkdocs.yml)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 配置文件 (mkdocs.yml)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      导航配置 (nav)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      插件配置 (plugins)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      主题配置 (theme)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 工作流程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 工作流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      文档生成流程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      自动部署流程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 文档组织
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 文档组织">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      项目文档结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      开发指南结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ 工具和脚本
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ 工具和脚本">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      主要工具
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      自动化脚本
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 关键文件说明
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📝 关键文件说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocsyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdocs.yml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      requirements.txt
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#githubworkflowsmkdocs-deployyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      .github/workflows/mkdocs-deploy.yml
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 文档特性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 文档特性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#material" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material 主题功能
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdocstrings" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdocstrings 功能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 项目统计
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 项目统计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      当前项目
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      文档页面
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 快速开始
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 快速开始">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 本地开发
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 更新文档
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 部署
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 相关文档
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">项目结构说明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">📁 整体目录结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Markdown/                          # 项目根目录
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── code_liu/                      # 源代码目录
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ├── NTRT/                      # NTRT 项目（国自然选题推荐数据清洗）
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   │   ├── data_cleaner.py        # 数据清洗主类
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   │   ├── base_mysql.py          # 数据库基础操作
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   │   ├── application/           # 应用模块
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   │   └── *.md                   # 项目相关文档
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   └── RCSB_PDB/                  # RCSB PDB 项目（蛋白质数据库爬虫）
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│       ├── src/
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│       │   ├── spider/            # 爬虫模块
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│       │   ├── items/             # 数据项定义
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│       │   └── pipelines/         # 数据处理管道
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│       └── *.md                   # 项目相关文档
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>├── MkDocs_doc/                    # MkDocs 文档项目
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│   ├── docs/                      # 文档源文件目录
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│   │   ├── index.md               # 首页
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│   │   ├── api.md                 # API 总览
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│   │   ├── projects/              # 项目文档
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│   │   │   ├── index.md          # 项目文档首页
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│   │   │   ├── ntrt/             # NTRT 项目文档
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│   │   │   │   ├── index.md      # 项目概述
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│   │   │   │   ├── api.md        # API 参考（自动生成）
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>│   │   │   │   ├── guide.md      # 使用指南
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│   │   │   │   └── update.md     # 更新日志
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│   │   │   └── rcsb_pdb/         # RCSB PDB 项目文档
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│   │   │       ├── index.md
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>│   │   │       ├── api.md
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>│   │   │       ├── guide.md
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>│   │   │       └── update.md
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>│   │   ├── guide/                 # 开发指南
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>│   │   │   ├── index.md
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>│   │   │   ├── getting-started.md
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>│   │   │   ├── best-practices.md
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>│   │   │   ├── mkdocstrings-workflow.md    # mkdocstrings 工作流程
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>│   │   │   ├── mkdocstrings-syntax.md      # mkdocstrings 语法参考
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>│   │   │   ├── mkdocstrings-comments.md    # mkdocstrings 与注释
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>│   │   │   └── advanced/          # 高级主题
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>│   │   │       ├── index.md
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>│   │   │       └── performance.md
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>│   │   └── reference/             # 参考文档
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>│   │       ├── index.md
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>│   │       └── glossary.md
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>│   │
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>│   ├── scripts/                   # 自动化脚本
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>│   │   ├── generate_mkdocstrings_md.py  # 自动生成包含 mkdocstrings 语法的 .md 文件
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>│   │   ├── code_to_markdown.py         # 将 Python 代码转换为 Markdown
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>│   │   ├── README_auto_generate.md     # 自动生成脚本说明
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>│   │   └── README_code_to_markdown.md  # 代码转 Markdown 说明
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>│   │
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>│   ├── mkdocs.yml                 # MkDocs 配置文件
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>│   ├── requirements.txt           # Python 依赖
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>│   └── site/                      # 构建输出目录（自动生成）
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>│
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>└── .github/
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>    └── workflows/
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>        └── mkdocs-deploy.yml      # GitHub Actions 自动部署配置
+</code></pre></div>
+<h2 id="_3">🎯 核心组件说明<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1-code_liu">1. 源代码目录 (<code>code_liu/</code>)<a class="headerlink" href="#1-code_liu" title="Permanent link">&para;</a></h3>
+<p><strong>作用</strong>：存放项目的 Python 源代码</p>
+<p><strong>结构</strong>：
+- <code>NTRT/</code> - 国自然选题推荐数据清洗项目
+- <code>RCSB_PDB/</code> - RCSB PDB 爬虫项目</p>
+<p><strong>用途</strong>：
+- mkdocstrings 从这里读取代码
+- 自动生成 API 文档</p>
+<h3 id="2-mkdocs_docdocs">2. 文档源文件 (<code>MkDocs_doc/docs/</code>)<a class="headerlink" href="#2-mkdocs_docdocs" title="Permanent link">&para;</a></h3>
+<p><strong>作用</strong>：存放所有 Markdown 文档源文件</p>
+<p><strong>主要目录</strong>：
+- <code>projects/</code> - 项目文档（每个项目一个子目录）
+- <code>guide/</code> - 开发指南和使用说明
+- <code>reference/</code> - 参考文档</p>
+<h3 id="3-mkdocs_docscripts">3. 自动化脚本 (<code>MkDocs_doc/scripts/</code>)<a class="headerlink" href="#3-mkdocs_docscripts" title="Permanent link">&para;</a></h3>
+<h4 id="generate_mkdocstrings_mdpy"><code>generate_mkdocstrings_md.py</code><a class="headerlink" href="#generate_mkdocstrings_mdpy" title="Permanent link">&para;</a></h4>
+<p><strong>功能</strong>：自动生成包含 mkdocstrings 语法的 .md 文件</p>
+<p><strong>使用</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>MkDocs_doc/scripts/generate_mkdocstrings_md.py
+</code></pre></div></p>
+<p><strong>作用</strong>：
+- 扫描代码目录
+- 自动发现所有类和函数
+- 生成包含 <code>::: 模块路径</code> 语法的 .md 文件</p>
+<h4 id="code_to_markdownpy"><code>code_to_markdown.py</code><a class="headerlink" href="#code_to_markdownpy" title="Permanent link">&para;</a></h4>
+<p><strong>功能</strong>：将 Python 代码直接转换为 Markdown 文档</p>
+<p><strong>使用</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>MkDocs_doc/scripts/code_to_markdown.py<span class="w"> </span>&lt;输入路径&gt;<span class="w"> </span>-o<span class="w"> </span>&lt;输出路径&gt;
+</code></pre></div></p>
+<p><strong>作用</strong>：
+- 解析 Python 代码
+- 提取 docstring、类、函数等信息
+- 生成完整的 Markdown 文档</p>
+<h3 id="4-mkdocsyml">4. 配置文件 (<code>mkdocs.yml</code>)<a class="headerlink" href="#4-mkdocsyml" title="Permanent link">&para;</a></h3>
+<p><strong>主要配置</strong>：</p>
+<h4 id="nav">导航配置 (<code>nav</code>)<a class="headerlink" href="#nav" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">nav</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">首页</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">项目文档</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">国自然选题推荐数据清洗</span><span class="p">:</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">文档概述</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">projects/ntrt/index.md</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">系统全景</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">projects/ntrt/api.md</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">核心模块</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">projects/ntrt/guide.md</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">更新日志</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">projects/ntrt/update.md</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">开发指南</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">参考文档</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</code></pre></div>
+<h4 id="plugins">插件配置 (<code>plugins</code>)<a class="headerlink" href="#plugins" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">plugins</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">search</span><span class="p">:</span><span class="w">                    </span><span class="c1"># 搜索功能</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">autorefs</span><span class="p">:</span><span class="w">                  </span><span class="c1"># 自动引用</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">mkdocstrings</span><span class="p">:</span><span class="w">              </span><span class="c1"># 从代码提取文档</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">handlers</span><span class="p">:</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">      </span><span class="nt">python</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="nt">paths</span><span class="p">:</span><span class="w"> </span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../code_liu</span><span class="w">        </span><span class="c1"># 代码路径</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">../src</span>
+</code></pre></div>
+<h4 id="theme">主题配置 (<code>theme</code>)<a class="headerlink" href="#theme" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">theme</span><span class="p">:</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span><span class="w">               </span><span class="c1"># Material 主题</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zh</span><span class="w">                </span><span class="c1"># 中文</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span><span class="w">                   </span><span class="c1"># 功能特性</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tabs</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search.suggest</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content.code.copy</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</code></pre></div>
+<h2 id="_4">🔄 工作流程<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="_5">文档生成流程<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>1. 编写/更新 Python 代码
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>   ↓
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>2. 运行自动生成脚本
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>   python scripts/generate_mkdocstrings_md.py
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>   ↓
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>3. 生成包含 mkdocstrings 语法的 .md 文件
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>   docs/projects/ntrt/api.md
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>   ↓
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>4. 运行 mkdocs build/serve
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>   mkdocs serve
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>   ↓
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>5. mkdocstrings 从代码读取文档
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>   解析 docstring、类、函数等
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>   ↓
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>6. 生成 HTML 文档
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>   site/ 目录
+</code></pre></div>
+<h3 id="_6">自动部署流程<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>1. 本地修改代码/文档
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   ↓
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>2. Git 提交并推送
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>   git push markdown test
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>   ↓
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>3. GitHub Actions 自动触发
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>   .github/workflows/mkdocs-deploy.yml
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>   ↓
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>4. 自动运行脚本生成文档
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>   python scripts/generate_mkdocstrings_md.py
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>   ↓
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>5. 构建并部署到 GitHub Pages
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>   mkdocs gh-deploy
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>   ↓
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>6. 文档自动更新
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>   https://Gearless01Joe.github.io/Markdown_test/
+</code></pre></div>
+<h2 id="_7">📋 文档组织<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="_8">项目文档结构<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>每个项目包含 4 个文档：</p>
+<ol>
+<li><strong>index.md</strong> - 项目概述</li>
+<li>项目介绍</li>
+<li>快速开始</li>
+<li>项目结构</li>
+<li>
+<p>文档导航</p>
+</li>
+<li>
+<p><strong>api.md</strong> - API 参考（自动生成）</p>
+</li>
+<li>使用 <code>generate_mkdocstrings_md.py</code> 生成</li>
+<li>包含 <code>::: 模块路径</code> 语法</li>
+<li>
+<p>mkdocstrings 自动从代码提取文档</p>
+</li>
+<li>
+<p><strong>guide.md</strong> - 使用指南</p>
+</li>
+<li>核心模块说明</li>
+<li>使用示例</li>
+<li>最佳实践</li>
+<li>
+<p>常见问题</p>
+</li>
+<li>
+<p><strong>update.md</strong> - 更新日志</p>
+</li>
+<li>版本历史</li>
+<li>更新记录</li>
+</ol>
+<h3 id="_9">开发指南结构<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>index.md</strong> - 指南首页</li>
+<li><strong>getting-started.md</strong> - 快速开始</li>
+<li><strong>best-practices.md</strong> - 最佳实践</li>
+<li><strong>mkdocstrings-workflow.md</strong> - mkdocstrings 工作流程</li>
+<li><strong>mkdocstrings-syntax.md</strong> - mkdocstrings 语法参考</li>
+<li><strong>mkdocstrings-comments.md</strong> - mkdocstrings 与注释</li>
+<li><strong>advanced/</strong> - 高级主题</li>
+</ul>
+<h2 id="_10">🛠️ 工具和脚本<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_11">主要工具<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>MkDocs</strong> - 文档生成框架</li>
+<li><strong>Material for MkDocs</strong> - 主题</li>
+<li><strong>mkdocstrings</strong> - 从代码提取文档</li>
+<li><strong>GitHub Actions</strong> - 自动部署</li>
+</ol>
+<h3 id="_12">自动化脚本<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>generate_mkdocstrings_md.py</strong></li>
+<li>自动生成包含 mkdocstrings 语法的 .md 文件</li>
+<li>扫描代码，发现类和函数</li>
+<li>
+<p>生成正确的模块路径</p>
+</li>
+<li>
+<p><strong>code_to_markdown.py</strong></p>
+</li>
+<li>将 Python 代码转换为 Markdown</li>
+<li>提取 docstring、类、函数等信息</li>
+<li>生成完整的文档内容</li>
+</ol>
+<h2 id="_13">📝 关键文件说明<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="mkdocsyml"><code>mkdocs.yml</code><a class="headerlink" href="#mkdocsyml" title="Permanent link">&para;</a></h3>
+<ul>
+<li>MkDocs 主配置文件</li>
+<li>定义导航结构</li>
+<li>配置插件和主题</li>
+<li>设置代码路径</li>
+</ul>
+<h3 id="requirementstxt"><code>requirements.txt</code><a class="headerlink" href="#requirementstxt" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Python 依赖包</li>
+<li>mkdocs、mkdocs-material、mkdocstrings 等</li>
+</ul>
+<h3 id="githubworkflowsmkdocs-deployyml"><code>.github/workflows/mkdocs-deploy.yml</code><a class="headerlink" href="#githubworkflowsmkdocs-deployyml" title="Permanent link">&para;</a></h3>
+<ul>
+<li>GitHub Actions 工作流</li>
+<li>自动构建和部署文档</li>
+<li>集成自动生成脚本</li>
+</ul>
+<h2 id="_14">🎨 文档特性<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h3 id="material">Material 主题功能<a class="headerlink" href="#material" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ 多层级导航</li>
+<li>✅ 全文搜索</li>
+<li>✅ 代码高亮</li>
+<li>✅ 代码复制按钮</li>
+<li>✅ 响应式设计</li>
+<li>✅ 暗色模式支持</li>
+</ul>
+<h3 id="mkdocstrings">mkdocstrings 功能<a class="headerlink" href="#mkdocstrings" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ 自动从代码提取文档</li>
+<li>✅ 解析 docstring</li>
+<li>✅ 显示类型注解</li>
+<li>✅ 显示源代码</li>
+<li>✅ 支持 Google/Sphinx/NumPy 风格</li>
+</ul>
+<h2 id="_15">📊 项目统计<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h3 id="_16">当前项目<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>NTRT 项目</strong>：11 个类/函数</li>
+<li><strong>RCSB PDB 项目</strong>：4 个类/函数</li>
+</ul>
+<h3 id="_17">文档页面<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>项目文档</strong>：2 个项目 × 4 个页面 = 8 页</li>
+<li><strong>开发指南</strong>：7 个页面</li>
+<li><strong>参考文档</strong>：3 个页面</li>
+<li><strong>总计</strong>：约 18 个页面</li>
+</ul>
+<h2 id="_18">🚀 快速开始<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 本地开发<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 安装依赖</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">cd</span><span class="w"> </span>MkDocs_doc
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># 生成 API 文档</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>python<span class="w"> </span>scripts/generate_mkdocstrings_md.py
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1"># 本地预览</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>mkdocs<span class="w"> </span>serve
+</code></pre></div>
+<h3 id="2">2. 更新文档<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># 代码更新后，重新生成文档</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>python<span class="w"> </span>scripts/generate_mkdocstrings_md.py
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># 查看效果</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>mkdocs<span class="w"> </span>serve
+</code></pre></div>
+<h3 id="3">3. 部署<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># 推送到 GitHub，自动部署</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Update docs&quot;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>git<span class="w"> </span>push<span class="w"> </span>markdown<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
+<h2 id="_19">📚 相关文档<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../mkdocstrings-workflow/">mkdocstrings 工作流程</a></li>
+<li><a href="../mkdocstrings-syntax/">mkdocstrings 语法参考</a></li>
+<li><a href="../mkdocstrings-comments/">mkdocstrings 与注释</a></li>
+<li>自动生成脚本说明：<code>MkDocs_doc/scripts/README_auto_generate.md</code></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../../javascripts/init-mermaid.js"></script>
+      
+    
+  </body>
+</html>
